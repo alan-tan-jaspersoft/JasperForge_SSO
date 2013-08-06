@@ -1,0 +1,15 @@
+--- sites/all/themes/jasperforge/css/jasperforge3.css
++++ sites/all/themes/jasperforge/css/jasperforge3.css
+@@ -579,4 +579,12 @@
+ .TableStyle_Note_Indent tbody,
+ .TableStyle_Note_Indent td {
+ 	border:none;
+-}+}
++
++table.AutoNumber_p_Bullet tbody {
++	border:none;
++}
++
++table.AutoNumber_p_Bullet td {
++	border:none;
++} 

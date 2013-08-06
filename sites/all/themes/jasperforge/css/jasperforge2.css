@@ -1,0 +1,419 @@
+h1, h2 {
+	color: #2B2622;
+}
+
+
+
+
+/** QUICKTABS **/
+.quicktabs-ui-jasperforge {
+	margin-top: 30px;
+}
+
+ul.quicktabs-style-jasperforge {
+  background: #f4f4f4; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f4f4f4 0%, #e5e5e5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f4f4f4 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f4f4f4 0%,#e5e5e5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f4f4f4 0%,#e5e5e5 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f4f4f4 0%,#e5e5e5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	border: 1px solid #ccc;
+  border-bottom: 0px solid transparent;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+  letter-spacing: .12em;
+  font-weight: normal;
+  height: 32px;
+	margin: 0;
+	padding-bottom: 5px;
+	font-family: "proxima_nova_ltbold";
+	font-size: 12px;
+  text-transform: none;
+}
+
+ul.quicktabs-style-jasperforge li {
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+  border-bottom: 1px solid #ccc;
+  font-weight: normal;
+  height: 30px;
+	position:relative;
+  text-align: center;
+  width: 174px;
+}
+
+ul.quicktabs-style-jasperforge li a {
+  border-left: 1px solid #fff;
+  border-right: 1px solid #ddd;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+	color: #707084;
+	display: inline-block;
+	line-height: 28px;
+	padding: 1px 0;
+	width:100%
+}
+
+ul.quicktabs-style-jasperforge li.first {
+	border-top-left-radius: 6px;
+	margin-left:0;
+}
+
+ul.quicktabs-style-jasperforge li.last {
+	border-top-right-radius: 6px;
+}
+
+ul.quicktabs-style-jasperforge li.active  {
+	background: #fff;
+  border-bottom: 1px solid #fff;
+	color: #2B2622;
+	margin-top: -1px;
+}
+
+
+ul.quicktabs-style-jasperforge li a:hover {
+	text-decoration:none;
+  background: #e8e8e8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e8e8e8 0%, #f4f4f4 70%, #f4f4f4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(70%,#f4f4f4), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+}
+
+ul.quicktabs-style-jasperforge li.active a:hover {
+	background: #fff;
+	color: #5E5F68;
+}
+
+ul.quicktabs-style-jasperforge li.active a,
+ul.quicktabs-style-jasperforge li.active a:hover {
+	color: #2B2622;
+}
+
+.quicktabs_main.quicktabs-style-jasperforge {
+  background-color: white;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#F2F2F2));
+  background-image: -webkit-linear-gradient(top, white, #F2F2F2);
+  background-image: -moz-linear-gradient(top, white, #F2F2F2);
+  background-image: -o-linear-gradient(top, white, #F2F2F2);
+  background-image: linear-gradient(to bottom, white, #F2F2F2);
+  border: 1px solid #CCC;
+  border-bottom: 1px solid #BBB;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	margin-top: -7px;
+  min-height: 340px;
+  padding: 30px 30px 20px;
+}
+
+
+
+
+/* media for image */
+.jf-media-block::after, .jf-media-block .js-media-body::after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+  height: 0!important;
+  line-height: 0;
+  font-size: xx-large;
+  content: " x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";
+}
+
+.jf-media-block .js-media-img {
+  display: inline;
+  float: left;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+.jf-media-block .js-media-body {
+  display: table-cell;
+  zoom: 1;
+  padding-bottom: 20px;
+}
+
+.jf-home-tabs-inner-left {
+	float: left;
+	width: 60%;
+}
+
+.jf-home-tabs-inner-right {
+	float: right;
+	width: 40%;
+}
+
+.jf-home-tabs-inner-left #project-icon {
+  margin: 0 5px 0 0;
+}
+
+.jf-home-tabs-inner-left .js-media-img img {
+  max-width: 50px;
+}
+
+.jf-home-tabs-inner-left h2,
+.jf-home-tabs-inner-left h2 a {
+  letter-spacing: .05em;
+  font-size: 35px;
+  margin-bottom: 5px;
+  color: #35302D;
+  font-family: ProximaNovaBold;
+}
+
+.jf-home-tabs-inner-left h3 {
+  letter-spacing: .05em;
+  font-size: 18px;
+  color: #707084;
+  margin-bottom: 0;
+}
+
+.jf-home-tabs-left {
+  width: 50%;
+  color: #707084;
+}
+
+.jf-home-tabs-left h4 {
+  color: #0480BA;
+  text-transform: uppercase;
+  font: 10px/15px ProximaNovaBold;
+}
+
+.jf-home-tabs-inner-right img {
+  float: right;
+  margin-top: 10px;
+}
+
+.jf-home-tabs-inner-left p {
+  color: #707084;
+  font-size: 12px;
+  width: 85%;
+  padding-bottom: 20px;
+  margin: 0;
+}
+
+/*** CONTENT TABS (ADAPTED FROM QUICKTABS) ***/
+
+
+ul.primary li:first-child > a, ul.primary li:first-child > span {
+border-left: 1px solid : #fefefe;}
+ul.tabs.primary  {
+  background: #f4f4f4; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f4f4f4 0%, #e5e5e5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4f4f4), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f4f4f4 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f4f4f4 0%,#e5e5e5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f4f4f4 0%,#e5e5e5 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f4f4f4 0%,#e5e5e5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+	border: 1px solid #ccc;
+	border-radius: 6px;
+  color: #707084;
+  letter-spacing: .12em;
+  font-weight: normal;
+  height: 32px;
+	margin: 0;
+	padding-bottom: 5px;
+	font-family: "proxima_nova_ltbold";
+	font-size: 12px;
+  padding: 0 10px;
+  text-transform: none;
+  height: 27px;
+}
+ul.tabs.primary.search-api-sorts {
+	width: 410px;
+}
+
+ul.tabs.primary li {
+  border-left: 0px solid transparent;
+  border-right: 1px solid #ddd;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+	color: #707084;
+	display: inline-block;
+  float: left;
+	line-height: 28px;
+	padding: 1px 0;
+  	border-left: 0px solid transparent;
+	border-right: 1px solid #ddd;
+  border-collapse:seperate;
+  height: 25px;
+  line-height: 25px;
+}
+
+ul.tabs.primary.search-api-sorts li span {
+	display: inline-block;
+}
+
+ul.tabs.primary li a {
+	display: inline-block;
+	padding: 0 15px;
+	border-left: 0px solid transparent;
+	border-right: 1px solid #fff;
+	line-height:151%;
+	margin: 0;
+	background:none;
+	border-top: none;
+
+    height: 25px;
+    color: #707084;
+display: inline-block;
+line-height: 25px;
+  
+}
+
+#content-tabs ul.primary li a:link, #content-tabs ul.primary li a:visited {
+font-size: 12px;line-height: 25px;
+}
+ul.tabs.primary.search-api-sorts li a {
+	padding:4px 0;
+}
+
+ul.tabs.primary li:first-child > a,
+ul.tabs.primary li:first-child > span {
+  border-left: 1px solid #fff;
+}
+
+ul.tabs.primary li:first-child {
+  border-left: 1px solid #ddd;
+}
+
+ul.tabs.primary li:last-child a,
+ul.tabs.primary li:last-child > span {
+
+}
+
+
+ul.tabs.primary li:first-child {
+	margin-left:0;
+}
+
+ul.tabs.primary li:last-child {
+}
+
+
+ul.tabs.primary li.active {
+  border-right: 1px solid #fff;
+}  
+
+ul.tabs.primary li.active a {
+
+border-right: 1px solid #ddd;
+border: 0px solid transparent;
+border-bottom:0px solid transparent;
+  margin: 0;
+  height: 25px;
+  }
+ul.tabs.primary li.active a,
+ul.tabs.primary li.active span.search-api-sort-active,
+ul.tabs.primary li.active:hover a,
+ul.tabs.primary li:hover a {
+	text-decoration:none;
+  background: #e8e8e8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e8e8e8 0%, #f4f4f4 70%, #f4f4f4 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(70%,#f4f4f4), color-stop(100%,#f4f4f4)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #e8e8e8 0%,#f4f4f4 70%,#f4f4f4 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+	color: #01283A;
+}
+
+ul.primary li a:hover,
+ul.primary li span.search-api-sort-active:hover {
+	text-decoration:none;
+	background: #C7DDFF;
+}
+
+ul.primary li.active a:hover,
+ul.primary li span.search-api-sort-active:hover {
+	background: #ECF5FB;
+}
+
+.quicktabs_main.quicktabs-style-jasperforge {
+	background-color: white;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#F2F2F2));
+	background-image: -webkit-linear-gradient(top, white, #F2F2F2);
+	background-image: -moz-linear-gradient(top, white, #F2F2F2);
+	background-image: -o-linear-gradient(top, white, #F2F2F2);
+	background-image: linear-gradient(to bottom, white, #F2F2F2);
+	border: 1px solid #CCC;
+	border-bottom: 1px solid #BBB;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+	margin-top: -7px;
+	min-height: 340px;
+  overflow: auto;
+	padding: 15px;
+}
+
+#block-jasperforge_home-jasperforge_home_announcements {
+margin-top:1em;
+margin-bottom: 0;
+}
+#block-jasperforge_home-jasperforge_home_announcements .inner {
+  
+  margin-bottom:25px;
+  }
+  
+.content-inner-inner {
+
+}
+
+.block .jf-home-info-block ul {
+margin-left: 0;
+margin-bottom: 1em;
+}
+
+
+h2.title.block-title a {
+  color: #2B2622;
+}
+
+.jcarousel-list-horizontal li {
+height :136px;
+max-height: 136px;
+overflow: hidden;
+}
+
+.more-link a {
+color: #1262A4;
+text-transform: uppercase;
+font: 10px/30px ProximaNovaBold;
+}
+
+.more-link a:hover {
+text-decoration: none;
+color: #538DC2;;
+}
+
+.more-link a:after {
+
+content: "";
+font-family: FontAwesome;
+font-weight: normal;
+font-style: normal;
+display: inline-block;
+text-decoration: inherit;
+font-style: normal;
+font-weight: normal;
+padding-left: 5px;
+}
+
+.jcarousel-prev {
+border-right-color: #CCC;
+}
+
+.jcarousel-next {
+border-left-color: #CCC;
+}

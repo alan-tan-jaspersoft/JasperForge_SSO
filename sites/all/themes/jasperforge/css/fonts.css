@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'ProximaNovaLtRegular';
+    src: url('../fonts/proximanova-light-webfont.eot');
+    src: 
+		 local("?"),
+		 url('../fonts/proximanova-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-light-webfont.woff') format('woff'),
+         url('../fonts/proximanova-light-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-light-webfont.svg#ProximaNovaLtRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ProximaNovaRgRegular';
+    src: url('../fonts/proximanova-reg-webfont.eot');
+    src: 
+		 local("?"),
+		 url('../fonts/proximanova-reg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-reg-webfont.woff') format('woff'),
+         url('../fonts/proximanova-reg-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-reg-webfont.svg#ProximaNovaRgRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_nova_ltbold';
+    src: url('../fonts/proximanova-sbold-webfont.eot');
+    src: local("?"),
+		 url('../fonts/proximanova-sbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-sbold-webfont.woff') format('woff'),
+         url('../fonts/proximanova-sbold-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-sbold-webfont.svg#proxima_nova_ltbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'ProximaNovaBold';
+    src: url('../fonts/proximanova-bold-webfont.eot');
+    src: 
+		 local("?"),
+		 url('../fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-bold-webfont.woff') format('woff'),
+         url('../fonts/proximanova-bold-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'TradeGothic';
+	src: url('/sites/all/libraries/webfonts/tradegothicltstd.eot');
+	src: url('/sites/all/libraries/webfonts/tradegothicltstd.eot?#iefix') format('embedded-opentype'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstd.svg#tradegothicltstd') format('svg'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstd.woff') format('woff'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstd.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TradeGothic';
+	src: url('/sites/all/libraries/webfonts/tradegothicltstdbold.eot');
+	src: url('/sites/all/libraries/webfonts/tradegothicltstdbold.eot?#iefix') format('embedded-opentype'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstdbold.svg#tradegothicltstdbold') format('svg'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstdbold.woff') format('woff'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstdbold.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'TradeGothic';
+	src: url('/sites/all/libraries/webfonts/tradegothicltstdlight.eot');
+	src: url('/sites/all/libraries/webfonts/tradegothicltstdlight.eot?#iefix') format('embedded-opentype'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstdlight.svg#tradegothicltstdlight') format('svg'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstdlight.woff') format('woff'),
+		 url('/sites/all/libraries/webfonts/tradegothicltstdlight.ttf') format('truetype');
+	font-weight: 100;
+	font-style: normal;
+}
