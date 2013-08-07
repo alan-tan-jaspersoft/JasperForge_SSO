@@ -6,8 +6,6 @@
 
 include_once 'jasperforge_profile.features.inc';
 
-require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'oneall_social_login_core') . '/oneall_social_login_core.module';
-
 function jasperforge_profile_init(){
   drupal_add_css(drupal_get_path('module', 'jasperforge_profile') . '/theme/global.css',
                   array('group'=> CSS_THEME, 'every_page' => TRUE));
