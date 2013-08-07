@@ -497,46 +497,6 @@ function jasperforge_profile_views_default_views() {
   $handler->display->display_options['allow']['exposed_form'] = 0;
   $handler->display->display_options['allow']['fields_override'] = 'fields_override';
 
-  /* Display: Oneall */
-  $handler = $view->new_display('panel_pane', 'Oneall', 'oneall');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Social Logins';
-  $handler->display->display_options['enabled'] = FALSE;
-  $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* No results behavior: Global: Text area */
-  $handler->display->display_options['empty']['area']['id'] = 'area';
-  $handler->display->display_options['empty']['area']['table'] = 'views';
-  $handler->display->display_options['empty']['area']['field'] = 'area';
-  $handler->display->display_options['empty']['area']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area']['content'] = '<em>You don\'t have any social login yet.</em>';
-  $handler->display->display_options['empty']['area']['format'] = 'full_html';
-  $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: User: Authmap ID */
-  $handler->display->display_options['fields']['aid']['id'] = 'aid';
-  $handler->display->display_options['fields']['aid']['table'] = 'authmap';
-  $handler->display->display_options['fields']['aid']['field'] = 'aid';
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['element_class'] = 'oneall_social_login_provider';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
-  $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: User: Authentication module */
-  $handler->display->display_options['filters']['module']['id'] = 'module';
-  $handler->display->display_options['filters']['module']['table'] = 'authmap';
-  $handler->display->display_options['filters']['module']['field'] = 'module';
-  $handler->display->display_options['filters']['module']['value'] = 'oneall_social_login';
-
   /* Display: Activity */
   $handler = $view->new_display('panel_pane', 'Activity', 'activity');
   $handler->display->display_options['defaults']['title'] = FALSE;

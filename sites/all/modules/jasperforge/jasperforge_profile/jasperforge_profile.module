@@ -54,15 +54,6 @@ function jasperforge_profile_menu(){
   return $items;
 }
 
-/**
- * implements hook_ctools_plugin_directory
- */
-function jasperforge_profile_ctools_plugin_directory($owner, $plugin_type) {
-  if ($owner == 'ctools' && ($plugin_type == 'content_types')) {
-    return 'plugins/' . $plugin_type;
-  }
-}
-
 
 function jasperforge_profile_unlink($user){
   oneall_social_login_core_unmap_identity_token($_GET['token']);
