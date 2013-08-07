@@ -1,0 +1,41 @@
+<?php
+
+/*
+function jasperforge_community_profile_schema(){
+  $schema['jasperforge_community_profile_privacy'] = array(
+    'description' => 'Stores privacy settings for users',
+    'fields' => array(
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE
+        ),
+      'privacy_setting' => array(
+        'type' => 'varchar',
+        'length' => 1024,
+        'not null' => TRUE
+        ),
+      ),
+    'primary key' => array('uid'),
+  );
+  return $schema;
+}*/
+
+
+/**
+  * Implement hook_enable()
+  */
+/*function jasperforge_community_profile_enable() {
+  if(!db_table_exists('jasperforge_community_profile_privacy')) {
+    drupal_install_schema('jasperforge_community_profile');
+  }
+}*/
+
+/**
+  * Implement hook_enable()
+  */
+function jasperforge_community_profile_enable() {
+  db_query('UPDATE {system} SET weight=10 WHERE name=:name AND weight<:weight',
+          array(':name' => 'jasperforge_community_profile', ':weight' => 10));
+}
+

@@ -1,0 +1,13 @@
+/**
+ *   social network
+ */
+div[class*='form-item-field-social-network-und-'] { float: left; }
+input[id*='edit-field-social-network-und-'] { margin-top: 0px !important; }
+
+.fieldset-title,
+.fieldset-legend
+{
+  font-size: 14px;
+  font-weight: bold;
+  color: #567;
+}

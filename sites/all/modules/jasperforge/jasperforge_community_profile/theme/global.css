@@ -1,0 +1,16 @@
+.user-picture img
+{
+  max-height: 100%;
+  max-width: 32px;
+}
+.user-picture-large img
+{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.user-picture-medium img
+{
+  max-height: 100%;
+  max-width: 64px;
+}

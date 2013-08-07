@@ -1,0 +1,96 @@
+.pane-title{ margin: 5px 0px 0px 0px;  }
+p {margin:0;}
+.pane-content { font-size: 11pt; }
+.inside { margin: 0px 0px 1em 0px !important;}
+.panel-panel.line { margin-top: 5px; }
+.panel-separator { padding-top: 10px; }
+/*#content-tabs>#content-tabs-inner>.tabs { display: none; }*/
+
+
+
+
+h2.pane-title.block-title { font-size: 16pt; }
+.panel-panel>.unit { margin-right: 20px; }
+.panel-panel>.unit.lastUnit { margin-right: 0px; }
+
+/**
+ *   top left 1
+ */
+.pane-community-profile-user
+{
+/*  display: inline-block;*/
+  text-align: center;
+}
+#point-value
+{
+  font-size: 20pt;
+  margin-top: 15px;
+  line-height: 1em;
+}
+
+
+/**
+ *   bio, company, stat
+ */
+.pane-community-profile-bio { margin-top: 50px; }
+.pane-community-profile-bio th,
+.pane-community-profile-company-info th,
+.pane-community-profile-stats th
+{
+  width: 95px;
+}
+
+.pane-community-profile-bio .pane-title,
+.pane-community-profile-company-info .pane-title,
+.pane-community-profile-stats .pane-title
+{
+  float:left;
+  text-align: right;
+  width:140px;
+  margin-right: 5px;
+}
+
+.pane-community-profile-bio .views-table,
+.pane-community-profile-company-info .views-table,
+.pane-community-profile-stats .views-table
+{
+  width: 500px;
+}
+
+.pane-pcp-pcp-profile-percent-complete
+{
+  margin-left: 145px;
+  width: 500px;
+}
+
+
+/**
+ *   top right 1
+ */
+.views-field-field-about-me { padding-bottom: 10px; }
+
+/**
+ *   oneall
+ */
+.oneall_social_login_provider a
+{
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+.view-display-id-oneall .views-row
+{
+  float: left;
+  margin: 5px;
+}
+.view-display-id-oneall .views-row-last { padding: 5px; float: none; }
+#oneall-unlink { font-size: 10pt; color: rgb(100, 100, 100); }
+
+
+/**
+ *   activity
+ */
+.view-display-id-activity .views-field-created{  width: 100px; }
+
+
+
