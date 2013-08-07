@@ -71,7 +71,7 @@ function jasperforge_profile_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_class'] = 'user-picture-large';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  /* Field: Userpoints total: Current total points */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['points']['id'] = 'points';
   $handler->display->display_options['fields']['points']['table'] = 'userpoints_total';
   $handler->display->display_options['fields']['points']['field'] = 'points';
@@ -327,7 +327,7 @@ function jasperforge_profile_views_default_views() {
   $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
   $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
   $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
-  /* Field: User: Primary Role */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_user_role']['id'] = 'field_user_role';
   $handler->display->display_options['fields']['field_user_role']['table'] = 'field_data_field_user_role';
   $handler->display->display_options['fields']['field_user_role']['field'] = 'field_user_role';
