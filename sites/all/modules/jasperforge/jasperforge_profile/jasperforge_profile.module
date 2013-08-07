@@ -4,20 +4,20 @@
  * Code for the JasperForge Community Profile feature.
  */
 
-include_once 'jasperforge_community_profile.features.inc';
+include_once 'jasperforge_profile.features.inc';
 
 require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'oneall_social_login_core') . '/oneall_social_login_core.module';
 
-function jasperforge_community_profile_init(){
-  drupal_add_css(drupal_get_path('module', 'jasperforge_community_profile') . '/theme/global.css',
+function jasperforge_profile_init(){
+  drupal_add_css(drupal_get_path('module', 'jasperforge_profile') . '/theme/global.css',
                   array('group'=> CSS_THEME, 'every_page' => TRUE));
 
   if(arg(0) == 'user'){
-    drupal_add_css(drupal_get_path('module', 'jasperforge_community_profile') . '/theme/user_profile.css',
+    drupal_add_css(drupal_get_path('module', 'jasperforge_profile') . '/theme/user_profile.css',
                     array('group'=> CSS_THEME , 'weight'=> 999));
   }
   if(arg(0) == 'user' && arg(2) == 'edit'){
-    drupal_add_css(drupal_get_path('module', 'jasperforge_community_profile') . '/theme/user_profile_form.css',
+    drupal_add_css(drupal_get_path('module', 'jasperforge_profile') . '/theme/user_profile_form.css',
                     array('group'=> CSS_THEME , 'weight'=> 999));
   }
 }
@@ -25,7 +25,7 @@ function jasperforge_community_profile_init(){
 /**
  * implements hook_permission
  */
-function jasperforge_community_profile_permission(){
+function jasperforge_profile_permission(){
   return array(
     'view full user profiles' => array(
       'title' => t('View full user profiles'),
@@ -37,17 +37,17 @@ function jasperforge_community_profile_permission(){
 /**
  * implements hook_menu
  */
-function jasperforge_community_profile_menu(){
+function jasperforge_profile_menu(){
   $item = array();
   $items['users/%user/profile-oneall-unlink'] = array(
-    'page callback' => 'jasperforge_community_profile_unlink',
+    'page callback' => 'jasperforge_profile_unlink',
     'page arguments' => array(1),
     'access arguments' => array('view any published content'),
     'type' => MENU_CALLBACK,
     'weight'=> 10,
     );
   $items['user/%user/profile-oneall-unlink'] = array(
-    'page callback' => 'jasperforge_community_profile_unlink',
+    'page callback' => 'jasperforge_profile_unlink',
     'page arguments' => array(1),
     'access arguments' => array('view any published content'),
     'type' => MENU_CALLBACK,
@@ -59,14 +59,14 @@ function jasperforge_community_profile_menu(){
 /**
  * implements hook_ctools_plugin_directory
  */
-function jasperforge_community_profile_ctools_plugin_directory($owner, $plugin_type) {
+function jasperforge_profile_ctools_plugin_directory($owner, $plugin_type) {
   if ($owner == 'ctools' && ($plugin_type == 'content_types')) {
     return 'plugins/' . $plugin_type;
   }
 }
 
 
-function jasperforge_community_profile_unlink($user){
+function jasperforge_profile_unlink($user){
   oneall_social_login_core_unmap_identity_token($_GET['token']);
   drupal_goto('users/' . $user->name);
 }
@@ -74,25 +74,25 @@ function jasperforge_community_profile_unlink($user){
 /**
  * implements hook_theme_registry_alter
  */
-function jasperforge_community_profile_theme_registry_alter(&$theme_registry) {
-  $path = drupal_get_path('module', 'jasperforge_community_profile');
+function jasperforge_profile_theme_registry_alter(&$theme_registry) {
+  $path = drupal_get_path('module', 'jasperforge_profile');
 
   $array = $theme_registry['views_view_fields'];
-  $array['preprocess functions'][] = 'jasperforge_community_profile_display_preprocess';
+  $array['preprocess functions'][] = 'jasperforge_profile_display_preprocess';
   unset($array['pattern']);
-  $theme_registry['views_view_fields__community_profile'] = $array;
+  $theme_registry['views_view_fields__profile'] = $array;
 
   $array = $theme_registry['views_view'];
-  $array['preprocess functions'][] = 'jasperforge_community_profile_display_preprocess2';
+  $array['preprocess functions'][] = 'jasperforge_profile_display_preprocess2';
   unset($array['pattern']);
-  $theme_registry['views_view__community_profile'] = $array;
+  $theme_registry['views_view__profile'] = $array;
 
 
-  $theme_registry['panels_pane']['preprocess functions'][] = 'jasperforge_community_profile_pane_preprocess';
-  $theme_registry['views_view_table']['preprocess functions'][] = 'jasperforge_community_profile_display_preprocess3';
+  $theme_registry['panels_pane']['preprocess functions'][] = 'jasperforge_profile_pane_preprocess';
+  $theme_registry['views_view_table']['preprocess functions'][] = 'jasperforge_profile_display_preprocess3';
 }
 
-function jasperforge_community_profile_display_preprocess3(&$vars){
+function jasperforge_profile_display_preprocess3(&$vars){
   if(arg(0) != 'user' || $vars['view']->name != 'user_questions' && $vars['view']->name != 'user_answers'){
     return;
   }
@@ -106,7 +106,7 @@ function jasperforge_community_profile_display_preprocess3(&$vars){
 
 
 
-function jasperforge_community_profile_display_preprocess2(&$vars){
+function jasperforge_profile_display_preprocess2(&$vars){
 //  unset($vars['title']);
   switch ($vars['view']->current_display) {
     case 'social_network':
@@ -137,7 +137,7 @@ function jasperforge_community_profile_display_preprocess2(&$vars){
 }
 
 
-function jasperforge_community_profile_display_preprocess(&$vars){
+function jasperforge_profile_display_preprocess(&$vars){
 //  dpm($vars['view']->current_display);
   switch ($vars['view']->current_display) {
     case 'top_right_1':
@@ -156,7 +156,7 @@ function jasperforge_community_profile_display_preprocess(&$vars){
       $regex = '/' . preg_quote('<td>', '/') . '([^\<]*)' . preg_quote('</td><td>', '/') . '(.*)' . preg_quote('</td>', '/') . '/';
       $vars['fields']['field_social_network']->content = preg_replace_callback(
           $regex,
-          '_jasperforge_community_profile_format_social_network',
+          '_jasperforge_profile_format_social_network',
           $vars['fields']['field_social_network']->content
           );
 
@@ -168,7 +168,7 @@ function jasperforge_community_profile_display_preprocess(&$vars){
   }
 }
 
-function _jasperforge_community_profile_format_social_network($matches){
+function _jasperforge_profile_format_social_network($matches){
   if(stripos($matches[2], 'http') === 0){
     $title = substr($matches[2], 0, 40);
     $matches[2] = "<a href=\"${matches[2]}\" target=\"_blank\">${title}&hellip;</a>";
@@ -209,9 +209,9 @@ function _jasperforge_community_profile_format_social_network($matches){
 
 
 
-function jasperforge_community_profile_pane_preprocess(&$vars){
-  if($vars['pane']->subtype != 'community_profile-company_info' || user_access('view full user profiles')){
-//  if($vars['pane']->subtype != 'community_profile-company_info'){
+function jasperforge_profile_pane_preprocess(&$vars){
+  if($vars['pane']->subtype != 'profile-company_info' || user_access('view full user profiles')){
+//  if($vars['pane']->subtype != 'profile-company_info'){
     return;
   }
   if($vars['display']->args[0] == $vars['user']->uid){
@@ -220,7 +220,7 @@ function jasperforge_community_profile_pane_preprocess(&$vars){
 
   $user = user_load($vars['display']->args[0]);
   foreach (array('primary_role' ,'company_info', 'title') as $value) {
-    if(jasperforge_community_profile_check_privacy_setting($value, $user)){
+    if(jasperforge_profile_check_privacy_setting($value, $user)){
       return;
     }
   }
@@ -230,7 +230,7 @@ function jasperforge_community_profile_pane_preprocess(&$vars){
 
 
 
-function jasperforge_community_profile_form_user_profile_form_alter(&$form, &$form_state, $form_id){
+function jasperforge_profile_form_user_profile_form_alter(&$form, &$form_state, $form_id){
 //  dpm($form);
   $form['#group_children']['signature_settings'] = 'group_profile';
   $form['signature_settings']['#weight'] = 10;
@@ -251,11 +251,11 @@ function jasperforge_community_profile_form_user_profile_form_alter(&$form, &$fo
       '#value' => t("Remove"),
 //      '#tree' => TRUE,
 //      '#limit_validation_errors' => array(),
-//      '#validate' => array('jasperforge_community_profile_social_network_item'),
+//      '#validate' => array('jasperforge_profile_social_network_item'),
       '#parent' => $key,
-      '#submit' => array('jasperforge_community_profile_ajax_submit'),
+      '#submit' => array('jasperforge_profile_ajax_submit'),
       '#ajax' => array(
-        'callback' => 'jasperforge_community_profile_social_network_item_ajax',
+        'callback' => 'jasperforge_profile_social_network_item_ajax',
         'wrapper' => 'field-social-network-add-more-wrapper',
         'effect' => 'fade',
         'method' => 'replace',
@@ -267,13 +267,13 @@ function jasperforge_community_profile_form_user_profile_form_alter(&$form, &$fo
 }
 
 
-function _jasperforge_community_profile_add_item_ajax_submit(&$form, &$form_state) {
+function _jasperforge_profile_add_item_ajax_submit(&$form, &$form_state) {
   $form_state['rebuild'] = TRUE;
 }
 
 
 
-function jasperforge_community_profile_ajax_submit(&$form, &$form_state){
+function jasperforge_profile_ajax_submit(&$form, &$form_state){
   if($form_state['clicked_button']['#value'] != 'Remove'){
     return;
   }
@@ -281,12 +281,12 @@ function jasperforge_community_profile_ajax_submit(&$form, &$form_state){
   $form_state['rebuild'] = TRUE;
 }
 
-function jasperforge_community_profile_social_network_item_ajax($form, &$form_state){
+function jasperforge_profile_social_network_item_ajax($form, &$form_state){
   return $form['field_social_network']['und'];
 }
 
 /*
-function jasperforge_community_profile_form_contact_personal_form_alter(&$form, &$form_state, $form_id){
+function jasperforge_profile_form_contact_personal_form_alter(&$form, &$form_state, $form_id){
   dpm($form);
   $form['field_set'] = array(
     '#type' => 'fieldset',
@@ -303,7 +303,7 @@ function jasperforge_community_profile_form_contact_personal_form_alter(&$form, 
 }
 */
 
-function jasperforge_community_profile_field_access($op, $field, $entity_type, $entity, $account) {
+function jasperforge_profile_field_access($op, $field, $entity_type, $entity, $account) {
   if($entity_type != 'user' || $op != 'view' || user_access('view full user profiles')){
 //  if($entity_type != 'user' || $op != 'view'){
     return TRUE;
@@ -316,27 +316,27 @@ function jasperforge_community_profile_field_access($op, $field, $entity_type, $
   }
   switch ($field['field_name']) {
     case 'field_user_title':
-      return jasperforge_community_profile_check_privacy_setting('title', $entity);
+      return jasperforge_profile_check_privacy_setting('title', $entity);
 
     case 'field_social_network':
-      return jasperforge_community_profile_check_privacy_setting('social_network', $entity);
+      return jasperforge_profile_check_privacy_setting('social_network', $entity);
 
     case 'field_first_name':
     case 'field_last_name':
-      return jasperforge_community_profile_check_privacy_setting('real_name', $entity);
+      return jasperforge_profile_check_privacy_setting('real_name', $entity);
 
     case 'field_user_role':
-      return jasperforge_community_profile_check_privacy_setting('primary_role', $entity);
+      return jasperforge_profile_check_privacy_setting('primary_role', $entity);
 
     case 'field_company':
     case 'field_company_size':
-      return jasperforge_community_profile_check_privacy_setting('company_info', $entity);
+      return jasperforge_profile_check_privacy_setting('company_info', $entity);
     default:
       return TRUE;
   }
 }
 
-function jasperforge_community_profile_check_privacy_setting($info, $entity){
+function jasperforge_profile_check_privacy_setting($info, $entity){
   foreach ($entity->field_privacy_settings['und'] as $value) {
     if($value['value'] == $info){
       return TRUE;

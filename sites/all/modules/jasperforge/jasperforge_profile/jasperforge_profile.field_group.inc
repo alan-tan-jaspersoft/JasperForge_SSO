@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * jasperforge_community_profile.field_group.inc
+ * jasperforge_profile.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function jasperforge_community_profile_field_group_info() {
+function jasperforge_profile_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();

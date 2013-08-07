@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * jasperforge_community_profile.strongarm.inc
+ * jasperforge_profile.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function jasperforge_community_profile_strongarm() {
+function jasperforge_profile_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

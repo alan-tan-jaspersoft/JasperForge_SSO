@@ -1,17 +1,17 @@
 <?php
 /**
  * @file
- * jasperforge_community_profile.views_default.inc
+ * jasperforge_profile.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function jasperforge_community_profile_views_default_views() {
+function jasperforge_profile_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'community_profile';
+  $view->name = 'jasperforge_profile';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'users';
@@ -45,13 +45,6 @@ function jasperforge_community_profile_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: User: Active */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'users';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = '1';
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
 
   /* Display: User */
   $handler = $view->new_display('panel_pane', 'User', 'user');
@@ -690,7 +683,7 @@ function jasperforge_community_profile_views_default_views() {
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
   $handler->display->display_options['inherit_panels_path'] = '1';
-  $export['community_profile'] = $view;
+  $export['jasperforge_profile'] = $view;
 
   return $export;
 }

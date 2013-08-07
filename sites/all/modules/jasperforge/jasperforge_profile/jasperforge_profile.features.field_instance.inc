@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * jasperforge_community_profile.features.field_instance.inc
+ * jasperforge_profile.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function jasperforge_community_profile_field_default_field_instances() {
+function jasperforge_profile_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'user-user-field_about_me'

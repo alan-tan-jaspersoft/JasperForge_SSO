@@ -34,8 +34,8 @@ function jasperforge_community_profile_schema(){
 /**
   * Implement hook_enable()
   */
-function jasperforge_community_profile_enable() {
+function jasperforge_profile_enable() {
   db_query('UPDATE {system} SET weight=10 WHERE name=:name AND weight<:weight',
-          array(':name' => 'jasperforge_community_profile', ':weight' => 10));
+          array(':name' => 'jasperforge_profile', ':weight' => 10));
 }
 
