@@ -84,7 +84,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-1';
     $pane->panel = '11';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-user';
+    $pane->subtype = 'jasperforge_profile-user';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -110,7 +110,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-2';
     $pane->panel = '11';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-top_right_1';
+    $pane->subtype = 'jasperforge_profile-top_right_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -133,7 +133,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-3';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-bio';
+    $pane->subtype = 'jasperforge_profile-bio';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -165,7 +165,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-4';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-company_info';
+    $pane->subtype = 'jasperforge_profile-company_info';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -183,7 +183,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-5';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-stats';
+    $pane->subtype = 'jasperforge_profile-stats';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -232,7 +232,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-7';
     $pane->panel = '31';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-social_network';
+    $pane->subtype = 'jasperforge_profile-social_network';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -277,7 +277,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-9';
     $pane->panel = '32';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-activity';
+    $pane->subtype = 'jasperforge_profile-activity';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -452,7 +452,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-12';
     $pane->panel = '11';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-user';
+    $pane->subtype = 'jasperforge_profile-user';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -478,7 +478,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-13';
     $pane->panel = '11';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-top_right_1';
+    $pane->subtype = 'jasperforge_profile-top_right_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -501,7 +501,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-14';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-bio';
+    $pane->subtype = 'jasperforge_profile-bio';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -533,7 +533,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-15';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-company_info';
+    $pane->subtype = 'jasperforge_profile-company_info';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -551,7 +551,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-16';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-stats';
+    $pane->subtype = 'jasperforge_profile-stats';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -621,7 +621,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-19';
     $pane->panel = '31';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-social_network';
+    $pane->subtype = 'jasperforge_profile-social_network';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -639,7 +639,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-20';
     $pane->panel = '32';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-activity';
+    $pane->subtype = 'jasperforge_profile-activity';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -811,7 +811,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-23';
     $pane->panel = '11';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-user';
+    $pane->subtype = 'jasperforge_profile-user';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -837,7 +837,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-24';
     $pane->panel = '11';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-top_right_1';
+    $pane->subtype = 'jasperforge_profile-top_right_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -855,7 +855,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-25';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-bio';
+    $pane->subtype = 'jasperforge_profile-bio';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -873,7 +873,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-26';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-company_info';
+    $pane->subtype = 'jasperforge_profile-company_info';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -894,7 +894,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-27';
     $pane->panel = '12';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-stats';
+    $pane->subtype = 'jasperforge_profile-stats';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -957,7 +957,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-30';
     $pane->panel = '31';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-social_network';
+    $pane->subtype = 'jasperforge_profile-social_network';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -975,7 +975,7 @@ function jasperforge_profile_default_page_manager_handlers() {
     $pane->pid = 'new-31';
     $pane->panel = '32';
     $pane->type = 'views_panes';
-    $pane->subtype = 'profile-activity';
+    $pane->subtype = 'jasperforge_profile-activity';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
