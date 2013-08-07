@@ -594,6 +594,38 @@ function jasperforge_profile_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_user_role'
+  $field_instances['user-user-field_user_role'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_user_role',
+    'is_property' => FALSE,
+    'label' => 'Primary Role',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
   // Exported field_instance: 'user-user-field_user_title'
   $field_instances['user-user-field_user_title'] = array(
     'bundle' => 'user',
@@ -680,6 +712,7 @@ function jasperforge_profile_field_default_field_instances() {
   t('First Name');
   t('Last Name');
   t('Phone');
+  t('Primary Role');
   t('Privacy Settings');
   t('Province');
   t('Select which information to be displayed publicly');

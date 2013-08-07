@@ -639,6 +639,55 @@ function jasperforge_profile_field_default_field_bases() {
     'type' => 'phone',
   );
 
+  // Exported field_base: 'field_user_role'
+  $field_bases['field_user_role'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_user_role',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'Business - Management' => 'Business - Management',
+        'Business - Analyst' => 'Business - Analyst',
+        'Business - Staff' => 'Business - Staff',
+        'IT - App Dev Management' => 'IT - App Dev Management',
+        'IT - Software Architect' => 'IT - Software Architect',
+        'IT - Data Architect' => 'IT - Data Architect',
+        'IT - Developer' => 'IT - Developer',
+        'IT - BI/DW Management' => 'IT - BI/DW Management',
+        'IT - Report Writer' => 'IT - Report Writer',
+        'IT - Management' => 'IT - Management',
+        'IT - Project Management' => 'IT - Project Management',
+        'IT - Project Manager' => 'IT - Project Manager',
+        'IT - DBA' => 'IT - DBA',
+        'Software Dev - Management' => 'Software Dev - Management',
+        'Software Dev - Architect' => 'Software Dev - Architect',
+        'Software Dev - Product Mgmt' => 'Software Dev - Product Mgmt',
+        'Software Dev - Developer' => 'Software Dev - Developer',
+        'Consultant' => 'Consultant',
+        'Partner' => 'Partner',
+        'Student/Researcher' => 'Student/Researcher',
+        'Business User' => 'Business User',
+        'Other' => 'Other',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_user_title'
   $field_bases['field_user_title'] = array(
     'active' => 1,
