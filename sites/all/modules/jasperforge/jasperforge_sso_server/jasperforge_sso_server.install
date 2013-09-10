@@ -1,0 +1,107 @@
+<?php
+
+function jasperforge_sso_server_schema()
+{
+  $schema['jasperforge_sso_links'] = array(
+    'description' => 'Stores Links to Exisiting Accounts',
+    'fields' => array(
+      'lid' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'size' => 'big',
+        'description' => 'Link ID',
+        ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'User ID of the SSO user',
+        ),
+      'status' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'size' => 'tiny',
+        'default' => 1,
+        'description' => 'Boolean int that indicates whether this link is active',
+        ),
+      'site' => array(
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+        'description' => 'The site which the merge was performed on',
+        ),
+      'link_uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'User ID of the link',
+        ),
+      'link_mail' => array(
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => false,
+        'description' => 'The email of the linked account',
+        ),
+      'type' => array(
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+        'description' => 'The type of the link',
+        ),
+      ),
+    'primary key' => array('lid'),
+  );
+
+  $schema['jasperforge_sso_merge'] = array(
+    'description' => 'Stores records of account merges',
+    'fields' => array(
+      'mid' => array(
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'size' => 'big',
+        'description' => 'The unique ID of this merge',
+        ),
+      'uid' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'User ID of the SSO user',
+        ),
+      'site' => array(
+        'type' => 'varchar',
+        'length' => 256,
+        'not null' => TRUE,
+        'description' => 'The site which the merge was performed on',
+        ),
+      'account' => array(
+        'type' => 'varchar',
+        'length' => 512,
+        'not null' => TRUE,
+        'description' => 'The merged account\'s user name',
+        ),
+      'timestamp' => array(
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'User ID of the SSO user',
+        ),
+      ),
+    'primary key' => array('mid'),
+  );
+  return $schema;
+}
+
+/**
+  * Implement hook_enable()
+  */
+function jasperforge_sso_server_enable() {
+  if(!db_table_exists('jasperforge_sso_links') || !db_table_exists('jasperforge_sso_merge')) {
+    drupal_install_schema('jasperforge_sso_server');
+  }
+}
+
+
+function jasperforge_sso_server_uninstall(){
+  variable_del('jasperforge_sso_secret');
+  variable_del('jf_sso_sites');
+}
