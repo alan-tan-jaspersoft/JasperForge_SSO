@@ -8,6 +8,9 @@ require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'user') . '/user.modu
  */
 function jasperforge_sso_server_form_user_profile_form_alter(&$form, &$form_state, $form_id)
 {
+  if($form['#user']->uid == 1)
+    return;
+
   $links = new JasperForgeSSO($form['#user']->uid);
 
   $colapsed = TRUE;

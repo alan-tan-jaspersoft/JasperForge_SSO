@@ -1,5 +1,5 @@
 name = Jasperforge SSO Server
-description = Handles SSO user registrations and logins
+description = Handles SSO user registrations, management, and logins
 core = 7.x
 package = Jasperforge
 php = 5.2.4

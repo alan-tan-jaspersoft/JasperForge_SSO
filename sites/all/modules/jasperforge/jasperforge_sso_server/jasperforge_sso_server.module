@@ -355,6 +355,32 @@ function jasperforge_sso_server_sso_unlink()
   return 'TRUE';
 }
 
+function jasperforge_sso_server_sso_reset_pass()
+{
+  $account = user_load($_POST['cas_uid']);
+  if(!$account)
+    return 'User not found';
+
+  // Mail one time login URL and instructions using current language.
+  include_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'user') . '/user.module';
+  global $language;
+  $mail = _user_mail_notify('password_reset', $account, $language);
+  if (empty($mail))
+  {
+    watchdog('jasperforge_sso_server',
+             'Password reset failed for account %name with Email: %email.<br />',
+              array('%name' => $account->name, '%email' => $account->mail),
+              WATCHDOG_ERROR);
+    return 'FALSE';
+  }
+
+  watchdog('jasperforge_sso_server',
+          'Password reset instructions mailed to %name at %email.',
+          array('%name' => $account->name, '%email' => $account->mail)
+          );
+  return 'TRUE';
+}
+
 /**
  * Return additional CAS attributes when acting as a CAS server.
  *
