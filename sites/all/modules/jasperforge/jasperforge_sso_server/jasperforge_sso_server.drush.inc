@@ -98,7 +98,6 @@ function drush_jasperforge_sso_server_sso_update_remote($uid, $data, $skip ='')
   $link = new JasperForgeSSO($uid);
   if($skip)
     $link->skip = $skip; // if this op is relayed from a client site, don't loopback to that client site
-  watchdog('drush_jasperforge_sso_server', dprint_r($data, TRUE));
   $link->update_remote($data);
 }
 

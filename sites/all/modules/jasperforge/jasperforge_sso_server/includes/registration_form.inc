@@ -347,7 +347,7 @@ function jasperforge_sso_server_step3($form, &$form_state)
 //dpm($form_state, 'step3');
   $description = t('If you already have existing accounts with any of the JasperSoft websites,
   you can link them with this JasperSoft ID. Note that you can only link one existing account per site.<br />
-  If you have more than one account that you want to use with this JasperSoft ID, you may consider using our Account Merge
+  If you have more than one account that you want to use with this JasperSoft ID, you may consider using the Account Merge
   feature. This feature is accessible after registration on your user profile page.');
   $form['user_register'] = array(
     '#type' => 'fieldset',
