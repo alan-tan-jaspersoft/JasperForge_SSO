@@ -487,6 +487,9 @@ function jasperforge_sso_server_reg_submit($form, &$form_state)
 
   $verified = isset($form_state['verified']) && $form_state['verified'];
 
+  if(!empty($form_state['account_link']))
+    _jasperforge_sso_server_sync_roles($form_state['account_link']);
+
   jasperforge_sso_server_user_register_submit($_SESSION['form'], $_SESSION['form_state'], $verified);
 
   $form_state['account_info']['uid'] = $_SESSION['form_state']['values']['uid'];
@@ -494,6 +497,38 @@ function jasperforge_sso_server_reg_submit($form, &$form_state)
   unset($_SESSION['form']);
   jasperforge_sso_server_add_links_submit($form_state, $verified);
 }
+
+function _jasperforge_sso_server_sync_roles($links)
+{
+  if(!isset($_SESSION['form_state']['values']['roles']))
+    return;
+
+  $tmp = array();
+  foreach ($links as $site => $value) {
+    $tmp += JasperForgeSSO::get_roles($site, $value['mail']);
+  }
+  array_unique($tmp);
+  $roles = array();
+  foreach ($tmp as $value)
+  {
+    $rid = db_query('SELECT rid FROM {role} WHERE name=:name', array(':name' => $value))->fetchField();
+    if($rid)
+    {
+      $roles[$rid] = $value;
+      continue;
+    }
+    $new_role = new stdClass();
+    $new_role->name = $value;
+    if(user_role_save($new_role) === FALSE)
+      continue;
+    $rid = db_query('SELECT rid FROM {role} WHERE name=:name', array(':name' => $value))->fetchField();
+    $roles[$rid] = $value;
+  }
+
+  foreach ($roles as $key => $value)
+    $_SESSION['form_state']['values']['roles'][$key] = $value;
+}
+
 
 function jasperforge_sso_server_user_register_submit($form, &$form_state, $verified)
 {

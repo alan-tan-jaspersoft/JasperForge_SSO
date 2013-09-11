@@ -5,7 +5,6 @@ include_once 'includes/registration_form.inc';
 
 function jasperforge_sso_server_init()
 {
-
 }
 
 
@@ -205,6 +204,8 @@ function jasperforge_sso_server_user_update(&$edit, $account, $category)
     $data['status'] = $account->status;
   if($account->original->mail != $account->mail)
     $data['mail'] = $account->mail;
+  if($account->original->roles != $account->roles)
+    $data['roles'] = $account->roles;
 
   if(empty($data))
     return;

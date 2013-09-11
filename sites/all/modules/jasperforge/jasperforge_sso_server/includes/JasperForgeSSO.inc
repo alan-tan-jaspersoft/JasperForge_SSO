@@ -226,6 +226,7 @@ class JasperForgeSSO
           unset($data['name']);
           unset($data['status']);
           unset($data['mail']);
+          unset($data['roles']);
         }
 
         $options = array(
@@ -610,6 +611,28 @@ class JasperForgeSSO
       return $result->data == 'TRUE'? TRUE : FALSE;
     }
 
+    public static function get_roles($site, $mail)
+    {
+      $data = drupal_http_build_query(array(
+            'op'=>'get_roles',
+            'mail' => $mail,
+            'secret' => variable_get('jasperforge_sso_secret', '')
+            ));
+      $options = array(
+        'method' => 'POST',
+        'data' => $data,
+        'timeout' => 15,
+        'headers' => array(
+          'Content-Type' => 'application/x-www-form-urlencoded',
+          'Cache-Control' => 'no-cache',
+          ),
+        );
+
+      $result = drupal_http_request("http://{$site}/jf-sso", $options);
+      if($result->data)
+        $result = json_decode($result->data);
+      return $result? $result : array();
+    }
 
     public static function delete_user($site, $cas_uid, $uid, $keep_content = 1)
     {
