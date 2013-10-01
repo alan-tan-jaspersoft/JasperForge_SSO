@@ -13,9 +13,10 @@
  * a standard region template if you prefer, or use your own themeName_process_region()
  * function to control the markup.
  *
- * For example you are use a template based on Drupal cores region.tpl.php in
- * your template suggestion overides, such as the following:
+ * For example, if you prefer a template based approach you can use something
+ * like this:
  *
+ * @code
  * <?php if ($content): ?>
  *   <div class="<?php print $classes; ?>">
  *     <div class="region-inner clearfix">
@@ -23,27 +24,31 @@
  *     </div>
  *   </div>
  * <?php endif; ?>
+ * @endcode
  *
- * If you prefer to theme from process fucntions you can control the markup per
- * region using something similar the follow example:
+ * If you prefer to theme from process functions you can control the markup per
+ * region using something similar to this:
  *
- *  if ($vars['region'] === 'foobar_region') {
- *    $vars['outer_prefix'] = '<div class="' . $vars['classes'] . '">';
- *    $vars['inner_prefix'] = '<div class="region-inner clearfix">';
- *    $vars['inner_suffix'] = '</div>';
- *    $vars['outer_suffix'] = '</div>';
- *  }
+ * @code
+ * if ($vars['region'] === 'foobar_region') {
+ *   $vars['outer_prefix'] = '<div class="' . $vars['classes'] . '">';
+ *   $vars['inner_prefix'] = '<div class="region-inner clearfix">';
+ *   $vars['inner_suffix'] = '</div>';
+ *   $vars['outer_suffix'] = '</div>';
+ * }
+ * @endcode
  *
  * Sidebar Region Template:
  * - You can use a singlular region--sidebar.tpl.php template
  *   file to theme both sidebars.
  *
- *
- * Adativetheme supplied variables:
+ * Adativetheme variables:
  * - $outer_prefix: Outer div with region classes.
  * - $outer_suffix: Closing element.
  * - $inner_prefix: Inner div with .region-inner and .clearfix classes.
  * - $inner_suffix: Closing div.
+ * - $is_mobile: Bool, requires the Browscap module to return TRUE for mobile
+ *   devices. Use to test for a mobile context.
  *
  * Available variables:
  * - $content: The content for this region, typically blocks.

@@ -14,7 +14,9 @@ function jasperforge_sso_server_reg_form($form, &$form_state)
   $form['#validate'][] = 'jasperforge_sso_server_reg_validate';
 //  $form['#submit'][] = 'user_register_submit';
 
-//dpm($form, '$form');
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/form.css',
+  );
   return $form;
 }
 
@@ -57,11 +59,22 @@ function jasperforge_sso_server_form_alter(&$form, &$form_state, $form_id){
   $form['account']['#prefix'] = '<div id="user-register-form">';
   $form['account']['#suffix'] = '</div>';
 
+  if(isset($_GET['username']))
+    $form['account']['name']['#default_value'] = $_GET['username'];
+  if(isset($_GET['mail']))
+    $form['account']['mail']['#default_value'] = $_GET['mail'];
+
+  if(isset($form_state['values']['sso']['checkbox']))
+    $check = $form_state['values']['sso']['checkbox'];
+  elseif(isset($_GET['mail']))
+    $check = TRUE;
+  else
+    $check = FALSE;
   $form['account']['sso'] = array(
     '#type' => 'checkbox',
     '#title' => 'Do you already have existing account(s) with any of the JasperSoft websites?',
     '#weight' => -100,
-    '#default_value' => isset($form_state['values']['sso']['checkbox'])? $form_state['values']['sso']['checkbox']: FALSE,
+    '#default_value' => $check,
     );
 
   $form['account']['instruction'] = array(
@@ -82,9 +95,12 @@ You will be able to link more existing accounts later.',
     );*/
 
   $form['account']['pass'] = array(
-      '#type' => 'password_confirm',
-      '#required' => TRUE,
-      '#size' => 25,
+    '#type' => 'password_confirm',
+    '#required' => TRUE,
+    '#size' => 25,
+    '#description' => isset($_GET['mail'])?
+                        t('Please enter the same password you use to log into the above account.')
+                      : ''
   );
 
   $form['account']['next'] = array(
@@ -193,17 +209,30 @@ function jasperforge_sso_server_step1($form, &$form_state){
     '#tree' => TRUE,
     );
   $form['user_register']['password'] = array(
-      '#type' => 'password',
-      '#title' => t('Password'),
-      '#maxlength' => 64,
-      '#size' => 15,
-      '#required' => TRUE,
-      '#tree' => TRUE,
-/*      '#states' => array(
-        'invisible' => array(
-          ':input[name="existing_user_check"]' => array('unchecked' => TRUE),)
-          ),*/
-      );
+    '#type' => 'password',
+    '#title' => t('Password'),
+    '#maxlength' => 64,
+    '#size' => 20,
+    '#required' => TRUE,
+    '#tree' => TRUE,
+    );
+  $form['user_register']['reset_pass'] = array(
+    '#type' => 'button',
+    '#value' => t('Forgot Password'),
+    '#name' => 'reset_pass',
+    '#prefix' => '<div id="sso-reset-pass">',
+    '#suffix' => '</div>',
+    '#limit_validation_errors' => array(),
+    '#ajax' => array(
+      'callback' => 'jasperforge_sso_server_reset_pass_ajax',
+      'wrapper' => 'sso-reset-pass',
+      'effect' => 'fade',
+      'method' => 'replace',
+      ),
+    );
+
+
+
   $form['user_register']['prev'] = array(
     '#type' => 'button',
     '#value' => t('Prev'),
@@ -217,7 +246,7 @@ function jasperforge_sso_server_step1($form, &$form_state){
       'effect' => 'fade',
       'method' => 'replace',
       ),
-  );
+    );
   $form['user_register']['next'] = array(
     '#type' => 'button',
     '#value' => t('Next'),
@@ -243,6 +272,9 @@ function jasperforge_sso_server_step1_validate($form, &$form_state){
     return;
 
   $form_state['rebuild'] = TRUE;
+  if($form_state['clicked_button']['#name'] == 'reset_pass')
+    return;
+
   if($form_state['clicked_button']['#name'] == 'prev')
   { // we are going back
     $form = $_SESSION['form'];
@@ -286,12 +318,12 @@ function jasperforge_sso_server_step1_validate($form, &$form_state){
  * validated but name not available, ask for new user name
  */
 function jasperforge_sso_server_step2($form, &$form_state){
-  $name = $_SESSION['form_state']['values']['name'];
+  $name = isset($_SESSION['form_state']['values']['name'])? $_SESSION['form_state']['values']['name']: '';
 
   $form['user_register'] = array(
     '#type' => 'container',
     '#weight' => -1,
-    '#title' => $description,
+//    '#title' => $description,
     '#tree' => TRUE,
     '#prefix' => '<div id="user-register-form">',
     '#suffix' => '</div>',
@@ -303,7 +335,7 @@ function jasperforge_sso_server_step2($form, &$form_state){
 <br />Please enter a new user name.",
     );
 
-  $form['user_register']['name'] =  $_SESSION['form']['account']['name'];
+  $form['user_register']['name'] = $_SESSION['form']['account']['name'];
 
   $form['user_register']['next'] = array(
     '#type' => 'button',
@@ -710,3 +742,17 @@ function jasperforge_sso_server_user_register_ajax($form, $form_state)
 {
   return isset($form['user_register'])? $form['user_register'] : $form;
 }
+
+
+
+function jasperforge_sso_server_reset_pass_ajax($form, $form_state)
+{
+  foreach ($form_state['existing'] as $site)
+    exec("drush sso-reset-pass {$site} {$form_state['account_info']['mail']} > /dev/null &");
+
+  drupal_set_message(t('Password reset instructions have been sent to <em>@mail</em>.',
+                     array('@mail' => $form_state['account_info']['mail'])));
+  return isset($form['user_register']['reset_pass'])? $form['user_register']['reset_pass'] : $form;
+}
+
+

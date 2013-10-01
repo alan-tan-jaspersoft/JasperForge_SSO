@@ -1,12 +1,8 @@
 <?php
-
 /**
  * @file
  * AT's liteweight plugin sub-system.
  */
-
-global $theme_key;
-$theme_name = $theme_key;
 
 /**
  * Find and return all plugins.
@@ -21,7 +17,6 @@ $theme_name = $theme_key;
  * @param $theme_name, usually the active theme.
  */
 function at_get_plugins($theme_name) {
-
   $plugins = drupal_static(__FUNCTION__, array());
   if (empty($plugins)) {
     if ($plugins_cache = cache_get('at_get_plugins_plugins')) {
@@ -111,7 +106,6 @@ function at_get_plugins_files($theme_name) {
  * "panels" or "page_layout".
  */
 function at_load_plugins($theme_name, $plugin_type) {
-
   $plugin_data_structures = array();
   $plugins_list = at_get_plugins_files($theme_name);
 
@@ -184,7 +178,8 @@ function at_load_plugins($theme_name, $plugin_type) {
  * it is cached in the cache table.
  */
 function responsive_page_layouts_data_structure() {
-  global $theme_name;
+  global $theme_key;
+  $theme_name = $theme_key;
 
   $page_data_structure = drupal_static(__FUNCTION__, array());
   if (empty($page_data_structure)) {
@@ -214,7 +209,8 @@ function responsive_page_layouts_data_structure() {
  * it is cached in the cache table.
  */
 function responsive_panels_data_structure() {
-  global $theme_name;
+  global $theme_key;
+  $theme_name = $theme_key;
 
   $panels_data_structure = drupal_static(__FUNCTION__, array());
   if (empty($panels_data_structure)) {
@@ -297,8 +293,7 @@ function responsive_page_layouts_device_group_options($theme_name) {
 
 /**
  * Return all the admin css files for a plugin type.
- * Used primarly to theme the icons for each layout method. The icons are in
- * sprites.
+ * Used primarly to theme the icons for each layout method.
  *
  * @param $theme_name
  * @param $plugin_type
@@ -403,47 +398,47 @@ function gpanel_regions() {
       'two_66_33' => array(
         'title' => t('AT Two column 66/33'),
         'regions' => array(
-          'two_66_33_top',    
-          'two_66_33_first',  
-          'two_66_33_second', 
+          'two_66_33_top',
+          'two_66_33_first',
+          'two_66_33_second',
           'two_66_33_bottom',
         ),
       ),
       'two_33_66' => array(
         'title' => t('AT Two column 33/66'),
         'regions' => array(
-          'two_33_66_top',    
-          'two_33_66_first', 
-          'two_33_66_second', 
+          'two_33_66_top',
+          'two_33_66_first',
+          'two_33_66_second',
           'two_33_66_bottom',
         ),
       ),
       'two_50' => array(
         'title' => t('AT Two column 50/50'),
         'regions' => array(
-          'two_50_top',   
-          'two_50_first',  
-          'two_50_second', 
+          'two_50_top',
+          'two_50_first',
+          'two_50_second',
           'two_50_bottom',
         ),
       ),
       'three_inset_right' => array(
         'title' => t('AT Inset right'),
         'regions' => array(
-          'threecol_inset_right_sidebar', 
-          'threecol_inset_right_top',     
-          'threecol_inset_right_middle', 
-          'threecol_inset_right_inset',  
+          'threecol_inset_right_sidebar',
+          'threecol_inset_right_top',
+          'threecol_inset_right_middle',
+          'threecol_inset_right_inset',
           'threecol_inset_right_bottom',
         ),
       ),
       'three_inset_left' => array(
         'title' => t('AT Inset left'),
         'regions' => array(
-          'threecol_inset_left_sidebar', 
-          'threecol_inset_left_top',     
-          'threecol_inset_left_middle', 
-          'threecol_inset_left_inset',   
+          'threecol_inset_left_sidebar',
+          'threecol_inset_left_top',
+          'threecol_inset_left_middle',
+          'threecol_inset_left_inset',
           'threecol_inset_left_bottom',
         ),
       ),
@@ -451,48 +446,48 @@ function gpanel_regions() {
         'title' => t('AT Three column 50/25/25'),
         'regions' => array(
           'three_50_25_25_top',
-          'three_50_25_25_first',  
-          'three_50_25_25_second', 
-          'three_50_25_25_third',  
+          'three_50_25_25_first',
+          'three_50_25_25_second',
+          'three_50_25_25_third',
           'three_50_25_25_bottom',
         ),
       ),
       'three_3x33' => array(
         'title' => t('AT Three column 3x33'),
         'regions' => array(
-          'three_33_top',   
-          'three_33_first',  
+          'three_33_top',
+          'three_33_first',
           'three_33_second',
-          'three_33_third',  
+          'three_33_third',
           'three_33_bottom',
         ),
       ),
       'three_25_50_25' => array(
         'title' => t('AT Three column 25/50/25'),
         'regions' => array(
-          'three_25_50_25_top',  
-          'three_25_50_25_first', 
-          'three_25_50_25_second', 
-          'three_25_50_25_third',  
+          'three_25_50_25_top',
+          'three_25_50_25_first',
+          'three_25_50_25_second',
+          'three_25_50_25_third',
           'three_25_50_25_bottom',
         ),
       ),
       'three_25_25_50' => array(
         'title' => t('AT Three column 25/25/50'),
         'regions' => array(
-          'three_25_25_50_top',   
-          'three_25_25_50_first',  
-          'three_25_25_50_second', 
-          'three_25_25_50_third',  
+          'three_25_25_50_top',
+          'three_25_25_50_first',
+          'three_25_25_50_second',
+          'three_25_25_50_third',
           'three_25_25_50_bottom',
         ),
       ),
       'four_4x25' => array(
         'title' => t('AT Four column 4x25'),
         'regions' => array(
-          'four_first',  
-          'four_second', 
-          'four_third',  
+          'four_first',
+          'four_second',
+          'four_third',
           'four_fourth',
         ),
       ),
@@ -509,16 +504,16 @@ function gpanel_regions() {
       'six_6x16' => array(
         'title' => t('AT Six column 6x16'),
         'regions' => array(
-          'six_first',  
-          'six_second', 
-          'six_third',  
-          'six_fourth', 
-          'six_fifth',  
+          'six_first',
+          'six_second',
+          'six_third',
+          'six_fourth',
+          'six_fifth',
           'six_sixth',
         ),
-      ), 
+      ),
     );
   }
-  
+
   return $gpanel_regions_array;
 }

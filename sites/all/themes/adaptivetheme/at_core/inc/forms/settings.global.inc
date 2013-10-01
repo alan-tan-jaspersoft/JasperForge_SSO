@@ -2,14 +2,15 @@
 
 /**
  * @file
- * Generate form elments for the Global settings.
+ * Generate form elments for the Global CSS settings.
  *
  * TODO: review documentation and provide links to help pages.
  */
 
 // Set variable for mode, we want to show a message based on this
 $mode = variable_get('preprocess_css', '') == 1 ? TRUE : FALSE;
-$performance_settings_path = base_path() . 'admin/config/development/performance';
+$performance_settings_path = url('admin/config/development/performance');
+$file_settings_path = url('admin/config/media/file-system');
 
 // Global Settings
 $form['at-settings']['global-settings'] = array(
@@ -49,7 +50,7 @@ $form['at-settings']['global-settings']['custom-mediaqueries']['enable_custom_me
   '#type' => 'checkbox',
   '#title'  => t('Enable the responsive.custom.css file'),
   '#description' => t('Use this file if you need to use custom media queries, such as <a href="!zomigi" target="_blank">overlapped media queries</a>. This file is located here: <code>themeName/css/responsive.custom.css</code>. Adaptivetheme will load this file automagically when this setting enabled.', array('!zomigi' => 'http://zomigi.com/blog/essential-considerations-for-crafting-quality-media-queries/#mq-overlap-stack')),
-  '#default_value' => at_get_setting('enable_cascading_media_queries'),
+  '#default_value' => at_get_setting('enable_custom_media_queries'),
 );
 
 // Set default layout
@@ -58,13 +59,23 @@ $form['at-settings']['global-settings']['default-layout'] = array(
   '#title' => t('Mobile first or Mobile last'),
   '#description' => t('<h3>Mobile first or Desktop first</h3>'),
   '#states' => array(
-    'invisible' => array(
-      array('input[name="disable_responsive_styles"]' => array('checked' => TRUE)),
-      array('input[name="global_default_layout_disable"]' => array('value' => 1)),
-    ),
+    'invisible' => array('input[name="disable_responsive_styles"]' => array('checked' => TRUE)),
   ),
 );
-$form['at-settings']['global-settings']['default-layout']['global_default_layout'] = array(
+$form['at-settings']['global-settings']['default-layout']['global_default_layout_toggle'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Change default layout method <small>(checking this will expose new settings)</small>'),
+  '#description' => t('<strong>Use with caution!</strong> If you are using a pre-styled sub-theme such as Pixture Reloaded, Sky, Corolla, AT Commerce or any of the commerical sub-themes you should NOT change this!'),
+  '#default_value' => at_get_setting('global_default_layout_toggle'),
+);
+$form['at-settings']['global-settings']['default-layout']['toggle'] = array(
+  '#type' => 'fieldset',
+  '#title' => t('Change default layout method'),
+  '#states' => array(
+    'visible' => array('input[name="global_default_layout_toggle"]' => array('checked' => TRUE)),
+  ),
+);
+$form['at-settings']['global-settings']['default-layout']['toggle']['global_default_layout'] = array(
   '#type' => 'radios',
   '#description' => t('<p>Adaptivetheme supports both mobile first and desktop first design approaches. Please review the <a href="!docs_link" target="_blank">online documentation</a>.</p><p>This setting fundementally alters what CSS is loaded and how it is loaded. At the most basic level if you select Mobile first the Smartphone portrait layout will load as the default, if you select Desktop first the Standard layout will load as the default. Many other changes take place regarding loading of CSS for Internet Explorer, Responsive Gpanels and Panels as well.</p> ', array('!docs_link' => 'http://adaptivethemes.com/documentation/mobile-first-design-with-adaptivetheme')),
   '#default_value' => at_get_setting('global_default_layout'),
@@ -73,10 +84,54 @@ $form['at-settings']['global-settings']['default-layout']['global_default_layout
     'standard-layout' => t('Desktop first'),
   ),
 );
-// Hidden setting allows us to hide the method setting from the info file
-$form['at-settings']['global-settings']['default-layout']['global_default_layout_disable'] = array(
-  '#type' => 'hidden',
-  '#value' => at_get_setting('global_default_layout_disable'),
+
+// Path to Generated files
+$public_files = variable_get('file_public_path', conf_path() . '/files') . '/adaptivetheme/' . $theme_name . '_files/';
+$theme_directory = drupal_get_path('theme', $theme_name) . '/generated_files/';
+$form['at-settings']['global-settings']['files-path'] = array(
+  '#type' => 'fieldset',
+  '#title' => t('Path to Generated Files'),
+  '#description' => t('<h3>Path to Generated Files</h3>'),
+);
+$form['at-settings']['global-settings']['files-path']['global_files_path'] = array(
+  '#type' => 'select',
+  '#title' => t('By default the generated files are saved in <a href="!file_settings_path" target="_blank">public files</a>. You can change this to your theme directory or a custom directory. These files include all the generated CSS files, the info file backup and color scheme backups if you are using the Color module. For more information see the docs on the <a href="!file_generation_system" target="_blank">file generation system</a>.', array('!file_settings_path' => $file_settings_path, '!file_generation_system' => 'http://adaptivethemes.com/documentation/file-generation-system')),
+  '#default_value' => at_get_setting('global_files_path'),
+  '#options' => array(
+    'public_files' => t('Public files'),
+    'theme_directory' => t('Theme directory'),
+    'custom_path' => t('Custom path'),
+  ),
+);
+// Message for public files
+$form['at-settings']['global-settings']['files-path']['public_files_path'] = array(
+  '#type' => 'fieldset',
+  '#states' => array(
+    'visible' => array('select[name="global_files_path"]' => array('value' => 'public_files')),
+  ),
+);
+$form['at-settings']['global-settings']['files-path']['public_files_path']['message'] = array(
+  '#markup' => t('<div class="description">Files will be saved to: <code>@public_files</code></div>', array('@public_files' => $public_files)),
+);
+// message for theme dir
+$form['at-settings']['global-settings']['files-path']['theme_directory_files_path'] = array(
+  '#type' => 'fieldset',
+  '#states' => array(
+    'visible' => array('select[name="global_files_path"]' => array('value' => 'theme_directory')),
+  ),
+);
+$form['at-settings']['global-settings']['files-path']['theme_directory_files_path']['message'] = array(
+  '#markup' => t('<div class="description">Files will be saved to: <code>@theme_directory</code></div>', array('@theme_directory' => $theme_directory)),
+);
+// Text field for custom path
+$form['at-settings']['global-settings']['files-path']['custom_files_path'] = array(
+  '#type' => 'textfield',
+  '#title' => t('Enter the custom path:'),
+  '#default_value' => at_get_setting('custom_files_path'),
+  '#description' => t('This directory must exist and be writable by Drupal. This directory must be relative to the Drupal installation directory and be accessible over the web. Do not try to use something like <code>../css</code>, it will fail. Use someting like <code>sites/default/css</code>.'),
+  '#states' => array(
+    'visible' => array('select[name="global_files_path"]' => array('value' => 'custom_path')),
+  ),
 );
 
 // Disable responsive layout

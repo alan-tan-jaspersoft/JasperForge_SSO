@@ -54,6 +54,24 @@ function jasperforge_sso_server_drush_command() {
       ),
     'required-arguments' => TRUE,
   );
+  $items['sso-user-merge-2'] = array(
+    'description' => 'Merges user account on client site (Internal Use Only)',
+    'arguments' => array(
+      'site' => 'The site to perform the merge on.',
+      'cas_name' => 'The user name of the SSO account.',
+      'cas_uid' => 'The uid of the SSO account.',
+      'mail' => 'The email address to ID the account to be merged.',
+      ),
+    'required-arguments' => TRUE,
+  );
+  $items['sso-reset-pass'] = array(
+    'description' => 'Sends reset password request to client sites on behalf of the user',
+    'arguments' => array(
+      'site' => 'The site to perform the merge on.',
+      'mail' => 'The email address to ID the account to be merged.',
+      ),
+    'required-arguments' => TRUE,
+  );
   return $items;
 }
 
@@ -82,7 +100,7 @@ function drush_jasperforge_sso_server_sso_sync_name($uid, $newname, $oldname)
   $link = new JasperForgeSSO($uid);
   foreach ($link->creds as $site => $value)
     if($link->sync_name || $value['type'] == 'forced' || $value['type'] == 'auto')
-      JasperForgeSSO::set_name($site, $newname, $oldname, $value['uid']);
+      JasperForgeSSO::set_name($site, $newname, $oldname, $value['link_uid']);
 }
 
 function drush_jasperforge_sso_server_sso_cleanup_remote($uid, $keep_content = 1)
@@ -115,9 +133,46 @@ function drush_jasperforge_sso_server_sso_user_merge($site, $cas_name, $cas_uid,
   try{
     JasperForgeSSO::merge_account($site, $cas_name, $cas_uid, $mail);
   }
-  catch(Exception $e)
-  {
+  catch(Exception $e){
     if($e->getMessage() != 'SSO client Timed Out' || $e->getMessage() != $result->data)
       watchdog_exception('jasperforge_sso_server', $e);
   }
 }
+function drush_jasperforge_sso_server_sso_user_merge_2($site, $cas_name, $cas_uid, $mail)
+{
+  try{
+    JasperForgeSSO::merge_account($site, $cas_name, $cas_uid, $mail);
+  }
+  catch(Exception $e)
+  {
+    if($e->getMessage() != 'SSO client Timed Out')
+      continue;
+    if(!isset($link))
+      $link = new JasperForgeSSO($user->uid);
+    $link->sso_link(array('site' => $site, 'mail' => $_POST['mail'], 'type' => 'user'));
+  }
+}
+
+function drush_jasperforge_sso_server_sso_reset_pass($site, $mail)
+{
+  $array = array(
+        'op'=>'reset_pass',
+        'mail' => $mail,
+        'secret' => variable_get('jasperforge_sso_secret', '')
+        );
+  $options = array(
+        'method' => 'POST',
+        'data' => drupal_http_build_query($array),
+        'timeout' => 20,
+        'headers' => array(
+          'Content-Type' => 'application/x-www-form-urlencoded',
+          'Cache-Control' => 'no-cache',
+          ),
+        );
+  watchdog('jasperforge_sso_server', dpr($options, TRUE));
+  $result = drupal_http_request("http://{$site}/jf-sso", $options);
+  if($result->data != 'TRUE')
+    watchdog('jasperforge_sso_server', 'Password reset request to <em>%site</em> failed.', array('%site' => $site));
+}
+
+

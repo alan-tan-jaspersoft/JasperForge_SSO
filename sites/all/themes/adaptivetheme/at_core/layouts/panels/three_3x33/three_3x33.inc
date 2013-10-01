@@ -6,7 +6,7 @@
  */
 function adaptivetheme_three_3x33_panels_layouts() {
   $items['three_3x33'] = array(
-    'title'    => t('AT Three column 33/34/33'),
+    'title'    => t('AT Three column 3x33'),
     'category' => t('AT Responsive Panels - 3 column'),
     'icon'     => 'three_3x33.png',
     'theme'    => 'three_3x33',
@@ -43,7 +43,7 @@ function adaptivetheme_three_3x33_panels_layouts() {
        'three-3x33-stack-top' => array(
         'css' => array(
           '50' => array('.three-3x33 > .region' => 'width:50%'),
-          'fdw' => array('.three-3x33 > .region-three-33-first' => 'float:none;display:block;width:100%;clear:both'),
+          'fdw' => array('.three-3x33 > div.region-three-33-first' => 'float:none;display:block;width:100%;clear:both'),
         ),
       ),
       'three-3x33-stack' => array(

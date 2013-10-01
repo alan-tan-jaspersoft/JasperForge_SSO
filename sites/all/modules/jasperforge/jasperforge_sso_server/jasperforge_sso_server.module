@@ -27,8 +27,22 @@ function jasperforge_sso_server_menu()
     'type' => MENU_CALLBACK,
     'access callback' => TRUE,
     );
+  $items['jf-sso/reset-pass'] = array(
+    'page callback' => 'jasperforge_sso_server_reset_pass',
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+    );
 
-  $items['user/%user/sso-merge'] = array(
+  $items['user/%user/manage-accounts'] = array(
+    'title' => 'Manage Accounts',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('jasperforge_sso_server_manage_form', 1),
+    'access callback' => 'jasperforge_sso_server_manage_form_access',
+    'access arguments' => array(1),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'includes/user_form.inc',
+  );
+/*  $items['user/%user/sso-merge'] = array(
     'title' => 'Account Merge',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('jasperforge_sso_server_merge_form', 1),
@@ -36,7 +50,7 @@ function jasperforge_sso_server_menu()
     'access arguments' => array(1),
     'type' => MENU_LOCAL_TASK,
     'file' => 'includes/user_form.inc',
-  );
+  );*/
   return $items;
 }
 
@@ -56,15 +70,23 @@ function jasperforge_sso_server_menu_alter(&$items)
 
 
 /**
+ * implements hook_user_login
+ */
+function jasperforge_sso_server_user_login(&$edit, $account)
+{
+//  $_COOKIE['jasperforge_sso_uid'] = $account->uid;
+  setcookie('jasperforge_sso_uid', $account->uid,  time() + 31536000, '/');
+}
+
+
+/**
  * implements hook_user_logout
- *
- * redirect back to previous page after X delay
  */
 function jasperforge_sso_server_user_logout($account)
 {
-  if($_GET['q'] == 'cas/logout' && $_GET['destination'])
-//    header("refresh: 3; url={$_GET['destination']}" );
-    drupal_add_http_header('Refresh', "3; url={$_GET['destination']}");
+  setcookie ('asperforge_sso_uid', '', time() - 3600);
+  if($_GET['q'] == 'cas/logout' && isset($_GET['url']))
+    drupal_add_http_header('Refresh', "1; url={$_GET['url']}"); //redirect back to previous page after X delay
 }
 
 
@@ -146,6 +168,10 @@ function jasperforge_sso_server_user_delete($account)
   if(!db_table_exists('jasperforge_sso_links'))
     return;
 
+  db_delete('jasperforge_sso_merge')
+    ->condition('uid', $account->uid)
+    ->execute();
+
   $skip = isset($_POST['site'])?  escapeshellarg($_POST['site']) : '';
 //  dpm("drush sso-user-op \"{$account->uid}\" user_cancel_delete ${skip} > /dev/null &", 'jasperforge_sso_server_user_delete');
   exec("drush sso-user-op \"{$account->uid}\" user_cancel_delete ${skip} > /dev/null &");
@@ -189,12 +215,14 @@ function jasperforge_sso_server_user_cancel($edit, $account, $method)
  */
 function jasperforge_sso_server_user_update(&$edit, $account, $category)
 {
-  // do not respond to remote requests or user ops
-  if(isset($_POST['cas_uid']) || $_POST['form_id'] == 'user_admin_account')
+  if(isset($_POST['cas_uid']))  // do not respond to remote requests
+    return;
+  if($_POST['form_id'] == 'user_admin_account' && $_POST['op'] != 'Update') // do not respond to non-update ops
     return;
 
-  $links = new JasperForgeSSO($account->uid);
-  if(empty($links->creds['active']))
+  $have_links = db_query('SELECT * FROM {jasperforge_sso_links} WHERE uid=:uid', array(':uid' => $account->uid))
+                  ->fetchField();
+  if(!$have_links)
     return;
 
   $data = array();
@@ -206,10 +234,9 @@ function jasperforge_sso_server_user_update(&$edit, $account, $category)
     $data['mail'] = $account->mail;
   if($account->original->roles != $account->roles)
     $data['roles'] = $account->roles;
-
   if(empty($data))
     return;
-//$links->update_remote($data);
+
   $data = serialize($data);
   $data = escapeshellarg($data);
 
@@ -302,14 +329,16 @@ function jasperforge_sso_server_sso_notify()
   if(!isset($_POST['uid']))
     return 'Bad Request';
 
-  $_POST['cas_uid'] = db_query('SELECT uid from {users} WHERE uid=:uid', array(':uid' => $_POST['cas_uid']))->fetchField();
+  $_POST['cas_uid'] = db_query('SELECT uid from {users} WHERE uid=:uid', array(':uid' => $_POST['cas_uid']))
+                        ->fetchField();
   if(!$_POST['cas_uid'])
     return 'User Not Found on SSO server.';
 
   try{
     $links = new JasperForgeSSO($_POST['cas_uid']);
 //    $links->creds['active'][$site] = array('uid' => $_POST['uid'], 'type' => 'auto');
-    $links->sso_link(array('site' => $_POST['site'], 'uid' => $_POST['uid'], 'type' => 'auto'));
+    $links->skip = $_POST['site'];
+    $links->sso_link(array('site' => $_POST['site'], 'link_uid' => $_POST['uid'], 'type' => 'auto'));
     $links->save();
   }
   catch(Exception $e){
@@ -339,14 +368,13 @@ function jasperforge_sso_server_sso_link()
   return 'TRUE';
 }
 
+
 function jasperforge_sso_server_sso_unlink()
 {
   try{
     $link = new JasperForgeSSO($_POST['cas_uid']);
-    if(isset($link->creds['inactive'][$_POST['site'] ]))
-      $link->creds['active'][$_POST['site'] ] = $link->creds['inactive'][$_POST['site'] ];
-    else
-      unset($link->creds['active'][$_POST['site'] ]);
+    $link->skip = $_POST['site'];
+    $link->sso_unlink($_POST['site']);
     $link->save();
   }
   catch(Exception $e){
@@ -355,6 +383,7 @@ function jasperforge_sso_server_sso_unlink()
   }
   return 'TRUE';
 }
+
 
 function jasperforge_sso_server_sso_reset_pass()
 {
@@ -382,6 +411,77 @@ function jasperforge_sso_server_sso_reset_pass()
   return 'TRUE';
 }
 
+
+function jasperforge_sso_server_sso_create_user()
+{
+  if(!isset($_POST['mail']) || !isset($_POST['name']))
+    return 'Bad Request';
+
+  $user = new stdClass();
+  $user->is_new = TRUE;
+  $user->mail = $_POST['mail'];
+
+  // check user name availability on SSO server
+  $result = db_query('SELECT uid FROM {users} WHERE name=:name', array(':name'=>$_POST['name']))->fetchField();
+  if($result)
+  {
+    $result = drupal_substr($_POST['mail'], 0, strpos($_POST['mail'], '@'));
+    if($result == $_POST['name'])
+      return t('User name already taken.');
+    $_POST['name'] = $result;
+  }
+
+  // check user name availability on all client sites
+  foreach (jasperforge_sso_server_get_supported_sites() as $site)
+    if(JasperForgeSSO::check_name($site, $_POST['name'], $_POST['mail']))
+      continue;
+    elseif(!stristr($_POST['mail'], "{$_POST['name']}@"))
+    {
+      $_POST['name'] = drupal_substr($_POST['mail'], 0, strpos($_POST['mail'], '@'));
+      foreach (jasperforge_sso_server_get_supported_sites() as $value)
+        if(!JasperForgeSSO::check_name($value, $_POST['name'], $_POST['mail']))
+        {
+          $_POST['name'] = NULL;
+          break;
+        }
+      if(!$_POST['name'])
+        return t('User name already taken.');
+      else
+        break;
+    }
+    else
+      return t('User name already taken.');
+
+
+  $user->name = $_POST['name'];
+  $user->status = 1;
+  $user->pass = user_password();
+  $user = user_save($user);
+
+  if(!$user)
+    return 'FALSE';
+
+  _user_mail_notify('register_admin_created', $account);
+  watchdog('user', 'New user: %name (%email).',
+          array('%name' => $user->name,
+                '%email' => $user->mail),
+          WATCHDOG_NOTICE, l(t('edit'), 'user/' . $user->uid . '/edit'));
+
+
+  $list = array($_POST['site']);
+  foreach (jasperforge_sso_server_get_supported_sites() as $site)
+  {
+    if($site == $_POST['site'])
+      continue;
+    if(JasperForgeSSO::find_cred($site, $_POST['mail']))
+      $list[] = $site;
+  }
+  foreach ($list as $site)
+    exec("drush sso-user-merge-2 {$site} {$user->name} {$user->uid} {$_POST['mail']} > /dev/null &");
+
+  return 'TRUE';
+}
+
 /**
  * Return additional CAS attributes when acting as a CAS server.
  *
@@ -400,7 +500,8 @@ function jasperforge_sso_server_sso_reset_pass()
  *
  * @see hook_cas_server_user_attributes_alter()
  */
-function jasperforge_sso_server_cas_server_user_attributes($account, $service, $ticket) {
+function jasperforge_sso_server_cas_server_user_attributes($account, $service, $ticket)
+{
   $attributes = array();
 
   $attributes['cas_uid'] = $account->uid;

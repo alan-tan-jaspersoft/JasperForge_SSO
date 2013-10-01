@@ -112,6 +112,7 @@ div.smartphone-portrait-layout,
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
+  text-indent: -1000px\9; /* IE */
 }
 
 /* edit-disabled responsive layout disabled messages */
@@ -140,7 +141,7 @@ fieldset.at-layout-form div.form-item input {
 }
 fieldset.at-layout-form select {
   width: 4em;
-   max-width: 100px;
+  max-width: 100px;
 }
 fieldset.at-layout-form div.form-type-checkbox label,
 fieldset.at-media-queries div.form-type-textfield label {
@@ -207,6 +208,19 @@ fieldset#edit-portrait--2 > .fieldset-wrapper {
 #edit-debug p.warning {
   background: url(images/warning.png) no-repeat left center;
   padding-left: 25px;
+}
+
+/* Conditional messages for sidebars */
+fieldset[id*="message-wrapper"] {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+fieldset[id*="message-wrapper"] .fieldset-wrapper {
+  margin: 0 !important;
+  padding: 0;
+}
+fieldset[id*="message-wrapper"] .fieldset-wrapper .description {
+  padding-top: 4px;
 }
 
 /* AT Panels */
@@ -482,12 +496,74 @@ html.js fieldset.collapsible fieldset .fieldset-legend {
   text-align: center;
 }
 
-/* Mode message */
-#edit-mode {
-  
+/* Mobile Regions */
+#edit-context-regions fieldset legend {
+  display: block;
+  position: static;
 }
-#edit-mode .fieldset-wrapper {
- 
+#edit-context-regions fieldset .fieldset-wrapper {
+  padding: 30px 15px 15px 1px;
+}
+.admin-theme-adaptivetheme-admin #edit-context-regions fieldset .fieldset-wrapper {
+  padding-left: 15px;
+}
+
+
+/* Float block regions */
+#edit-float-region-blocks label {
+  min-width: 15em;
+}
+#edit-float-region-blocks .form-type-select,
+#edit-float-region-blocks .form-type-radios {
+  float: left;
+  clear: none;
+}
+#edit-float-region-blocks .form-type-radios * {
+  display: inline-block;
+  width: auto;
+  min-width: 0;
+}
+#edit-float-region-blocks .form-type-radios {
+  padding: 2px 10px 0 20px;
+}
+#edit-float-region-blocks .form-type-radios label {
+  margin-right: 5px;
+}
+#edit-float-region-blocks .form-type-radios > label:after {
+  content: ":";
+}
+#edit-float-region-blocks ol {
+  list-style: lower-roman;
+  margin-bottom: 20px;
+}
+
+/* Global CSS files path */
+#edit-files-path .form-item-global-files-path {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+#edit-files-path fieldset .fieldset-wrapper {
+  margin: 0 0 20px;
+}
+#edit-files-path .form-item-global-files-path label {
+  margin-bottom: 10px;
+}
+#edit-global-files-path {
+  display: block;
+}
+
+/* Debugger media queries dl */
+#edit-mediaqueries dl {
+  padding: 20px 20px 0;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+#edit-mediaqueries dl dt {
+  font-weight: 700;
+}
+#edit-mediaqueries dl dd {
+  margin-bottom: 20px;
+  margin-left: 0;
 }
 
 /* Wrangel Seven to look half decent */
@@ -571,4 +647,7 @@ html.js fieldset.collapsible fieldset .fieldset-legend {
 .admin-theme-seven #edit-font fieldset[id$=-gwf-styles] .fieldset-wrapper,
 .admin-theme-seven #edit-font fieldset[id$=-gwf-charsets] .fieldset-wrapper {
   padding: 0 10px 7px !important;
+}
+.admin-theme-seven fieldset[id*="message-wrapper"] .fieldset-wrapper .description {
+  padding-top: 7px;
 }

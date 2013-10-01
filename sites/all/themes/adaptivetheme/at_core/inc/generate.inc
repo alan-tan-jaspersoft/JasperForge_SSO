@@ -13,7 +13,6 @@
  * @param $theme_name, the active theme.
  */
 function generate_html_classes(&$vars, $theme_name) {
-
   $classes_array = &drupal_static(__FUNCTION__, array());
   if (empty($classes_array)) {
 
@@ -92,12 +91,11 @@ function generate_html_classes(&$vars, $theme_name) {
  * @param $theme_name, the active theme.
  */
 function generate_page_classes(&$vars, $theme_name) {
-
   $classes_array = &drupal_static(__FUNCTION__, array());
   if (empty($classes_array)) {
 
     // Site name classes
-    if ($vars['hide_site_name'] === FALSE) {
+    if (isset($vars['hide_site_name']) && $vars['hide_site_name'] === FALSE) {
       if (at_get_setting('enable_heading_settings', $theme_name) === 1) {
         $site_name_settings_array = array(
           'site_name_case',
@@ -114,7 +112,7 @@ function generate_page_classes(&$vars, $theme_name) {
     }
 
     // Slogan classes
-    if ($vars['site_slogan']) {
+    if (isset($vars['site_slogan'])) {
       if (at_get_setting('enable_heading_settings', $theme_name) === 1) {
         $site_slogan_settings_array= array(
           'site_slogan_case',
@@ -188,21 +186,6 @@ function generate_page_classes(&$vars, $theme_name) {
       foreach ($page_title_settings_array as $setting) {
         if ($page_title_setting = at_get_setting($setting, $theme_name)) {
           $classes_array[] = $page_title_setting;
-        }
-      }
-    }
-
-    // Image alignment and caption classes
-    if (at_get_setting('enable_image_settings', $theme_name) === 1) {
-      $image_settings_array = array(
-        'image_caption_full',
-        'image_caption_teaser',
-        'image_alignment',
-        'image_alignment_teaser',
-      );
-      foreach ($image_settings_array as $setting) {
-        if ($image_setting = at_get_setting($setting, $theme_name)) {
-          $classes_array[] = $image_setting;
         }
       }
     }
@@ -334,7 +317,6 @@ function css_browser_selector($ua = NULL) {
  * @param $theme_name
  */
 function get_color_scheme_name($theme_name) {
-
   $scheme_name = drupal_static(__FUNCTION__, array());
   if (empty($scheme_name)) {
     if (module_exists('color')) {

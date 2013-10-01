@@ -28,7 +28,7 @@ function jasperforge_sso_server_schema()
         'type' => 'varchar',
         'length' => 256,
         'not null' => TRUE,
-        'description' => 'The site which the merge was performed on',
+        'description' => 'The site of which the link belongs to',
         ),
       'link_uid' => array(
         'type' => 'int',

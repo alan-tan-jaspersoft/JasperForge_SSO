@@ -7,10 +7,6 @@
  * If you need to add or modify theme functions do it in your sub-theme.
  */
 
-global $theme_key, $theme_name;
-$theme_name = $theme_key;
-$path_to_at_core = drupal_get_path('theme', 'adaptivetheme');
-
 /**
  * Implements hook_theme()
  *
@@ -47,12 +43,10 @@ function adaptivetheme_theme($existing, $type, $theme, $path) {
  */
 function adaptivetheme_menubar($vars) {
   $output = '';
-
   $output .= '<div id="' . $vars['menubar_id'] . '" class="' . $vars['classes'] . '"' . $vars['attributes'] . '>';
   $output .= '<nav ' . $vars['content_attributes'] . '>';
   $output .= $vars['menu'];
   $output .= '</nav></div>';
-
   return $output;
 }
 
@@ -87,23 +81,40 @@ function adaptivetheme_breadcrumb($vars) {
 
   $breadcrumb = $vars['breadcrumb'];
 
-  if (at_get_setting('breadcrumb_display', $theme_name) === 1) {
+  if (at_get_setting('breadcrumb_display', $theme_name) == 1) {
 
-    if (at_get_setting('breadcrumb_home', $theme_name) === 0) {
+    if (at_get_setting('breadcrumb_home', $theme_name) == 0) {
       array_shift($breadcrumb);
     }
 
+    // Remove the rather pointless breadcrumbs for reset password and user
+    // register pages, they link to the page you are on.
+    if (arg(0) === 'user' && (arg(1) === 'password' || arg(1) === 'register')) {
+      array_pop($breadcrumb);
+    }
+
     if (!empty($breadcrumb)) {
-      $heading = '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+
       $separator = filter_xss_admin(at_get_setting('breadcrumb_separator', $theme_name));
+
+      // Push the page title onto the end of the breadcrumb array
+      if (at_get_setting('breadcrumb_title', $theme_name) == 1) {
+        $breadcrumb[] = '<span class="crumb-title">' . drupal_get_title() . '</span>';
+      }
 
       $class = 'crumb';
       end($breadcrumb);
       $last = key($breadcrumb);
 
       $output = '';
-      $output = '<div id="breadcrumb" class="clearfix"><nav class="breadcrumb-wrapper clearfix" role="navigation">';
-      $output .= $heading;
+      if (at_get_setting('breadcrumb_label', $theme_name) == 1) {
+        $output = '<div id="breadcrumb" class="clearfix"><nav class="breadcrumb-wrapper with-breadcrumb-label clearfix" role="navigation">';
+        $output .= '<h2 class="breadcrumb-label">' . t('You are here') . '</h2>';
+      }
+      else {
+        $output = '<div id="breadcrumb" class="clearfix"><nav class="breadcrumb-wrapper clearfix" role="navigation">';
+        $output .= '<h2 class="element-invisible">' . t('You are here') . '</h2>';
+      }
       $output .= '<ol id="crumbs" class="clearfix">';
       foreach ($breadcrumb as $key => $val) {
         if ($key == $last && count($breadcrumb) != 1) {
@@ -113,7 +124,7 @@ function adaptivetheme_breadcrumb($vars) {
           $output .= '<li class="' . $class . ' crumb-first">' . $val . '</li>';
         }
         else {
-          $output .= '<li class="' . $class . '"><span>' . $separator . '</span>' . $val . '</li>';
+          $output .= '<li class="' . $class . '"><span class="crumb-sepreator">' . $separator . '</span>' . $val . '</li>';
         }
       }
       $output .= '</ol></nav></div>';
@@ -230,7 +241,7 @@ function adaptivetheme_item_list($vars) {
         $data .= theme_item_list(array('items' => $children, 'title' => NULL, 'type' => $type, 'attributes' => $attributes));
       }
 
-      if (at_get_setting('extra_item_list_classes', $theme_name) === 1) {
+      if (at_get_setting('extra_item_list_classes', $theme_name) == 1) {
         if ($i & 1) {
           $attributes['class'][] = 'odd';
         }
@@ -255,7 +266,6 @@ function adaptivetheme_item_list($vars) {
 
 // Dont run this if the DHTML module is running, it borks its output!
 if (!function_exists('dhtml_menu_init')) {
-
   /**
    * Returns HTML for a wrapper for a menu sub-tree.
    *
@@ -292,7 +302,7 @@ if (!function_exists('dhtml_menu_init')) {
       $sub_menu = drupal_render($element['#below']);
     }
 
-    if (at_get_setting('extra_menu_classes', $theme_name) !== 0 && !empty($element['#original_link'])) {
+    if (at_get_setting('extra_menu_classes', $theme_name) == 1 && !empty($element['#original_link'])) {
       if (!empty($element['#original_link']['depth'])) {
         $element['#attributes']['class'][] = 'menu-depth-' . $element['#original_link']['depth'];
       }
@@ -301,23 +311,22 @@ if (!function_exists('dhtml_menu_init')) {
       }
     }
 
-    if (at_get_setting('menu_item_span_elements', $theme_name) !== 0 && !empty($element['#title'])) {
+    if (at_get_setting('menu_item_span_elements', $theme_name) == 1 && !empty($element['#title'])) {
       $element['#title'] = '<span>' . $element['#title'] . '</span>';
       $element['#localized_options']['html'] = TRUE;
+    }
+
+    if (at_get_setting('unset_menu_titles', $theme_name) == 1 && !empty($element['#localized_options']['attributes']['title'])) {
+      unset($element['#localized_options']['attributes']['title']);
     }
 
     $output = l($element['#title'], $element['#href'], $element['#localized_options']);
     return '<li' . drupal_attributes($element['#attributes']) . '>' . $output . $sub_menu . "</li>";
   }
-
 }
 
 /**
  * Returns HTML for a set of links.
- *
- * Adaptivetheme overides this function in order to insert additional classes
- * into link items. It can also wrap link items in span elements (wrapped around
- * the actual link text inside the anchor element).
  *
  * @param $vars
  *   An associative array containing:
@@ -352,16 +361,15 @@ if (!function_exists('dhtml_menu_init')) {
  *     http://www.w3.org/TR/WCAG-TECHS/H42.html for more information.
  */
 function adaptivetheme_links($vars) {
-  global $theme_key, $language_url;
-  $theme_name = $theme_key;
-
   $links = $vars['links'];
   $attributes = $vars['attributes'];
   $heading = $vars['heading'];
-
+  global $language_url;
   $output = '';
+
   if (count($links) > 0) {
     $output = '';
+
     if (!empty($heading)) {
       if (is_string($heading)) {
         $heading = array(
@@ -373,41 +381,44 @@ function adaptivetheme_links($vars) {
       if (!empty($heading['class'])) {
         $output .= drupal_attributes(array('class' => $heading['class']));
       }
-      $output .= '>' . filter_xss_admin($heading['text']) . '</' . $heading['level'] . '>'; // Core uses check_plain(), I think this is over the top, basic markup is OK
+      $output .= '>' . check_plain($heading['text']) . '</' . $heading['level'] . '>';
     }
-    $output .= '<ul' . drupal_attributes($attributes) . '>';
 
+    $output .= '<ul' . drupal_attributes($attributes) . '>';
     $num_links = count($links);
     $i = 1;
 
     foreach ($links as $key => $link) {
-
-      if (at_get_setting('extra_menu_classes', $theme_name) === 1) {
+      if (at_get_setting('extra_menu_classes')) {
         $class = array($key);
+      }
+      if (at_get_setting('extra_menu_classes')) {
         if ($i == 1) {
           $class[] = 'first';
         }
         if ($i == $num_links) {
           $class[] = 'last';
         }
+      }
+      if (at_get_setting('extra_menu_classes')) {
         if (isset($link['href']) && ($link['href'] == $_GET['q'] || ($link['href'] == '<front>' && drupal_is_front_page()))
             && (empty($link['language']) || $link['language']->language == $language_url->language)) {
           $class[] = 'active';
         }
+      }
+      if (at_get_setting('extra_menu_classes')) {
         $output .= '<li' . drupal_attributes(array('class' => $class)) . '>';
       }
-
       else {
         $output .= '<li>';
       }
       if (isset($link['href'])) {
-        if (at_get_setting('menu_item_span_elements', $theme_name) === 1) {
+        if (at_get_setting('menu_item_span_elements')) {
           $link['title'] = '<span>' . $link['title'] . '</span>';
           $link['html'] = TRUE;
         }
         $output .= l($link['title'], $link['href'], $link);
       }
-
       elseif (!empty($link['title'])) {
         if (empty($link['html'])) {
           $link['title'] = check_plain($link['title']);
@@ -418,9 +429,11 @@ function adaptivetheme_links($vars) {
         }
         $output .= '<span' . $span_attributes . '>' . $link['title'] . '</span>';
       }
+
       $i++;
       $output .= "</li>";
     }
+
     $output .= '</ul>';
   }
 
@@ -548,12 +561,17 @@ function adaptivetheme_field__taxonomy_term_reference($vars) {
  * Output image fields as figure with figcaption for captioning.
  */
 function adaptivetheme_field__image($vars) {
-  global $theme_name;
+  global $theme_key;
+  $theme_name = $theme_key;
 
-  // Check if image settings are enabled, otherwise captions might print unexpectedly
+  // Check if image settings are enabled
   $image_settings_enabled = at_get_setting('enable_image_settings', $theme_name) === 1 ? TRUE : FALSE;
-  $caption_full = at_get_setting('image_caption_full', $theme_name) === 1 ? TRUE : FALSE;
-  $caption_teaser = at_get_setting('image_caption_teaser', $theme_name) === 1 ? TRUE : FALSE;
+
+  // Check if captions are enabled for full and/or teaser view modes
+  if ($image_settings_enabled == TRUE) {
+    $caption_full = at_get_setting('image_caption_full', $theme_name) === 1 ? TRUE : FALSE;
+    $caption_teaser = at_get_setting('image_caption_teaser', $theme_name) === 1 ? TRUE : FALSE;
+  }
 
   $output = '';
 
@@ -568,18 +586,29 @@ function adaptivetheme_field__image($vars) {
   foreach ($vars['items'] as $delta => $item) {
 
     $classes = 'field-item ' . ($delta % 2 ? 'odd' : 'even');
-    $output .= '<figure class="' . $classes . '"' . $vars['item_attributes'][$delta] . '>';
+    $output .= '<figure class="clearfix ' . $classes . '"' . $vars['item_attributes'][$delta] .'>';
     $output .= drupal_render($item);
 
-    if (isset($item['#item']['title'])) {
+    // Captions
+    if (isset($item['#item']['title']) && !empty($item['#item']['title']) && $image_settings_enabled == TRUE) {
+
+      // Ouch this is ugly, please tell me how to get the actual width of the image.
+      // image_style_load($item['#image_style']); will return the image style dimensions,
+      // but not the actual image width, which can be different, say when images
+      // scale, but I cannot decipher where these dimensions come from when
+      // the item is rendered.
+      preg_match('/< *img[^>]*width *= *["\']?([^"\']*)/i', $item['#children'], $matches);
+      $width = isset($matches[1]) ? $matches[1] . 'px' : 'auto';
+      $styles = 'style="width:' . $width . ';"';
+
       if ($vars['field_view_mode'] == 'full') {
-        if ($caption_full == TRUE && $image_settings_enabled == TRUE) {
-          $output .= '<figcaption class="caption full-caption">' . $item['#item']['title'] . '</figcaption>';
+        if ($caption_full == TRUE) {
+          $output .= '<figcaption class="caption full-caption"' . $styles .'>' . $item['#item']['title'] . '</figcaption>';
         }
       }
       if ($vars['field_view_mode'] == 'teaser') {
-        if ($caption_teaser == TRUE && $image_settings_enabled == TRUE) {
-          $output .= '<figcaption class="caption teaser-caption">' . $item['#item']['title'] . '</figcaption>';
+        if ($caption_teaser == TRUE) {
+          $output .= '<figcaption class="caption teaser-caption"' . $styles .'>' . $item['#item']['title'] . '</figcaption>';
         }
       }
     }

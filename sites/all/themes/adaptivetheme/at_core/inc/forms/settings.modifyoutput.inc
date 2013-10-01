@@ -56,18 +56,18 @@ $form['at']['modify-output']['breadcrumb'] = array(
   '#title' => t('Breadcrumbs'),
   '#description' => t('<h3>Breadcrumb Settings</h3>'),
 );
-$form['at']['modify-output']['breadcrumb']['bd'] = array(
+$form['at']['modify-output']['breadcrumb']['wrapper'] = array(
   '#type' => 'fieldset',
   '#title' => t('Breadcrumbs'),
 );
 // Display?
-$form['at']['modify-output']['breadcrumb']['bd']['breadcrumb_display'] = array(
+$form['at']['modify-output']['breadcrumb']['wrapper']['breadcrumb_display'] = array(
   '#type' => 'checkbox',
   '#title' => t('Show breadcrumbs'),
   '#default_value' => at_get_setting('breadcrumb_display'),
 );
 // Home link?
-$form['at']['modify-output']['breadcrumb']['bd']['breadcrumb_home'] = array(
+$form['at']['modify-output']['breadcrumb']['wrapper']['breadcrumb_home'] = array(
   '#type' => 'checkbox',
   '#title' => t('Show the homepage link'),
   '#default_value' => at_get_setting('breadcrumb_home'),
@@ -75,14 +75,32 @@ $form['at']['modify-output']['breadcrumb']['bd']['breadcrumb_home'] = array(
     'visible' => array('input[name="breadcrumb_display"]' => array('checked' => TRUE)),
   ),
 );
+// Label?
+$form['at']['modify-output']['breadcrumb']['wrapper']['breadcrumb_label'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Show the "You are here" label'),
+  '#default_value' => at_get_setting('breadcrumb_label'),
+  '#states' => array(
+    'visible' => array('input[name="breadcrumb_display"]' => array('checked' => TRUE)),
+  ),
+);
+// Page title?
+$form['at']['modify-output']['breadcrumb']['wrapper']['breadcrumb_title'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Append the page title to the breadcrumb trail'),
+  '#default_value' => at_get_setting('breadcrumb_title'),
+  '#states' => array(
+    'visible' => array('input[name="breadcrumb_display"]' => array('checked' => TRUE)),
+  ),
+);
 // Seperator
-$form['at']['modify-output']['breadcrumb']['bd']['breadcrumb_separator'] = array(
+$form['at']['modify-output']['breadcrumb']['wrapper']['breadcrumb_separator'] = array(
   '#type'  => 'textfield',
   '#title' => t('Separator'),
-  '#description' => t('Text only. Dont forget to include spaces.'),
+  '#description' => t('Text, basic markup and html entities only. Dont forget to include spaces.'),
   '#default_value' => filter_xss_admin(at_get_setting('breadcrumb_separator')),
-  '#size' => 8,
-  '#maxlength' => 10,
+  '#size' => 25,
+  '#maxlength' => 60,
   '#states' => array(
     'visible' => array('input[name="breadcrumb_display"]' => array('checked' => TRUE)),
   ),
@@ -95,16 +113,26 @@ if (at_get_setting('horizontal_login_block_enable') === 'on') {
     '#title' => t('Login Block'),
     '#description' => t('<h3>Login Block Options</h3>'),
   );
-  $form['at']['modify-output']['login-block']['hlb'] = array(
-    '#type' => 'fieldset',
-    '#title' => t('Login Block'),
-  );
-  // Horizonal login block
-  $form['at']['modify-output']['login-block']['hlb']['horizontal_login_block'] = array(
+  // Login block links
+  $form['at']['modify-output']['login-block']['login_block_remove_links'] = array(
     '#type' => 'checkbox',
-    '#title' => t('Horizontal Login Block'),
+    '#title' => t('Remove links'),
+    '#default_value' => at_get_setting('login_block_remove_links'),
+    '#description' => t('Remove the <em>Create new account</em> and <em>Request new password</em> links from the login block.'),
+  );
+  // Login block OpenID
+  $form['at']['modify-output']['login-block']['login_block_remove_openid'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Remove OpenID elements'),
+    '#default_value' => at_get_setting('login_block_remove_openid'),
+    '#description' => t('Remove the OpenID links and form elements from the login block.'),
+  );
+  // Horizontal login block
+  $form['at']['modify-output']['login-block']['horizontal_login_block'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Horizontal login block'),
     '#default_value' => at_get_setting('horizontal_login_block'),
-    '#description' => t('Checking this setting will enable a horizontal style login block (all elements on one line). Note that if you are using OpenID this does not work well and you will need a more sophisticated approach than can be provided here.'),
+    '#description' => t('Enable a horizontal style login block (all elements on one line). This does not work so well with OpenID and you should probably check the setting to remove OpendID elements.'),
   );
 }
 
@@ -138,9 +166,16 @@ $form['at']['modify-output']['hide-remove']['feed_icons_hide'] = array(
 // Hide comment title
 $form['at']['modify-output']['hide-remove']['comments_hide_title'] = array(
   '#type' => 'checkbox',
-  '#title' => t('Hide the comment title'),
+  '#title' => t('Hide comment titles'),
   '#default_value' => at_get_setting('comments_hide_title'),
   '#description' => t('Checking this setting will hide comment titles using element-invisible. Hiding rather than removing titles maintains accessibility and semantic structure while not showing titles to sighted users.'),
+);
+// Remove menu link titles
+$form['at']['modify-output']['hide-remove']['unset_menu_titles'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Remove menu link titles'),
+  '#default_value' => at_get_setting('unset_menu_titles'),
+  '#description' => t('Checking this setting will remove all menu link titles (tool tips). This only works for menu blocks.'),
 );
 
 // Accessibility
@@ -149,7 +184,6 @@ $form['at']['modify-output']['a11y'] = array(
   '#title' => t('Accessibility'),
   '#description' => t('<h3>Accessibility</h3>'),
 );
-
 // Use extra fieldsets in advanced serach form
 $form['at']['modify-output']['a11y']['adv_search_extra_fieldsets'] = array(
   '#type' => 'checkbox',
@@ -157,13 +191,26 @@ $form['at']['modify-output']['a11y']['adv_search_extra_fieldsets'] = array(
   '#default_value' => at_get_setting('adv_search_extra_fieldsets'),
   '#description' => t('The problem with Drupals standard Advanced search form is that each criterion group is wrapped in a DIV, whereas it should use fieldsets. Turning this on may cause issues with modules that modify the search form such as Search Config.'),
 );
-
 // Skip link target
 $form['at']['modify-output']['a11y']['skip_link_target'] = array(
   '#type' => 'textfield',
   '#title' => t('Skip to navigation target ID'),
   '#description' => t('If your main content is not in the Main Content region you can change the skip link target ID to match.'),
   '#default_value' => check_plain(at_get_setting('skip_link_target')),
+);
+
+// SEO/Authorship
+$form['at']['modify-output']['seo'] = array(
+  '#type' => 'fieldset',
+  '#title' => t('SEO'),
+  '#description' => t('<h3>SEO</h3>'),
+);
+// Use extra fieldsets in advanced serach form
+$form['at']['modify-output']['seo']['rel_author'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Add rel=author to user names.'),
+  '#default_value' => at_get_setting('rel_author'),
+  '#description' => t('Add rel author to user names to support Googles <a href="!authorhship" target="_blank">Authorship</a> feature.', array('!authorhship' => 'http://support.google.com/webmasters/bin/answer.py?hl=en&answer=1408986')),
 );
 
 // Extra CSS Classes

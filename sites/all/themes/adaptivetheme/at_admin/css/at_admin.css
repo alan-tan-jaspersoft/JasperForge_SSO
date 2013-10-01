@@ -11,6 +11,28 @@ body.section-admin {
   padding: 0;
 }
 
+/* If gutters are set in theme settings they will override these
+   values: see Extensions > Modify Output > Design */
+#main-content,
+.block-inner,
+.pane-inner,
+.menu-wrapper,
+.branding-elements,
+.breadcrumb-wrapper,
+.attribution,
+.at-panel .rounded-corner,
+div.messages {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Panel pages need negative margin equal to the gutter width applied to #content,
+  this is taken care of in theme settings as per above for normal gutters */
+.page-panels #content {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
 /* Wrangle things in small views */
 @media only screen and (min-width:320px) and (max-width:768px) {
   body.admin-menu {
@@ -82,6 +104,7 @@ p {
 h1#page-title {
   font-size: 1.33em;
   padding: 0;
+  display: inline-block;
 }
 #footer {
   margin-left: 10px;
@@ -101,15 +124,10 @@ h1#page-title {
 .content-header {
   background: #eee;
 }
-#banner {
+#main-content-header {
   padding-top: 20px;
   position: relative;
   min-height: 50px;
-}
-#topbar,
-#banner {
-  padding-left: 10px;
-  padding-right: 10px;
 }
 #page-footer {
   background: #fff;
@@ -208,18 +226,30 @@ a:focus {
   line-height: 1.5;
 }
 #topbar time {
-  float: right; /* LTR */
+  float: right;
 }
 #breadcrumb {
-  float: left; /* LTR */
-  margin: 0;
+  float: left;
 }
-ol#crumbs {
+#breadcrumb ol {
   margin: 0;
   padding: 0;
-  list-style: none;
 }
-ol#crumbs li {
+#breadcrumb .breadcrumb-label {
+  font-size: 1em;
+  display: inline;
+  padding-right: 10px;
+  font-weight: 700;
+  color: #e7e7e7;
+}
+#breadcrumb .breadcrumb-label:after {
+  content: ":";
+}
+#breadcrumb .with-breadcrumb-label ol {
+  display: inline;
+}
+#breadcrumb li {
+  list-style: none;
   display: inline;
 }
 #topbar time,
@@ -232,6 +262,9 @@ ol#crumbs a:hover,
 ol#crumbs a:focus,
 ol#crumbs a:active {
   color: #fff;
+}
+.crumb-title {
+  font-style: italic;
 }
 
 /* Pager */
@@ -494,10 +527,7 @@ div.admin .right {
   color: #222;
 }
 div.add-or-remove-shortcuts  {
-  padding-top:0;
-  position:absolute;
-  right:20px;
-  top:33%;
+  display: inline-block;
 }
 .admin-panel ul li {
   color: #555;
@@ -552,6 +582,17 @@ ul.primary li.active a:focus {
   color: #6e6e6e;
   text-decoration: none !important;
 }
+
+@media only screen and (max-width: 600px) {
+  ul.primary li a {
+    float: none;
+    margin-bottom: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+  }
+}
+
 .secondary-tasks-wrapper {
   background: #fff;
 }
@@ -632,7 +673,7 @@ tbody {
 }
 td,th {
   margin: 0;
-  padding: 0.85em 0.6em;
+  padding: 10px 7px;
 }
 th.active a {
   padding-right: 25px;
@@ -662,11 +703,6 @@ tr:first-child td.container {
 }
 #block-admin-display-form tr .block {
   background: transparent;
-}
-tr.draggable td.block {
-  padding: 10px 0 0 6px;
-}
-.draggable a.tabledrag-handle {
 }
 body div.tabledrag-changed-warning {
   margin: 0 0 10px 0;
@@ -723,7 +759,7 @@ tr.even td.active {
   background: none;
 }
 a.tabledrag-handle .handle {
-  margin-top: 2px;
+  margin-top: -0.42em;
 }
 #system-modules table th {
   min-width: 60px;
@@ -921,8 +957,8 @@ input.form-radio {
   vertical-align: middle;
 }
 td div.description,
-.form-item .description {
-  font-size: 0.923em;
+.form-item .description,
+.description {
   padding: 4px 0;
   color: #666;
 }
@@ -1006,6 +1042,7 @@ input[value~=Update],
 input#edit-save.form-submit {
   background-image: url(images/green-button.png);
 }
+input[value~=Cancel],
 input#edit-delete.form-submit,
 #system-modules-uninstall input#edit-submit,
 #user-multiple-delete-confirm input#edit-submit {
@@ -1016,7 +1053,7 @@ input[value~=Save]:hover,
 #system-theme-settings input#edit-submit:hover,
 input.form-submit:hover,
 input.teaser-button:hover,
-input#edit-save.form-submit,
+input#edit-save.form-submit:hover,
 .node-form input#edit-submit.form-submit:hover,
 input#edit-delete.form-submit:hover,
 #system-modules-uninstall input#edit-submit:hover,
@@ -1141,8 +1178,17 @@ fieldset legend a:active {
   font-weight: 600;
   color: #424242;
 }
-html.js fieldset.collapsible .fieldset-legend {
-  padding-left: 17px;
+html.js fieldset span.fieldset-legend {
+  background-image: none !important;
+  padding-left: 0 !important;
+}
+html.js fieldset.collapsible .fieldset-legend a {
+  background: url('images/menu-expanded.png') no-repeat scroll 5px 65% transparent;
+  padding-left: 15px;
+}
+html.js fieldset.collapsed .fieldset-legend a {
+  background-image: url('images/menu-collapsed.png');
+  background-position: 5px 50%;
 }
 html.js #edit-css-settings > legend > .fieldset-legend {
   padding-left: 0;
@@ -1995,3 +2041,16 @@ table.context-admin td.ctools-export-ui-operations {
 input[type="radio"],
 input[type="checkbox"] {
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

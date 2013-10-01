@@ -34,7 +34,7 @@ $form['at-settings']['extend']['enable']['enable_font_settings'] = array(
   '#type' => 'checkbox',
   '#title' => t('Fonts'),
   '#default_value' => at_get_setting('enable_font_settings'),
-  '#description' => t('Apply fonts to site elements (page, titles, headings). Supports websafe, custom and Google fonts, and <a href="!link" target="_blank">@font-your-face</a> integration.', array('!link' => 'http://drupal.org/project/fontyourface')),
+  '#description' => t('Apply fonts to site elements (page, titles, headings, menus and custom selectors). Supports websafe, custom and Google fonts, and <a href="!link" target="_blank">@font-your-face</a> integration.', array('!link' => 'http://drupal.org/project/fontyourface')),
 );
 
 // Title styles
@@ -50,7 +50,7 @@ $form['at-settings']['extend']['enable']['enable_image_settings'] = array(
   '#type' => 'checkbox',
   '#title' => t('Image alignment and captions'),
   '#default_value' => at_get_setting('enable_image_settings'),
-  '#description' => t('Set default image alignment and enable image captions.'),
+  '#description' => t('Set default image alignment, image captions and teaser image view.'),
 );
 
 // Apple touch icons
@@ -77,10 +77,43 @@ $form['at-settings']['extend']['enable']['enable_custom_css'] = array(
   '#default_value' => at_get_setting('enable_custom_css'),
 );
 
+// Mobile regions and blocks
+$form['at-settings']['extend']['enable']['enable_context_regions'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Mobile Regions and Blocks'),
+  '#description' => t('Unset regions or move blocks to another region in mobile devices. Requires the <a href="!browscap_module" target="_blank">Browscap module</a> for mobile device detection.', array('!browscap_module' => 'http://drupal.org/project/browscap')),
+  '#default_value' => at_get_setting('enable_context_regions'),
+);
+
+// Float Region blocks
+$form['at-settings']['extend']['enable']['enable_float_region_blocks'] = array(
+  '#type' => 'checkbox',
+  '#title' => t('Float Region blocks'),
+  '#description' => t('Float blocks in any region - this allows blocks to line up horizontally within a region, similar to a CSS grid or columns.'),
+  '#default_value' => at_get_setting('enable_float_region_blocks'),
+);
+
 // Markup overrides
 $form['at-settings']['extend']['enable']['enable_markup_overides'] = array(
   '#type' => 'checkbox',
   '#title' => t('Markup overrides'),
-  '#description' => t('Many additional options for adding, removing, hiding and changing site elements and markup - includes settings for gutter widths, using 100% width wrappers in page templates, adding span elements to menu items, breadcrumb display and seperator, login block options, CSS classes, changing the skip link target id, hiding frontpage and comment titles, removing the the main content block from the front page, and hiding RSS icons.'),
+  '#description' => t('Many additional options for adding, removing, hiding and changing site elements and markup - includes:
+    <ul>
+      <li>Set the gutter width</li>
+      <li>Use page--full-width-wrappers.tpl.php for 100% width header and footer designs</li>
+      <li>Enable page--[content-type].tpl.php suggestions</li>
+      <li>Wrap menu item text in SPAN tags</li>
+      <li>Breadcrumb Settings - hide, hide the home link, configure seperator, append the page title</li>
+      <li>Login Block - hide links, hide OpenID links, horizontal login block</li>
+      <li>Remove the frontpage title</li>
+      <li>Do not display the Main content block on the front page</li>
+      <li>Remove RSS feed icons</li>
+      <li>Hide comment titles</li>
+      <li>Remove menu link titles (tool tips)</li>
+      <li>Accessibility settings - set the skip navigation target ID, use extra fieldsets in the advanced search form</li>
+      <li>Add rel=author to user names</li>
+      <li>Add or remove CSS classes for pages, nodes, blocks, comments, menus and item lists</li>
+    </ul>
+    '),
   '#default_value' => at_get_setting('enable_markup_overides'),
 );
