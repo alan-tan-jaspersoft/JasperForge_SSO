@@ -1,0 +1,23 @@
+
+#footer-wrapper {
+	
+	.admin-menu & { margin-bottom: -20px; }
+	
+	footer {
+		border-top: 6px solid $blue2;
+		margin-top: 2em;
+		min-height: 300px;
+		padding-top: 2em
+	}
+	
+	.vp {
+		color: $blue2;
+		font: 100 24px/36px $sans-serif-title;
+		@include span-columns(8);
+	}
+	
+	.links {
+		@include span-columns(4 omega);
+	}
+	
+}

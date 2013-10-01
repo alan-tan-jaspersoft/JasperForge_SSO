@@ -1,0 +1,62 @@
+.cols2-12 {
+	@include span-columns(6);
+	@include nth-omega(2n,of-type);
+	@include at-breakpoint(12 50em) {
+		@include span-columns(10);
+		@include remove-nth-omega(2n,of-type);
+		@include isolate(2);
+		clear: both;
+	}
+}
+
+.cols3-12 {
+	@include span-columns(4);
+	@include nth-omega(3n);
+	@include at-breakpoint(12 50em) {
+		@include span-columns(10);
+		@include remove-nth-omega(3n);
+		@include isolate(2);
+		clear: both;
+	}
+}
+
+.cols4-12 {
+	@include span-columns(3);
+	@include nth-omega(4n);
+	@include at-breakpoint(12 50em) {
+		@include span-columns(10);
+		@include remove-nth-omega(4n);
+		@include isolate(2);
+		clear: both;
+	}
+}
+
+.col-wrap2-12 {
+	@include span-columns(6);
+	@include isolate(4);
+}
+
+.col5-7 {
+	@include span-columns(5 omega);
+	@include at-breakpoint(12 50em) {
+		@include span-columns(10);
+		@include isolate(2);
+		clear: both;
+	}
+}
+
+.col7-5 {
+	@include span-columns(7);
+	@include at-breakpoint(12 50em) {
+		@include span-columns(12);
+		clear: both;
+	}
+}
+
+// Optional 2 col side-by-sides
+.col2-opt {
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+	&:first-child:nth-last-child(2), 
+	&:first-child:nth-last-child(2) ~ & { @extend .cols2-12; }
+}

@@ -1,0 +1,69 @@
+	<div id="header-wrapper" class="p-rel w-full">
+
+		<div id="header-bg" class="p-abs w-full">
+			<div id="bg-1"></div>
+			<div id="bg-2"></div>
+			<div id="bg-3"></div>
+			<div id="bg-4" class="grad-bl-med">
+				<div id="bg-wave" class="mca"></div>
+			</div>
+			<div id="bg-5"></div>
+			<div id="bg-6" class="grad-bl-med"></div>
+			<div id="bg-7"></div>
+		</div>
+
+		<div id="leaderboard-wrapper">
+			<div class="container clearfix">
+				<ul id="top-menu" class="f-r d-ib ta-r">
+				  <li><a href="http://www.jaspersoft.com" target="_blank"><?php echo t('JASPERSOFT.COM'); ?></a></li>
+					<li><a href="http://community.jaspersoft.com" target="_blank"><?php echo t('COMMUNITY'); ?></a></li>
+					<li><a href="http://support.jaspersoft.com" target="_blank"><?php echo t('SUPPORT'); ?></a></li>
+					<li><a href="http://www.jaspersoft.com/contact-us"><?php echo t('CONTACT US'); ?></a></li>
+
+					<?php if(user_is_logged_in()) :?>
+						<li><a href="http://www.jaspersoft.com/user" target="_blank"><?php echo t('MY ACCOUNT'); ?></a></li>
+						<li><a href="http://www.jaspersoft.com/user/logout" target="_blank"><?php echo t('LOG OUT'); ?></a></li>
+					<?php else: ?>
+						<li><a href="http://www.jaspersoft.com/user/login" target="_blank"><?php echo t('LOG IN'); ?></a></li>
+					<?php endif; ?>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container clearfix">
+			<header<?php print $header_attributes; ?>>
+
+				<?php if ($site_logo || $site_name || $site_slogan): ?>
+					<!-- start: Branding -->
+					<div<?php print $branding_attributes; ?>>
+
+						<?php if ($site_logo): ?>
+							<div id="logo">
+								<?php print $site_logo; ?>
+							</div>
+						<?php endif; ?>
+
+						<div id="button-nav" class="f-r">
+							<div id="community-links">
+								<a class="button blue small" href="http://community.jaspersoft.com/answers" target="_blank">Answers</a>
+								<a class="button blue small" href="http://community.jaspersoft.com/exchange" target="_blank">Exchange</a>
+								<a class="button blue small" href="http://community.jaspersoft.com/documentation" target="_blank">Docs</a>
+								<a class="button blue small" href="http://community.jaspersoft.com/wiki" target="_blank">Wiki</a>
+							</div>
+							<a id="download-button" class="button green ta-c w-full" href="/drupal7/download"><?php echo t('Try It Now'); ?></a>
+						</div>
+
+					</div><!-- /end #branding -->
+				<?php endif; ?>
+
+				<?php print render($page['header']); ?>
+
+			</header>
+
+			<div id="nav-wrapper" class="p-rel">
+				<div id="mobile-nav-trigger">&equiv;</div>
+				<?php print render($page['menu_bar']); ?>
+			</div>
+
+		</div>
+	</div>

@@ -1,0 +1,855 @@
+/*
+# Buttons
+
+Styleguide 1
+*/
+/** Color Defs **/
+/* Gradients */
+/** Color Defs **/
+/* Gradients */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000322}}
+.fw {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000327}}
+.fl {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000333}}
+img.alignright {
+  float: right;
+  margin: 0 0 0 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000334}}
+img.alignleft {
+  float: left;
+  margin: 0 2em 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000335}}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+# Type and Headings
+
+Styleguide 4
+*/
+/*
+# Heading 1
+
+Markup: <h1>Jaspersoft BI Suite</h1>
+
+Styleguide 4.1
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000327}}
+h1 {
+  color: #035585;
+  font: 400 36px/36px "futura-pt",sans-serif;
+  margin: 0 0 1em 0;
+  text-shadow: 0px 0px 1px rgba(3, 91, 133, 0.1);
+}
+
+/*
+# Heading 2
+
+Markup: <h2 class="$modifierClass">Awesome Cloud Analytics</h2>
+
+.blue - Blue Variant
+
+Styleguide 4.2
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000343}}
+h2 {
+  color: #bf5b08;
+  font: 400 24px/24px "futura-pt",sans-serif;
+  margin: 0 0 12px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000347}}
+h2.blue {
+  color: #0480ba;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000348}}
+h2.secondary-title {
+  color: #024666;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/*
+# Heading 3
+
+Markup: <h3 class="$modifierClass">Capabilities supported:</h3>
+
+.light 			- Alternate
+.block-title 	- Used in certain blocks
+
+Styleguide 4.3
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000367}}
+h3 {
+  color: #bf5b08;
+  font: 400 20px/20px "futura-pt", sans-serif;
+  margin: 0 0 12px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000371}}
+h3.blue {
+  color: #0480ba;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000372}}
+h3.light {
+  color: #ff9f30;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: -6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000378}}
+h3.block-title {
+  color: #024666;
+  font: 100 24px/1em "futura-pt",sans-serif;
+  text-shadow: 0px 0px 1px rgba(3, 91, 133, 0.61);
+}
+
+/*
+# Heading 4
+
+Markup: <h4>For Big Data Applications</h4>
+
+Styleguide 4.4
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000393}}
+h4 {
+  color: #555;
+  font: 100 18px/18px "futura-pt",sans-serif;
+  margin: 0 0 12px 0;
+  text-shadow: 0px 0px 1px rgba(70, 70, 70, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000398}}
+h4.secondary-sub-title {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0 auto;
+  text-align: center;
+  width: 55%;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000398}}
+  h4.secondary-sub-title {
+    width: 85%;
+  }
+}
+
+/*
+# Heading 5
+
+Markup: <h5>What is it?</h5>
+
+Styleguide 4.5
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\00003115}}
+h5 {
+  font: 500 14px/22px "futura-pt",sans-serif;
+  margin: 0;
+}
+
+/*
+# Heading 6
+
+Markup: <h6>Dashboards and Mashboards</h6>
+
+Styleguide 4.6
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\00003127}}
+h6 {
+  font: 500 12px/18px "futura-pt",sans-serif;
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000322}}
+.fw {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000327}}
+.fl {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000333}}
+img.alignright {
+  float: right;
+  margin: 0 0 0 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000334}}
+img.alignleft {
+  float: left;
+  margin: 0 2em 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000335}}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+# Button Style "No.2"
+
+The default button style for actionable items and forms.
+
+Markup: <a href="#_" class="button $modifierClass">Register Now</a>
+or
+<input type="submit" class="button $modifierClass" value="Submit" />
+
+.orange			- Orange
+.blue			- Blue
+
+Styleguide 1.1
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000331}}
+a.button, .button, button {
+  border: 1px solid #245c08;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font: 100 20px/22px "myriad-pro", sans-serif;
+  padding: 8px 20px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0px 1px 1px 0px #7cd450, 0px 4px 6px -3px #555555;
+  -moz-box-shadow: inset 0px 1px 1px 0px #7cd450, 0px 4px 6px -3px #555555;
+  box-shadow: inset 0px 1px 1px 0px #7cd450, 0px 4px 6px -3px #555555;
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwYWIyMiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PHN0b3Agb2Zmc2V0PSI3OCUiIHN0b3AtY29sb3I9IiMzMjczMTEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNDVjMDgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50ab22), color-stop(45%, #3f8c13), color-stop(78%, #327311), color-stop(100%, #245c08));
+  background-image: -webkit-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: -moz-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: -o-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000344}}
+a.button:hover, .button:hover, button:hover {
+  color: white;
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwYWIyMiIvPjxzdG9wIG9mZnNldD0iNzElIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PHN0b3Agb2Zmc2V0PSI5MiUiIHN0b3AtY29sb3I9IiMzMjczMTEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNDVjMDgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50ab22), color-stop(71%, #3f8c13), color-stop(92%, #327311), color-stop(100%, #245c08));
+  background-image: -webkit-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: -moz-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: -o-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000349}}
+a.button:active, .button:active, button:active {
+  color: white;
+  -webkit-box-shadow: inset 0px -1px 6px 0px #555555;
+  -moz-box-shadow: inset 0px -1px 6px 0px #555555;
+  box-shadow: inset 0px -1px 6px 0px #555555;
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI0NWMwOCIvPjxzdG9wIG9mZnNldD0iMzglIiBzdG9wLWNvbG9yPSIjMzI3MzExIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #245c08), color-stop(38%, #327311), color-stop(100%, #3f8c13));
+  background-image: -webkit-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: -moz-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: -o-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000355}}
+a.button.orange, .button.orange, button.orange {
+  border: 1px solid #963b06;
+  text-shadow: 2px 2px 4px #963b06;
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmODAxNyIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjYmY1YjA4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOTYzYjA2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8017), color-stop(64%, #bf5b08), color-stop(100%, #963b06));
+  background-image: -webkit-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: -moz-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: -o-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px #ffc37e, 0px 4px 6px -3px #555555;
+  -moz-box-shadow: inset 0px 1px 1px 0px #ffc37e, 0px 4px 6px -3px #555555;
+  box-shadow: inset 0px 1px 1px 0px #ffc37e, 0px 4px 6px -3px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000360}}
+a.button.orange:hover, .button.orange:hover, button.orange:hover {
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmODAxNyIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjYmY1YjA4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOTYzYjA2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8017), color-stop(75%, #bf5b08), color-stop(100%, #963b06));
+  background-image: -webkit-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: -moz-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: -o-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000361}}
+a.button.orange:active, .button.orange:active, button.orange:active {
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk2M2IwNiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2JmNWIwOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #963b06), color-stop(100%, #bf5b08));
+  background-image: -webkit-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: -moz-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: -o-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  -webkit-box-shadow: inset 0px -1px 6px 0px #555555;
+  -moz-box-shadow: inset 0px -1px 6px 0px #555555;
+  box-shadow: inset 0px -1px 6px 0px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000364}}
+a.button.blue, .button.blue, button.blue {
+  border: 1px solid #024666;
+  text-shadow: 2px 2px 4px #024666;
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjMDM1NTg1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDI0NjY2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(64%, #035585), color-stop(100%, #024666));
+  background-image: -webkit-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: -moz-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: -o-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px #92c6de, 0px 4px 6px -3px #555555;
+  -moz-box-shadow: inset 0px 1px 1px 0px #92c6de, 0px 4px 6px -3px #555555;
+  box-shadow: inset 0px 1px 1px 0px #92c6de, 0px 4px 6px -3px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000369}}
+a.button.blue:hover, .button.blue:hover, button.blue:hover {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjMDM1NTg1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDI0NjY2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(75%, #035585), color-stop(100%, #024666));
+  background-image: -webkit-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: -moz-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: -o-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000370}}
+a.button.blue:active, .button.blue:active, button.blue:active {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAyNDY2NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAzNTU4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #024666), color-stop(100%, #035585));
+  background-image: -webkit-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -moz-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -o-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: linear-gradient(top, #024666 0%, #035585 100%);
+  -webkit-box-shadow: inset 0px -1px 6px 0px #555555;
+  -moz-box-shadow: inset 0px -1px 6px 0px #555555;
+  box-shadow: inset 0px -1px 6px 0px #555555;
+}
+
+/*
+# Button Style "No.3"
+
+An alternate button style with action text.
+
+Markup:
+<a class="button3 $modifierClass grid12-3 nobb" href="#_">
+	<span class="button3-prefix">Take the Jaspersoft</span>
+	<span class="button3-action">Product Tour</span>
+</a>
+
+.orange			- Orange
+.blue			- Blue
+
+Styleguide 1.2
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\0000391}}
+a.button3, .button3 {
+  border: 1px solid #245c08;
+  cursor: pointer;
+  display: inline-block;
+  margin: 32px 3% 24px;
+  max-width: 320px;
+  padding: 16px 18px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: inset 0px 1px 1px 0px #7cd450, 0px 4px 6px -3px #555555;
+  -moz-box-shadow: inset 0px 1px 1px 0px #7cd450, 0px 4px 6px -3px #555555;
+  box-shadow: inset 0px 1px 1px 0px #7cd450, 0px 4px 6px -3px #555555;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwYWIyMiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PHN0b3Agb2Zmc2V0PSI3OCUiIHN0b3AtY29sb3I9IiMzMjczMTEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNDVjMDgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50ab22), color-stop(45%, #3f8c13), color-stop(78%, #327311), color-stop(100%, #245c08));
+  background-image: -webkit-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: -moz-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: -o-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003106}}
+a.button3:hover, .button3:hover {
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwYWIyMiIvPjxzdG9wIG9mZnNldD0iNzElIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PHN0b3Agb2Zmc2V0PSI5MiUiIHN0b3AtY29sb3I9IiMzMjczMTEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNDVjMDgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50ab22), color-stop(71%, #3f8c13), color-stop(92%, #327311), color-stop(100%, #245c08));
+  background-image: -webkit-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: -moz-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: -o-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003107}}
+a.button3:active, .button3:active {
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI0NWMwOCIvPjxzdG9wIG9mZnNldD0iMzglIiBzdG9wLWNvbG9yPSIjMzI3MzExIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #245c08), color-stop(38%, #327311), color-stop(100%, #3f8c13));
+  background-image: -webkit-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: -moz-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: -o-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  -webkit-box-shadow: inset 0px -1px 6px 0px #555555;
+  -moz-box-shadow: inset 0px -1px 6px 0px #555555;
+  box-shadow: inset 0px -1px 6px 0px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003109}}
+a.button3 .button3-prefix, .button3 .button3-prefix {
+  color: #245c08;
+  font: italic 20px/18px georgia, serif;
+  text-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003115}}
+a.button3 .button3-action, .button3 .button3-action {
+  color: white;
+  display: block;
+  font: 100 26px/18px "futura-pt",serif;
+  margin-top: 10px;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003123}}
+a.button3.cta, .button3.cta {
+  width: 27%;
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003123}}
+  a.button3.cta, .button3.cta {
+    width: 26%;
+  }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003129}}
+  a.button3.cta .button3-prefix, a.button3.cta .button3-action, .button3.cta .button3-prefix, .button3.cta .button3-action {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003123}}
+  a.button3.cta, .button3.cta {
+    width: 90%;
+    display: block;
+    margin: 24px auto;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003123}}
+  a.button3.cta, .button3.cta {
+    width: 90%;
+    display: block;
+    margin: 24px auto;
+    text-align: center;
+  }
+}
+@media only screen and (max-width: 320px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003123}}
+  a.button3.cta, .button3.cta {
+    width: 90%;
+    display: block;
+    margin: 24px auto;
+    text-align: center;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003136}}
+a.button3.orange, .button3.orange {
+  border: 1px solid #963b06;
+  text-shadow: 2px 2px 4px #963b06;
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmODAxNyIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjYmY1YjA4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOTYzYjA2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8017), color-stop(64%, #bf5b08), color-stop(100%, #963b06));
+  background-image: -webkit-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: -moz-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: -o-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px #ffc37e, 0px 4px 6px -3px #555555;
+  -moz-box-shadow: inset 0px 1px 1px 0px #ffc37e, 0px 4px 6px -3px #555555;
+  box-shadow: inset 0px 1px 1px 0px #ffc37e, 0px 4px 6px -3px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003141}}
+a.button3.orange:hover, .button3.orange:hover {
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmODAxNyIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjYmY1YjA4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOTYzYjA2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8017), color-stop(75%, #bf5b08), color-stop(100%, #963b06));
+  background-image: -webkit-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: -moz-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: -o-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003142}}
+a.button3.orange:active, .button3.orange:active {
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk2M2IwNiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2JmNWIwOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #963b06), color-stop(100%, #bf5b08));
+  background-image: -webkit-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: -moz-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: -o-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  -webkit-box-shadow: inset 0px -1px 6px 0px #555555;
+  -moz-box-shadow: inset 0px -1px 6px 0px #555555;
+  box-shadow: inset 0px -1px 6px 0px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003143}}
+a.button3.orange .button3-prefix, .button3.orange .button3-prefix {
+  color: #963b06;
+  text-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003146}}
+a.button3.blue, .button3.blue {
+  border: 1px solid #024666;
+  text-shadow: 2px 2px 4px #024666;
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjMDM1NTg1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDI0NjY2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(64%, #035585), color-stop(100%, #024666));
+  background-image: -webkit-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: -moz-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: -o-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  -webkit-box-shadow: inset 0px 1px 1px 0px #92c6de, 0px 4px 6px -3px #555555;
+  -moz-box-shadow: inset 0px 1px 1px 0px #92c6de, 0px 4px 6px -3px #555555;
+  box-shadow: inset 0px 1px 1px 0px #92c6de, 0px 4px 6px -3px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003151}}
+a.button3.blue:hover, .button3.blue:hover {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjMDM1NTg1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDI0NjY2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(75%, #035585), color-stop(100%, #024666));
+  background-image: -webkit-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: -moz-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: -o-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003152}}
+a.button3.blue:active, .button3.blue:active {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAyNDY2NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAzNTU4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #024666), color-stop(100%, #035585));
+  background-image: -webkit-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -moz-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -o-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: linear-gradient(top, #024666 0%, #035585 100%);
+  -webkit-box-shadow: inset 0px -1px 6px 0px #555555;
+  -moz-box-shadow: inset 0px -1px 6px 0px #555555;
+  box-shadow: inset 0px -1px 6px 0px #555555;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003153}}
+a.button3.blue .button3-prefix, .button3.blue .button3-prefix {
+  color: #024666;
+  text-shadow: none;
+}
+
+/*
+# Small & Very Small Button Style
+
+Buttons for use as UI elements where larger buttons don't make sense.
+These can be found in older views and ecommerce pages.
+
+Markup:
+<a class="js-button-grad $modifierClass">Add to Cart</a>
+
+.green			- Green
+.orange			- Orange
+.blue			- Blue
+.gray			- Gray
+.small			- Small Default
+.green.small	- Small Green
+.orange.small	- Small Orange
+.blue.small		- Small Blue
+.gray.small		- Small Gray
+
+Styleguide 1.3
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003178}}
+.js-button-grad {
+  border: solid 1px #024666;
+  color: white !important;
+  cursor: pointer;
+  display: inline-block;
+  font: 14px "MyriadProRegular",sans-serif;
+  outline: none;
+  padding: .5em 1em;
+  text-align: center;
+  text-decoration: none;
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzNTU4NSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAyNDY2NiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #035585), color-stop(100%, #024666));
+  background-image: -webkit-linear-gradient(top, #035585 0%, #024666 100%);
+  background-image: -moz-linear-gradient(top, #035585 0%, #024666 100%);
+  background-image: -o-linear-gradient(top, #035585 0%, #024666 100%);
+  background-image: linear-gradient(top, #035585 0%, #024666 100%);
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003192}}
+.js-button-grad.small {
+  padding: .2em 1em;
+  font-size: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003199}}
+.js-button-grad:hover, .js-button-grad.hover, .js-button-grad:focus {
+  text-decoration: none;
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAzNTU4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(100%, #035585));
+  background-image: -webkit-linear-gradient(top, #0480ba 0%, #035585 100%);
+  background-image: -moz-linear-gradient(top, #0480ba 0%, #035585 100%);
+  background-image: -o-linear-gradient(top, #0480ba 0%, #035585 100%);
+  background-image: linear-gradient(top, #0480ba 0%, #035585 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003204}}
+.js-button-grad:active {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAyNDY2NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAzNTU4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #024666), color-stop(100%, #035585));
+  background-image: -webkit-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -moz-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -o-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: linear-gradient(top, #024666 0%, #035585 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003208}}
+.js-button-grad.green {
+  border: 1px solid #327311;
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwYWIyMiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PHN0b3Agb2Zmc2V0PSI3OCUiIHN0b3AtY29sb3I9IiMzMjczMTEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNDVjMDgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50ab22), color-stop(45%, #3f8c13), color-stop(78%, #327311), color-stop(100%, #245c08));
+  background-image: -webkit-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: -moz-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: -o-linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+  background-image: linear-gradient(top, #50ab22 0%, #3f8c13 45%, #327311 78%, #245c08 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003211}}
+.js-button-grad.green:hover {
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzUwYWIyMiIvPjxzdG9wIG9mZnNldD0iNzElIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PHN0b3Agb2Zmc2V0PSI5MiUiIHN0b3AtY29sb3I9IiMzMjczMTEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyNDVjMDgiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #50ab22), color-stop(71%, #3f8c13), color-stop(92%, #327311), color-stop(100%, #245c08));
+  background-image: -webkit-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: -moz-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: -o-linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+  background-image: linear-gradient(top, #50ab22 0%, #3f8c13 71%, #327311 92%, #245c08 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003212}}
+.js-button-grad.green:active {
+  background-color: #50ab22;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF50AB22', endColorstr='#FF245C08');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI0NWMwOCIvPjxzdG9wIG9mZnNldD0iMzglIiBzdG9wLWNvbG9yPSIjMzI3MzExIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjM2Y4YzEzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #245c08), color-stop(38%, #327311), color-stop(100%, #3f8c13));
+  background-image: -webkit-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: -moz-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: -o-linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+  background-image: linear-gradient(top, #245c08 0%, #327311 38%, #3f8c13 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003215}}
+.js-button-grad.orange {
+  border: 1px solid #bf5b08;
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmODAxNyIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjYmY1YjA4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOTYzYjA2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8017), color-stop(64%, #bf5b08), color-stop(100%, #963b06));
+  background-image: -webkit-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: -moz-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: -o-linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+  background-image: linear-gradient(top, #ff8017 0%, #bf5b08 64%, #963b06 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003218}}
+.js-button-grad.orange:hover {
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmODAxNyIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjYmY1YjA4Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOTYzYjA2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ff8017), color-stop(75%, #bf5b08), color-stop(100%, #963b06));
+  background-image: -webkit-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: -moz-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: -o-linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+  background-image: linear-gradient(top, #ff8017 0%, #bf5b08 75%, #963b06 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003219}}
+.js-button-grad.orange:active {
+  background-color: #ff8017;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFFF8017', endColorstr='#FF963B06');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzk2M2IwNiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2JmNWIwOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #963b06), color-stop(100%, #bf5b08));
+  background-image: -webkit-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: -moz-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: -o-linear-gradient(top, #963b06 0%, #bf5b08 100%);
+  background-image: linear-gradient(top, #963b06 0%, #bf5b08 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003222}}
+.js-button-grad.blue {
+  border: 1px solid #035585;
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjMDM1NTg1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDI0NjY2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(64%, #035585), color-stop(100%, #024666));
+  background-image: -webkit-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: -moz-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: -o-linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+  background-image: linear-gradient(top, #0480ba 0%, #035585 64%, #024666 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003225}}
+.js-button-grad.blue:hover {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjMDM1NTg1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDI0NjY2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(75%, #035585), color-stop(100%, #024666));
+  background-image: -webkit-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: -moz-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: -o-linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+  background-image: linear-gradient(top, #0480ba 0%, #035585 75%, #024666 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003226}}
+.js-button-grad.blue:active {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAyNDY2NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAzNTU4NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #024666), color-stop(100%, #035585));
+  background-image: -webkit-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -moz-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: -o-linear-gradient(top, #024666 0%, #035585 100%);
+  background-image: linear-gradient(top, #024666 0%, #035585 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003229}}
+.js-button-grad.gray {
+  border: 1px solid #555555;
+  background-color: #ffffff;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3Nzc3NyIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjNTU1NTU1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzMzMzMzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #777777), color-stop(64%, #555555), color-stop(100%, #333333));
+  background-image: -webkit-linear-gradient(top, #777777 0%, #555555 64%, #333333 100%);
+  background-image: -moz-linear-gradient(top, #777777 0%, #555555 64%, #333333 100%);
+  background-image: -o-linear-gradient(top, #777777 0%, #555555 64%, #333333 100%);
+  background-image: linear-gradient(top, #777777 0%, #555555 64%, #333333 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003232}}
+.js-button-grad.gray:hover {
+  background-color: #ffffff;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3Nzc3NyIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjNTU1NTU1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzMzMzMzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #777777), color-stop(75%, #555555), color-stop(100%, #333333));
+  background-image: -webkit-linear-gradient(top, #777777 0%, #555555 75%, #333333 100%);
+  background-image: -moz-linear-gradient(top, #777777 0%, #555555 75%, #333333 100%);
+  background-image: -o-linear-gradient(top, #777777 0%, #555555 75%, #333333 100%);
+  background-image: linear-gradient(top, #777777 0%, #555555 75%, #333333 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003233}}
+.js-button-grad.gray:active {
+  background-color: #ffffff;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3Nzc3NyIvPjxzdG9wIG9mZnNldD0iNTElIiBzdG9wLWNvbG9yPSIjNTU1NTU1Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzMzMzMzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #777777), color-stop(51%, #555555), color-stop(100%, #333333));
+  background-image: -webkit-linear-gradient(top, #777777 0%, #555555 51%, #333333 100%);
+  background-image: -moz-linear-gradient(top, #777777 0%, #555555 51%, #333333 100%);
+  background-image: -o-linear-gradient(top, #777777 0%, #555555 51%, #333333 100%);
+  background-image: linear-gradient(top, #777777 0%, #555555 51%, #333333 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003236}}
+.js-button-grad.bold {
+  font-weight: 500;
+  text-shadow: 1px 1px #E67B0F;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/buttons\.scss}line{font-family:\00003241}}
+.js-button-grad submit {
+  padding: .4em 1em;
+}

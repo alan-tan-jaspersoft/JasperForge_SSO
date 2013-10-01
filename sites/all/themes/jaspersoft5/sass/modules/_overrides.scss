@@ -1,0 +1,45 @@
+
+// fix the tabledrag handle size due to border-box?
+a.tabledrag-handle .handle {
+	height: 24px;
+	width: 24px;
+}
+
+// admin textfields in tabgroups
+.vertical-tabs .form-type-textfield input {
+	display: block;
+}
+
+// slideshow pagers
+.field-slideshow-pager a {
+	background: $gray6;
+	border-bottom: 1px solid transparent!important;
+	color: transparent;
+	display: inline-block;
+	height: 0.5em;
+	margin: 0 0.25em;
+	width: 0.5em;
+	@include border-radius(10em);
+	&.activeSlide {	background: $gray4; }
+}
+
+// Chosen Selects 
+.chosen-container { font-size: 1em; }
+.chosen-container-single .chosen-single {
+	height: 2.5em;
+	line-height: 1.75em;
+	padding: 0.25em 0 0.25em 0.5em;
+	@include border-radius(3px); 
+	div b { margin-top: 0.5em; }	
+}
+
+// Field Collections
+.field-collection-view {
+	margin: 0;
+	padding: 0;
+}
+
+// Cluetips
+.cluetip-arrows {
+	top:1em!important;
+}

@@ -1,0 +1,29 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/panels\.scss}line{font-family:\000037}}
+.panel-row .region-frontresponsive-left-above,
+.panel-row .region-frontresponsive-middle-above,
+.panel-row .region-frontresponsive-right-above,
+.panel-row .region-frontresponsive-left-bottom,
+.panel-row .region-frontresponsive-middle-bottom,
+.region-frontresponsive-right-below,
+.panel-row .region-frontresponsive-right-bottom {
+  width: 33.33333%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/panels\.scss}line{font-family:\0000311}}
+.region-frontresponsive-left-above,
+.region-frontresponsive-left-below,
+.region-frontresponsive-left-bottom {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/panels\.scss}line{font-family:\0000312}}
+.region-frontresponsive-left-below {
+  width: 66.65%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/panels\.scss}line{font-family:\0000315}}
+.region-frontresponsive-right-above,
+.region-frontresponsive-right-below,
+.region-frontresponsive-right-bottom {
+  float: right;
+}

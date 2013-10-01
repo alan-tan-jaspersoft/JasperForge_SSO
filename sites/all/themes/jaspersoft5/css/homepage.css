@@ -1,0 +1,240 @@
+/** Styles which ONLY appear on the Home Page **/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000322}}
+.fw {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000327}}
+.fl {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000333}}
+img.alignright {
+  float: right;
+  margin: 0 0 0 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000334}}
+img.alignleft {
+  float: left;
+  margin: 0 2em 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000335}}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/** Color Defs **/
+/* Gradients */
+/** Color Defs **/
+/* Gradients */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000322}}
+.fw {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000327}}
+.fl {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000333}}
+img.alignright {
+  float: right;
+  margin: 0 0 0 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000334}}
+img.alignleft {
+  float: left;
+  margin: 0 2em 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000335}}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+# Type and Headings
+
+Styleguide 4
+*/
+/*
+# Heading 1
+
+Markup: <h1>Jaspersoft BI Suite</h1>
+
+Styleguide 4.1
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000327}}
+h1 {
+  color: #035585;
+  font: 400 36px/36px "futura-pt",sans-serif;
+  margin: 0 0 1em 0;
+  text-shadow: 0px 0px 1px rgba(3, 91, 133, 0.1);
+}
+
+/*
+# Heading 2
+
+Markup: <h2 class="$modifierClass">Awesome Cloud Analytics</h2>
+
+.blue - Blue Variant
+
+Styleguide 4.2
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000343}}
+h2 {
+  color: #bf5b08;
+  font: 400 24px/24px "futura-pt",sans-serif;
+  margin: 0 0 12px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000347}}
+h2.blue {
+  color: #0480ba;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000348}}
+h2.secondary-title {
+  color: #024666;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/*
+# Heading 3
+
+Markup: <h3 class="$modifierClass">Capabilities supported:</h3>
+
+.light 			- Alternate
+.block-title 	- Used in certain blocks
+
+Styleguide 4.3
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000367}}
+h3 {
+  color: #bf5b08;
+  font: 400 20px/20px "futura-pt", sans-serif;
+  margin: 0 0 12px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000371}}
+h3.blue {
+  color: #0480ba;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000372}}
+h3.light {
+  color: #ff9f30;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: -6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000378}}
+h3.block-title {
+  color: #024666;
+  font: 100 24px/1em "futura-pt",sans-serif;
+  text-shadow: 0px 0px 1px rgba(3, 91, 133, 0.61);
+}
+
+/*
+# Heading 4
+
+Markup: <h4>For Big Data Applications</h4>
+
+Styleguide 4.4
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000393}}
+h4 {
+  color: #555;
+  font: 100 18px/18px "futura-pt",sans-serif;
+  margin: 0 0 12px 0;
+  text-shadow: 0px 0px 1px rgba(70, 70, 70, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000398}}
+h4.secondary-sub-title {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0 auto;
+  text-align: center;
+  width: 55%;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000398}}
+  h4.secondary-sub-title {
+    width: 85%;
+  }
+}
+
+/*
+# Heading 5
+
+Markup: <h5>What is it?</h5>
+
+Styleguide 4.5
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\00003115}}
+h5 {
+  font: 500 14px/22px "futura-pt",sans-serif;
+  margin: 0;
+}
+
+/*
+# Heading 6
+
+Markup: <h6>Dashboards and Mashboards</h6>
+
+Styleguide 4.6
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\00003127}}
+h6 {
+  font: 500 12px/18px "futura-pt",sans-serif;
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/homepage\.scss}line{font-family:\000038}}
+.view-home-page-banner {
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/homepage\.scss}line{font-family:\0000311}}
+.view-home-page-banner .views-field-field-banner-headline {
+  color: #035585;
+  font: 600 44px/64px "futura-pt";
+  height: 50%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 10%;
+  width: 50%;
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/homepage\.scss}line{font-family:\0000311}}
+  .view-home-page-banner .views-field-field-banner-headline {
+    font-size: 34px;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/homepage\.scss}line{font-family:\0000326}}
+.view-home-page-banner .views-field-field-banner-subheading {
+  border-top: 4px solid #035585;
+  color: #bf5b08;
+  font: 400 16px/22px "ff-dagny-web-pro", sans-serif;
+  padding: 10px 180px 0 10px;
+  position: absolute;
+  right: 0;
+  top: 280px;
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/homepage\.scss}line{font-family:\0000339}}
+.view-home-page-banner .views-field-field-link-1 {
+  position: absolute;
+  right: 24px;
+  top: 295px;
+}

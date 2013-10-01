@@ -1,0 +1,851 @@
+/** Color Defs **/
+/* Gradients */
+/** Color Defs **/
+/* Gradients */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000322}}
+.fw {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000327}}
+.fl {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000333}}
+img.alignright {
+  float: right;
+  margin: 0 0 0 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000334}}
+img.alignleft {
+  float: left;
+  margin: 0 2em 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000335}}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*
+# Type and Headings
+
+Styleguide 4
+*/
+/*
+# Heading 1
+
+Markup: <h1>Jaspersoft BI Suite</h1>
+
+Styleguide 4.1
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000327}}
+h1 {
+  color: #035585;
+  font: 400 36px/36px "futura-pt",sans-serif;
+  margin: 0 0 1em 0;
+  text-shadow: 0px 0px 1px rgba(3, 91, 133, 0.1);
+}
+
+/*
+# Heading 2
+
+Markup: <h2 class="$modifierClass">Awesome Cloud Analytics</h2>
+
+.blue - Blue Variant
+
+Styleguide 4.2
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000343}}
+h2 {
+  color: #bf5b08;
+  font: 400 24px/24px "futura-pt",sans-serif;
+  margin: 0 0 12px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000347}}
+h2.blue {
+  color: #0480ba;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000348}}
+h2.secondary-title {
+  color: #024666;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/*
+# Heading 3
+
+Markup: <h3 class="$modifierClass">Capabilities supported:</h3>
+
+.light 			- Alternate
+.block-title 	- Used in certain blocks
+
+Styleguide 4.3
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000367}}
+h3 {
+  color: #bf5b08;
+  font: 400 20px/20px "futura-pt", sans-serif;
+  margin: 0 0 12px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000371}}
+h3.blue {
+  color: #0480ba;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000372}}
+h3.light {
+  color: #ff9f30;
+  font-size: 18px;
+  font-style: italic;
+  margin-top: -6px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000378}}
+h3.block-title {
+  color: #024666;
+  font: 100 24px/1em "futura-pt",sans-serif;
+  text-shadow: 0px 0px 1px rgba(3, 91, 133, 0.61);
+}
+
+/*
+# Heading 4
+
+Markup: <h4>For Big Data Applications</h4>
+
+Styleguide 4.4
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000393}}
+h4 {
+  color: #555;
+  font: 100 18px/18px "futura-pt",sans-serif;
+  margin: 0 0 12px 0;
+  text-shadow: 0px 0px 1px rgba(70, 70, 70, 0.2);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000398}}
+h4.secondary-sub-title {
+  font-size: 20px;
+  line-height: 26px;
+  margin: 0 auto;
+  text-align: center;
+  width: 55%;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\0000398}}
+  h4.secondary-sub-title {
+    width: 85%;
+  }
+}
+
+/*
+# Heading 5
+
+Markup: <h5>What is it?</h5>
+
+Styleguide 4.5
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\00003115}}
+h5 {
+  font: 500 14px/22px "futura-pt",sans-serif;
+  margin: 0;
+}
+
+/*
+# Heading 6
+
+Markup: <h6>Dashboards and Mashboards</h6>
+
+Styleguide 4.6
+*/
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/type\.scss}line{font-family:\00003127}}
+h6 {
+  font: 500 12px/18px "futura-pt",sans-serif;
+  margin: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000322}}
+.fw {
+  width: 100%;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000327}}
+.fl {
+  float: left;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000333}}
+img.alignright {
+  float: right;
+  margin: 0 0 0 2em;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000334}}
+img.alignleft {
+  float: left;
+  margin: 0 2em 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/helpers\.scss}line{font-family:\0000335}}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000318}}
+.container {
+  *zoom: 1;
+  max-width: 70em;
+  _width: 70em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-position: left top;
+  -webkit-background-origin: content;
+  -moz-background-origin: content;
+  -ms-background-origin: content-box;
+  -o-background-origin: content-box;
+  background-origin: content-box;
+  -webkit-background-clip: content-box;
+  -moz-background-clip: content-box;
+  background-clip: content-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/lib64\/ruby\/gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000326}}
+.container.product-feature p {
+  color: #555555;
+  display: inline-block;
+  font: 400 18px/26px "franklin-gothic-urw", sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000331}}
+.container.product-feature p img {
+  margin-top: -12px;
+}
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000331}}
+  .container.product-feature p img {
+    width: 390px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000331}}
+  .container.product-feature p img {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 321px) and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000331}}
+  .container.product-feature p img {
+    display: block;
+    float: none;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 320px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000331}}
+  .container.product-feature p img {
+    display: block;
+    float: none;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000342}}
+.container.section-menu-wrapper {
+  height: 48px;
+  position: relative;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000350}}
+.edition-container {
+  border-bottom: 1px solid #d9d9d9;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000354}}
+.edition-container .container {
+  padding: 52px 0;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000358}}
+.edition-container .container img {
+  display: block;
+  margin: 32px auto 0;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000358}}
+  .edition-container .container img {
+    width: 70%;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000365}}
+.edition-container .container .edition-video {
+  margin: 32px auto 0;
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000367}}
+.edition-container .container .product-box {
+  background: #FFFFFF;
+  border: 1px solid #c7c7c7;
+  font-size: 16px;
+  line-height: 22px;
+  list-style: none;
+  padding: 10px 12px 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000376}}
+.edition-container .container .product-box .product-box-title {
+  color: #bf5b08;
+  display: block;
+  font-size: 22px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000384}}
+.edition-container .container .product-box ul {
+  margin-left: 18px;
+  margin-top: 12px;
+  overflow: auto;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000389}}
+.edition-container .container .product-box ul li {
+  float: left;
+  list-style: none;
+  width: 204px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\0000394}}
+.edition-container .container .product-box ul li a {
+  font-size: 17px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003102}}
+.edition-container .container-wrapper-background {
+  background-position: 0px -377px;
+  background-size: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+}
+@media only screen and (max-width: 1024px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003102}}
+  .edition-container .container-wrapper-background {
+    background-size: auto;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003116}}
+dl.feature-list {
+  font-family: "futura-pt", sans-serif;
+  display: inline-block;
+  margin: 30px 20px 0 60px;
+  width: 41%;
+  vertical-align: top;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003116}}
+  dl.feature-list {
+    width: auto;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003125}}
+dl.feature-list dt {
+  color: #0480ba;
+  font: 400 18px/21px "ff-dagny-web-pro", sans-serif;
+  padding-left: 26px;
+  position: relative;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003131}}
+dl.feature-list dt:before {
+  color: #ff8017;
+  font-family: "js-icons";
+  font-size: 40px;
+  left: -40px;
+  position: absolute;
+  top: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003141}}
+dl.feature-list dd {
+  color: #555555;
+  font: 400 15px/21px "ff-dagny-web-pro", sans-serif;
+  margin: 6px 0 12px -26px;
+  min-height: 80px;
+  padding-left: 53px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003152}}
+q.edition-quote {
+  color: #FFFFFF;
+  font-family: "futura-pt", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  padding: 14px 10px;
+  position: absolute;
+  text-align: center;
+  top: 300px;
+  width: 240px;
+  z-index: 0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003166}}
+q.edition-quote cite {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003173}}
+q.edition-quote:before, q.edition-quote:after {
+  content: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003175}}
+q.edition-quote.quote-left {
+  background: #035585;
+  left: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003176}}
+q.edition-quote.quote-right {
+  background: #bf5b08;
+  right: 0px;
+  margin-top: 10px;
+}
+@media only screen and (max-width: 1024px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003152}}
+  q.edition-quote {
+    display: block;
+    margin: 18px auto;
+    position: relative;
+    top: 0;
+    width: 70%;
+  }
+}
+@media only screen and (max-width: 480px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003152}}
+  q.edition-quote {
+    width: 90%;
+  }
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003188}}
+.edition-header {
+  background: #ecf5fb;
+  font-family: "futura-pt", sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003191}}
+.edition-header img {
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003193}}
+.edition-header .edition-header-left {
+  display: inline-block;
+  float: left;
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003193}}
+  .edition-header .edition-header-left {
+    display: none;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003201}}
+.edition-header .edition-header-right {
+  display: inline-block;
+  margin-left: 5%;
+  width: 45%;
+}
+@media only screen and (max-width: 768px) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003201}}
+  .edition-header .edition-header-right {
+    margin-left: 18px;
+    width: auto;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003211}}
+.edition-header .description-wrapper {
+  color: #024666;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  padding: 0 18px 0 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003221}}
+.edition-tooltip-trigger {
+  height: 25%;
+  position: absolute;
+  width: 40%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003225}}
+.edition-tooltip-trigger:hover .edition-tooltip {
+  display: block;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003228}}
+.edition-tooltip {
+  background: #050505;
+  background: rgba(5, 5, 5, 0.8);
+  color: #FFFFFF;
+  display: none;
+  font-size: 16px;
+  padding: 12px;
+  position: absolute;
+  text-align: center;
+  width: 270px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003241}}
+.edition-tooltip:after {
+  border-color: #050505 transparent transparent transparent;
+  border-color: rgba(5, 5, 5, 0.8) transparent transparent transparent;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  bottom: -10px;
+  content: ' ';
+  display: block;
+  height: 0px;
+  position: absolute;
+  width: 0px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003254}}
+.edition-tooltip.top:after {
+  border-color: transparent transparent #050505 transparent;
+  border-color: transparent transparent rgba(5, 5, 5, 0.8) transparent;
+  border-width: 0 10px 10px 10px;
+  top: -10px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003262}}
+#relational-trigger {
+  left: 20px;
+  top: 180px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003263}}
+#relational-tip {
+  left: -70px;
+  top: 100px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003264}}
+#relational-tip:after {
+  left: 148px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003265}}
+#analysis-trigger {
+  left: 30px;
+  top: 373px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003266}}
+#analysis-tip {
+  bottom: 100%;
+  left: -60px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003267}}
+#analysis-tip:after {
+  left: 134px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003268}}
+#dimensional-trigger {
+  right: 20px;
+  top: 180px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003269}}
+#dimensional-tip {
+  right: -50px;
+  top: 100px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003270}}
+#dimensional-tip:after {
+  left: 134px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003271}}
+#interactive-trigger {
+  right: 30px;
+  top: 390px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003272}}
+#interactive-tip {
+  bottom: 100%;
+  right: -50px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003273}}
+#interactive-tip:after {
+  left: 116px;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003277}}
+#editions-table {
+  background: #f7f7f7;
+  font-family: "futura-pt";
+  margin: 0 auto;
+  width: 900px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003283}}
+#editions-table tr {
+  border-bottom: 1px solid #c7c7c7;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003286}}
+#editions-table tr th {
+  background: #f2f2f2;
+  border: none;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 6px;
+  position: relative;
+  text-align: center;
+  width: 12%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003297}}
+#editions-table tr td {
+  border-right: 1px solid #d9d9d9;
+  text-align: center;
+  width: 12%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003302}}
+#editions-table tr td.cell-blank {
+  background: #FFFFFF;
+  border: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003307}}
+#editions-table tr td.row-header {
+  color: #333333;
+  font-size: 14px;
+  padding-left: 20px;
+  position: relative;
+  text-align: left;
+  width: 40%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003318}}
+#editions-table tr.heading-row {
+  background: #e5e5e5;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003321}}
+#editions-table tr.heading-row td {
+  color: #035585;
+  font-size: 16px;
+  text-align: left;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003329}}
+#editions-table .editions-info-trigger {
+  background: url(/imgRoot/blue_question.png);
+  cursor: pointer;
+  display: block;
+  height: 16px;
+  float: right;
+  margin-right: 4px;
+  position: relative;
+  width: 12px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003340}}
+#editions-table .editions-info-wrapper {
+  background: #FFFFFF;
+  border: 1px solid #acacac;
+  display: none;
+  margin-left: 26px;
+  margin-top: -7px;
+  min-width: 314px;
+  position: relative;
+  z-index: 2;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003351}}
+#editions-table .editions-info {
+  font-size: 12px;
+  padding: 1em;
+  text-align: center;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003357}}
+#editions-table .editions-info-close {
+  cursor: pointer;
+  float: right;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003362}}
+#editions-table .editions-info-title {
+  background: #0480ba;
+  color: #FFFFFF;
+  padding: 6px 16px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003368}}
+#editions-table .editions-info-triangle {
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-right: 14px solid #0480ba;
+  height: 0;
+  left: -14px;
+  position: absolute;
+  top: 0;
+  width: 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003379}}
+#editions-table .round-check {
+  background: url(/imgRoot/round_check.png) no-repeat -2px -2px;
+  display: inline-block;
+  height: 20px;
+  margin-bottom: -5px;
+  margin-top: 6px;
+  width: 20px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003388}}
+#editions-table .check-wrapper {
+  height: 32px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003390}}
+#editions-table .color-bar-1, #editions-table .color-bar-2 {
+  background: #ff9f30;
+  position: absolute;
+  height: 4px;
+  left: 0px;
+  top: -4px;
+  width: 100%;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003399}}
+#editions-table .color-bar-2 {
+  background: #035585;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003407}}
+.ss-container {
+  *zoom: 1;
+  max-width: 70em;
+  _width: 70em;
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-position: left top;
+  -webkit-background-origin: content;
+  -moz-background-origin: content;
+  -ms-background-origin: content-box;
+  -o-background-origin: content-box;
+  background-origin: content-box;
+  -webkit-background-clip: content-box;
+  -moz-background-clip: content-box;
+  background-clip: content-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/usr\/lib64\/ruby\/gems\/1\.8\/gems\/compass-0\.12\.2\/frameworks\/compass\/stylesheets\/compass\/utilities\/general\/_clearfix\.scss}line{font-family:\0000338}}
+.ss-container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003411}}
+.ss-container .test-content {
+  display: block;
+  background: red;
+  height: 20px;
+  width: 82.85714%;
+  float: left;
+  margin-right: 2.85714%;
+  display: inline;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(100, 100, 225, 0.25)), color-stop(5.71429%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(0, 0, 0, 0)), color-stop(8.57143%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(100, 100, 225, 0.25)), color-stop(14.28571%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(0, 0, 0, 0)), color-stop(17.14286%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(100, 100, 225, 0.25)), color-stop(22.85714%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(0, 0, 0, 0)), color-stop(25.71429%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(100, 100, 225, 0.25)), color-stop(31.42857%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(0, 0, 0, 0)), color-stop(34.28571%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(100, 100, 225, 0.25)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(0, 0, 0, 0)), color-stop(42.85714%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(100, 100, 225, 0.25)), color-stop(48.57143%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(0, 0, 0, 0)), color-stop(51.42857%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(100, 100, 225, 0.25)), color-stop(57.14286%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(100, 100, 225, 0.25)), color-stop(65.71429%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(0, 0, 0, 0)), color-stop(68.57143%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(100, 100, 225, 0.25)), color-stop(74.28571%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(0, 0, 0, 0)), color-stop(77.14286%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(100, 100, 225, 0.25)), color-stop(82.85714%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(0, 0, 0, 0)), color-stop(85.71429%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(100, 100, 225, 0.25)), color-stop(91.42857%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(0, 0, 0, 0)), color-stop(94.28571%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(100, 100, 225, 0.25)), color-stop(100.0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-image: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(100, 100, 225, 0.25) 0%, rgba(100, 100, 225, 0.25) 5.71429%, rgba(0, 0, 0, 0) 5.71429%, rgba(0, 0, 0, 0) 8.57143%, rgba(100, 100, 225, 0.25) 8.57143%, rgba(100, 100, 225, 0.25) 14.28571%, rgba(0, 0, 0, 0) 14.28571%, rgba(0, 0, 0, 0) 17.14286%, rgba(100, 100, 225, 0.25) 17.14286%, rgba(100, 100, 225, 0.25) 22.85714%, rgba(0, 0, 0, 0) 22.85714%, rgba(0, 0, 0, 0) 25.71429%, rgba(100, 100, 225, 0.25) 25.71429%, rgba(100, 100, 225, 0.25) 31.42857%, rgba(0, 0, 0, 0) 31.42857%, rgba(0, 0, 0, 0) 34.28571%, rgba(100, 100, 225, 0.25) 34.28571%, rgba(100, 100, 225, 0.25) 40%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 42.85714%, rgba(100, 100, 225, 0.25) 42.85714%, rgba(100, 100, 225, 0.25) 48.57143%, rgba(0, 0, 0, 0) 48.57143%, rgba(0, 0, 0, 0) 51.42857%, rgba(100, 100, 225, 0.25) 51.42857%, rgba(100, 100, 225, 0.25) 57.14286%, rgba(0, 0, 0, 0) 57.14286%, rgba(0, 0, 0, 0) 60%, rgba(100, 100, 225, 0.25) 60%, rgba(100, 100, 225, 0.25) 65.71429%, rgba(0, 0, 0, 0) 65.71429%, rgba(0, 0, 0, 0) 68.57143%, rgba(100, 100, 225, 0.25) 68.57143%, rgba(100, 100, 225, 0.25) 74.28571%, rgba(0, 0, 0, 0) 74.28571%, rgba(0, 0, 0, 0) 77.14286%, rgba(100, 100, 225, 0.25) 77.14286%, rgba(100, 100, 225, 0.25) 82.85714%, rgba(0, 0, 0, 0) 82.85714%, rgba(0, 0, 0, 0) 85.71429%, rgba(100, 100, 225, 0.25) 85.71429%, rgba(100, 100, 225, 0.25) 91.42857%, rgba(0, 0, 0, 0) 91.42857%, rgba(0, 0, 0, 0) 94.28571%, rgba(100, 100, 225, 0.25) 94.28571%, rgba(100, 100, 225, 0.25) 100.0%, rgba(0, 0, 0, 0) 100.0%, rgba(0, 0, 0, 0) 100%);
+  background-position: left top;
+  -webkit-background-origin: content;
+  -moz-background-origin: content;
+  -ms-background-origin: content-box;
+  -o-background-origin: content-box;
+  background-origin: content-box;
+  -webkit-background-clip: content-box;
+  -moz-background-clip: content-box;
+  background-clip: content-box;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003419}}
+.ss-container .test-content1 {
+  display: block;
+  background: blue;
+  height: 20px;
+  width: 14.28571%;
+  float: left;
+  margin-right: 2.85714%;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003426}}
+.ss-container .test-content2 {
+  display: block;
+  background: green;
+  height: 20px;
+  width: 48.57143%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -2em;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003433}}
+.ss-container .test-content4 {
+  display: block;
+  background: yellow;
+  height: 20px;
+  width: 64.70588%;
+  float: left;
+  margin-right: 5.88235%;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003440}}
+.ss-container .test-content5 {
+  display: block;
+  background: orange;
+  height: 20px;
+  width: 11.76471%;
+  float: right;
+  margin-right: 0;
+  *margin-left: -2em;
+  display: inline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/html\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/pages\.scss}line{font-family:\00003447}}
+.ss-container .test-content6 {
+  display: block;
+  background: pink;
+  height: 20px;
+  clear: both;
+}

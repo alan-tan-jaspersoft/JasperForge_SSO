@@ -1,0 +1,16 @@
+#page-title { display: none; }
+form#user-login, form#user-pass
+{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form#jasperforge-sso-server-reg-form
+{
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form#jasperforge-sso-server-reg-form #sso-reset-pass  {  margin-bottom: 20px; }

@@ -1,0 +1,17 @@
+#panels-dnd-main .region {margin-bottom: 5px}
+
+#panels-dnd-main .panel-row .region-frontresponsive-left-above,
+#panels-dnd-main .panel-row .region-frontresponsive-middle-above,
+#panels-dnd-main .panel-row .region-frontresponsive-right-above,
+#panels-dnd-main .panel-row .region-frontresponsive-left-bottom,
+#panels-dnd-main .panel-row .region-frontresponsive-middle-bottom,
+#panels-dnd-main .region-frontresponsive-right-below,
+#panels-dnd-main .panel-row .region-frontresponsive-right-bottom {width: 33.33333%}
+
+#panels-dnd-main .region-frontresponsive-left-above,
+#panels-dnd-main .region-frontresponsive-left-below,
+#panels-dnd-main .region-frontresponsive-left-bottom {float: left}
+#panels-dnd-main .region-frontresponsive-left-below { width: 66.65% }
+#panels-dnd-main .region-frontresponsive-right-above,
+#panels-dnd-main .region-frontresponsive-right-below,
+#panels-dnd-main .region-frontresponsive-right-bottom {float: right}

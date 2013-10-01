@@ -1,0 +1,151 @@
+/** Color Defs **/
+
+$green1: #245C08;
+$green2: #327311;
+$green3: #3F8C13;
+$green4: #50AB22;
+$green5: #7CD450;
+
+$orange1: #963B06;
+$orange2: #BF5B08;
+$orange25: #D76609;
+$orange3: #FF8017;
+$orange4: #FF9F30;
+$orange5: #FFC37E;
+
+$blue1: #024666;
+$blue2: #035585;
+$blue3: #0480BA;
+$blue4: #92C6DE;
+$blue5: #BCDCEB;
+$blue6: #DCEFFB;
+$blue7: #ECF5FB;
+
+$blue-special1: #043565;
+$blue-special2: #002646;
+$blue-menu-btm: #003b64;
+
+$gray1: #333333;
+$gray2: #555555;
+$gray3: #777777;
+$gray4: #ACACAC;
+$gray5: #C7C7C7;
+$gray6: #D9D9D9;
+$gray7: #E5E5E5;
+$gray8: #F2F2F2;
+$gray9: #F7F7F7;
+
+
+/* Gradients (Legacy) */
+/*
+
+@mixin gray-gradient($type: 'normal') {
+	background-color: #ffffff;
+	$experimental-support-for-svg: true;
+	@if $type == 'normal' {
+		@include background-image(linear-gradient(top,  $gray3 0%,$gray2 64%,$gray1 100%));
+	} @else if $type == 'hover' {
+		@include background-image(linear-gradient(top,  $gray3 0%,$gray2 75%,$gray1 100%));
+	} @else if $type == 'active' {
+		@include background-image(linear-gradient(top,  $gray3 0%,$gray2 51%,$gray1 100%));
+	} @else if $type == 'wide-medium' {
+		@include filter-gradient(#ffffff, #cccccc, horizontal);
+		@include background-image(linear-gradient(left,  #ffffff 0%,#b3b3b3 30%,#cccccc 100%));
+	} @else if $type == 'wide-light' {
+		@include filter-gradient(#ffffff, #e6e6e6, horizontal);
+		@include background-image(linear-gradient(left,  #ffffff 0%,#e6e6e6 100%));
+	} @else if $type == 'vert-light' {
+		@include filter-gradient($gray9, $gray8, vertical);
+		@include background-image(linear-gradient(top,  $gray9 0%,$gray8 100%));
+	}
+}
+
+@mixin green-gradient($type: 'normal') {
+	background-color: $green4;
+	@include filter-gradient($green4, $green1, vertical);
+	@if $type == 'normal' {
+		@include background-image(linear-gradient(top, $green4 0%,$green3 45%,$green2 78%,$green1 100%));
+	} @else if $type == 'hover' {
+		@include background-image(linear-gradient(top,  $green4 0%,$green3 71%,$green2 92%,$green1 100%));
+	} @else if $type == 'active' {
+		@include background-image(linear-gradient(top,  $green1 0%,$green2 38%,$green3 100%));
+	}
+}
+
+@mixin orange-gradient($type: 'normal') {
+	background-color: $orange3;
+	@include filter-gradient($orange3, $orange1, vertical);
+	@if $type == 'normal' {
+		@include background-image(linear-gradient(top,  $orange3 0%,$orange2 64%,$orange1 100%));
+	} @else if $type == 'hover' {
+		@include background-image(linear-gradient(top,  $orange3 0%,$orange2 75%,$orange1 100%));
+	} @else if $type == 'active' {
+		@include background-image(linear-gradient(top,  $orange1 0%,$orange2 100%));
+	}
+}
+
+@mixin blue-gradient($type: 'normal') {
+	background-color: $blue3;
+	@include filter-gradient($blue3, $blue1, vertical);
+	@if $type == 'normal' {
+		@include background-image(linear-gradient(top,  $blue3 0%,$blue2 64%,$blue1 100%));
+	} @else if $type == 'hover' {
+		@include background-image(linear-gradient(top,  $blue3 0%,$blue2 75%,$blue1 100%));
+	} @else if $type == 'active' {
+		@include background-image(linear-gradient(top,  $blue1 0%,$blue2 100%));
+	} @else if $type == 'dark' {
+		@include background-image(linear-gradient(top,  $blue2 0%,$blue1 100%));
+	} @else if $type == 'dark-hover' {
+		@include background-image(linear-gradient(top,  $blue3 0%,$blue2 100%));
+	} @else if $type == 'dark-active' {
+		@include background-image(linear-gradient(top,  $blue1 0%,$blue2 100%));
+	} @else if $type == 'menu-hover' {
+		background-color: #0075bf;
+		@include filter-gradient(#0075bf, #003b64, vertical);
+		@include background-image(linear-gradient(top,  #0075bf 0%,#00538c 64%,#003b64 100%));
+	} @else if $type == 'medium' {
+		background-color: $blue2;
+		@include filter-gradient($blue2, $blue-special1, vertical);
+		@include background-image(linear-gradient(top, $blue2 0%, $blue-special1 100%))
+	}
+}
+*/
+
+
+@mixin blue-gradient($type: 'normal') {
+	background-color: $blue3;
+	@include filter-gradient($blue3, $blue1, vertical);
+	@if $type == 'normal' {
+		@include background-image(linear-gradient(top,  $blue3 0%,$blue2 64%,$blue1 100%));
+	} @else if $type == 'menu-hover' {
+		background-color: #0075bf;
+		@include filter-gradient(#0075bf, #003b64, vertical);
+		@include background-image(linear-gradient(top,  #0075bf 0%,#00538c 64%,#003b64 100%));
+	} @else if $type == 'medium' {
+		background-color: $blue2;
+		@include filter-gradient($blue2, $blue-special1, vertical);
+		@include background-image(linear-gradient(top, $blue2 0%, $blue-special1 100%))
+	}
+}
+
+@mixin gray-gradient($type: 'normal') {
+	background-color: #ffffff;
+	@if $type == 'normal' {
+		@include background-image(linear-gradient(top,  $gray3 0%,$gray2 64%,$gray1 100%));
+	} @else if $type == 'wide-medium' {
+		@include filter-gradient(#ffffff, #cccccc, horizontal);
+		@include background-image(linear-gradient(left,  #ffffff 0%,#b3b3b3 30%,#cccccc 100%));
+	} @else if $type == 'dark-div' {
+		@include filter-gradient($gray1, $gray6, horizontal);
+		@include background-image(linear-gradient(left,  rgba($gray5,0) 0%, $gray5 50%, rgba($gray5,0) 100%));
+	} @else if $type == 'wide-light' {
+		@include filter-gradient(#ffffff, #e6e6e6, horizontal);
+		@include background-image(linear-gradient(left,  #ffffff 0%,#e6e6e6 100%));
+	} @else if $type == 'vert-light' {
+		@include filter-gradient($gray9, $gray8, vertical);
+		@include background-image(linear-gradient(top,  $gray9 0%,$gray8 100%));
+	} @else if $type == 'vert-medium' {
+		@include filter-gradient($gray8, $gray5, vertical);
+		@include background-image(linear-gradient(top,  $gray8 0%,$gray5 100%));
+	}
+}

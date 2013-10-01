@@ -1,0 +1,175 @@
+.media {
+	@include cf;
+	&.reverse .media-img,
+	&.stack:nth-child(even) .media-img {
+		@include at-breakpoint(40em 12) { 
+			float: right;
+			margin-left: $gutter-width;
+			margin-right: inherit;
+		}
+	}
+	&>.media-img { 
+		float: left; 
+		margin-right: $gutter-width; 
+		@include at-breakpoint(12 40em) {
+			float:none;
+			margin: 0.5em auto;
+			max-width: 100%;
+			text-align: center;
+			img { max-width: 100%; }
+		}
+		&.large {
+			@include at-breakpoint(40em 12 60em) {
+				width:50%;
+				img { width: 100%; }
+			}
+		}
+	}
+	&>.media-body { 
+		display: table-cell;
+		vertical-align: top;
+		width: 10000px!important;
+		@include at-breakpoint(12 40em) {
+			text-align:center;
+		}
+	}
+}
+
+.flag {
+    display: table;
+	.flag-img,
+	.flag-body { display: table-cell; vertical-align: middle; }
+	.flag-img {
+		padding-right: 10px;
+		.reverse & { padding-right: 0; padding-left: 10px; }
+	}
+	.flag-body { text-align: center; }
+}
+
+.js-block {
+	margin-bottom: $gutter-width;
+	
+	.js-block-top { padding: 0.5em 1em 0; }
+	.js-block-content { padding: 0.5em 1em;}
+	
+	&.feature {
+		background: #FFFFFF;
+		@include box-shadow(0px 0px 3px 1px $gray4);
+		.js-block-bottom { 
+			background: $gray9;
+			border-top: 1px solid $gray6;
+			overflow: auto;
+			a { float: right; margin: 0.5em 1em; }
+		}	
+		@include at-breakpoint(48em 12) {
+			&:nth-child(odd) { @include span-columns($total-columns/2); }
+			&:nth-child(even) { @include span-columns($total-columns/2 omega); }
+		}
+		@include at-breakpoint(12 30em) { text-align: center; }
+	}
+	
+	&.blue-rounded {
+		background: $blue1;
+		margin-top: 1em;
+		@include border-radius(8px);
+		&.medium { background: $blue2; }
+		&.light { background: $blue3; }
+		a {
+			color: $blue4;
+			display: block;
+			//min-height: 140px;
+			padding: 1em 0 0;
+			//&:hover, &:active { text-decoration: none; }
+		}
+		.js-block-title,
+		.js-block-content {
+			color: #FFFFFF;
+			display: block;
+			font: 100 21px/32px "futura-pt", sans-serif;
+		}
+		.js-block-title { 
+			margin-bottom: 0.5em;
+			padding: 0.5em 1em 0;
+		}
+		.js-block-content { font-size: 18px; line-height:20px; padding-bottom: 1em; }
+	}
+	
+	&.js-block-dark {
+		background: rgba(20,20,20,0.9);
+		color: $gray8;
+		.js-block-content {
+			&:before { 
+				content: '';
+				display: block;
+				height: 1px;
+				margin-bottom: 0.8em;
+				margin-top: -0.4em;
+				@include gray-gradient(dark-div); 
+				background-color: transparent;
+			}
+			&.bottom { padding: 0.5em 1em 1em; }
+		}
+	}
+	
+	.tri-panel & {
+		.js-block-top {
+			background: $gray1;
+			color: #FFFFFF;
+			padding-bottom: 0.5em;
+		}
+		.js-block-content {
+			color: white;
+			list-style: none;
+			line-height: 18px;
+			padding: 0 1.5em 1em;
+			li {
+				margin-top: 1.5em;
+			}
+		}
+		&.first {
+			.js-block-top { margin-bottom: 1em; }
+			.js-block-bottom { margin-top: 2em; }
+		}
+	}
+}
+
+.tri-panel {
+	.first, .second, .third {
+		padding-bottom: 1.5em;
+		text-align: center;
+		@include box-shadow(0px 0px 4px 0px #000000);
+	}
+	
+	@include at-breakpoint(50em 12) {
+		.first { @include isolate(5); position: relative; }
+		.second { @include span-columns(3); @include push(3.1); margin-top: 2em; }
+		.third { @include span-columns(3); @include push(1.1); margin-right: 0; margin-top: 2em; }
+	}
+	
+	.first { background: $gray1; }
+	.third { background: $blue1; }
+	.second { background: $gray2; }
+}
+
+// for embeds
+.video-container-container {
+	margin: 0 auto;
+	width: 50%;
+	@include at-breakpoint(12 40em) { width: 80%; }
+}
+
+.video-container {
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    position: relative;
+	
+	iframe,
+	object,
+	embed {
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+}

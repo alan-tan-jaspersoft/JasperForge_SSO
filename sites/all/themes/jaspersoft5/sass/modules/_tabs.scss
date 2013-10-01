@@ -1,0 +1,183 @@
+#tasks { margin-bottom: 1em; }
+
+ul.tabs.primary {
+	border-bottom: 1px solid $gray6;
+	list-style: none;
+	margin: 1em 0;
+	padding: 0;
+	li {
+		display: inline-block;
+		a { color: $gray3; display: inline-block; padding: 2px 12px; }
+		&:first-child {	margin-left: 8px; }
+		&.active {
+			border-color: $gray6;
+			border-style: solid solid none solid;
+			border-width: 1px;
+			position: relative;
+			a {
+				color: $gray2;
+				&:hover, &:active {	text-decoration: none; }
+			}
+			&:after {
+				background: #FFFFFF;
+				bottom: -0.1em;
+				content: "";
+				height: 2px;
+				left: 0;
+				position: absolute;
+				width: 100%;
+			}
+		}
+	}
+}
+
+ul.secondary {
+	border-bottom: 1px solid $gray6;
+	padding: 0 1em 1em;
+	li {
+		background: $gray9;
+		border: 1px solid $gray7;
+		float: left;
+		list-style: none;
+		margin: 0 1em 0 0;
+		padding: 0;
+		@include border-radius(12px);
+		a {
+			color: $gray3;
+			display: inline-block;
+			padding: 1px 0.5em;
+			&:hover, &.active { color: $gray2; text-decoration: none; }
+		}
+		&:hover { border-color:$gray5; }
+		&.active { background: $gray7; border-color: $gray4; }
+	}
+}
+
+ul.button-bar {
+	border: 1px solid $gray7;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	@include border-radius(4px);
+	@include box-shadow(0px 3px 6px -3px $gray3);
+	@include gray-gradient('vert-light');
+	li {
+		border-right: 1px solid $gray6;
+		display: inline-block;
+		width: 33%;
+		&:last-child { border: none; }
+		a {
+			color: $gray3;
+			display: inline-block;
+			font: 600 20px/30px "futura-pt",sans-serif;
+			padding: 12px 0;
+			text-align: center;
+			text-shadow: 1px 1px 1px white;
+			width: 100%;
+			&:hover,&:active { text-decoration: none; color: $blue2; }
+			i.icon {
+				display: inline-block;
+				font-size: 2em;
+				height: 30px;
+				margin-right: 4px;
+				vertical-align: bottom;
+			}
+		}
+	}
+}
+
+.js-toolbar {
+	border: 1px solid;
+	border-color: $gray7 $gray4 $gray4 $gray7;
+	display: inline-block;
+    font-family: $sans-serif-small;
+    height: 50px;
+    margin-right: 20px;
+    vertical-align:top;
+	@include border-radius(6px);
+	@include box-shadow(0px 0px 4px -1px $gray2);
+	@include gray-gradient(vert-medium);
+
+	select, div.selector {
+		background-position: 96% center;
+		border: 1px solid $gray5;
+		color: $gray3;
+		cursor:pointer;
+		font: 400 1em $sans-serif-small;
+		height: 38px;
+		margin: 5px 0 5px 5px;
+		padding: 0 2em 0 1em;
+		text-align:left;
+		text-shadow: 1px 1px 1px #FFFFFF;
+		-webkit-appearance: none;
+		@include border-radius(3px);
+		@include box-shadow(0px 1px 1px 0px $gray9, inset 0px 0px 2px 1px rgba(255,255,255,.6));
+		@include gray-gradient(vert-medium);
+
+		&:hover { @include gray-gradient(vert-light); }
+		&:focus {
+			outline:none;
+			z-index: 1;
+			-webkit-appearance: none;
+			@include box-shadow(0px 0px 3px 0px $gray4);
+		}
+	}
+	> *.last-child { margin-left: 5px; margin-right: 5px; }
+
+	input {
+		border: 1px solid $gray5;
+		color: $gray2;
+		font-size: 1em;
+		height: 2em;
+		padding-left: 10px;
+		@include border-radius(3px);
+		&:focus { outline:none;	@include box-shadow(0px 0px 1px 0px $gray1); }
+	}
+
+	.js-toolbar-button {
+		border: 1px solid $gray5;
+		border-left: none;
+		color: $gray3;
+		display: inline-block;
+		float: left;
+		font: 400 1em $sans-serif-small;
+		height: 38px;
+		margin: 5px 0;
+		padding: 0.5em 1em 0;
+		text-shadow: 1px 1px 1px #FFFFFF;
+		@include box-shadow(0px 1px 1px 0px #F7F7F7, inset 0px 0px 2px 1px rgba(255,255,255,.6));
+		@include gray-gradient('vert-light');
+		&:first-child {
+			border-bottom-left-radius: 3px;
+			border-top-left-radius: 3px;
+			border-left: 1px solid $gray5;
+			margin-left: 5px;
+		}
+		&:last-child {
+			border-bottom-right-radius: 3px;
+			border-top-right-radius: 3px;
+			border-right: 1px solid $gray5;
+			margin-right: 5px;
+		}
+		&.active {
+			color: $gray7;
+			filter: alpha(opacity=80);
+			opacity: 0.8;
+			text-shadow: none;
+			@include box-shadow(0px 1px 1px 0px $gray7);
+			@include gray-gradient;
+		}
+	}
+
+}
+
+.vertical-tabs
+{
+  .vertical-tabs-list
+  {
+    .offscreen { display: none; }
+  }
+  .vertical-tabs-panes { padding: 10px; }
+
+}
+

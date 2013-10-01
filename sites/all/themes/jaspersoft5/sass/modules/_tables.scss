@@ -1,0 +1,184 @@
+
+/*** BASE TABLES ***/
+table {
+	max-width: 100%;
+	background-color: transparent;
+	border: 0px solid $gray5;
+	border-collapse: separate;
+	*border-collapse: collapsed;
+	border-left: 0;
+	border-right: 0;
+	border-spacing: 0;
+	th, td {
+		border-left: 0px;
+		border-right: 0px;
+		line-height: 1em;
+		padding: 0.5em;
+		text-align: left;
+		vertical-align: top;
+	}
+	th
+	{
+
+	  border-bottom: 1px solid rgb(170, 187, 204);
+	  font-weight: normal;
+	}
+	td { border-bottom: 1px solid $gray5; }
+	thead {
+		th { vertical-align: bottom; }
+		&:first-child tr:first-child th,
+		&:first-child tr:first-child td { border-top: 0; }
+	}
+	tbody + tbody { border-top: 2px solid $gray5; }
+	tbody {	tr.odd { background-color: $gray9; }	}
+}
+
+
+/*
+# Basic Comparison Table (Table "No.3")
+
+Used when comparing product, editions, or services.
+Column 1 is typically the Row label.
+thead is optional.
+
+Markup:
+<table class="table-j3">
+	<thead>
+	  <tr><th>Feature</th><th><a href="#_">Express</a></th><th>Standard</th><th>Pro</th><th>Premium</th></tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td class="first-col">Licenses</td>
+		<td class="second-col">8 Licenses</td>
+		<td class="third-col">12 Licenses</td>
+		<td class="fourth-col">18 Licenses</td>
+		<td>20 Licenses</td>
+	  </tr>
+	  <tr>
+		<td class="first-col $modifierClass">CPU Cores</td>
+		<td class="second-col $modifierClass">1 Core</td>
+		<td class="third-col $modifierClass">4 Cores</td>
+		<td class="fourth-col $modifierClass">8 Cores</td>
+	  </tr>
+	</tbody>
+</table>
+
+.comm - Used to highlight cells specific to Community resources or products.
+
+Styleguide 2.1
+*/
+table.table-j3 {
+	border: 0;
+	border-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 1px;
+	margin: 0;
+
+	th {
+		background-color: $gray2;
+		border: 1px solid white;
+		color: white;
+		font: 400 16px "ff-dagny-web-pro",sans-serif;
+		padding: 6px 32px;
+		text-align: center;
+		a { color:#92C6DE!important; }
+		&.first-col { background-color: #ffffff; }
+	}
+
+	tbody {
+		font-family: "ff-dagny-web-pro", sans-serif;
+
+		td {
+			@include background-clip(padding-box);
+			border: 1px solid transparent;
+			font-size: 14px;
+			padding: 14px 12px;
+			text-align: center;
+
+			&.first-col {
+				border:1px solid white;
+				text-align: right;
+				&.comm {  }
+			}
+
+			&.second-col {
+				background-color: $gray7;
+				&.comm { background-color: $blue6; }
+			}
+
+			&.third-col {
+				background-color: $gray8;
+				&.comm { background-color: #E2F1FB; }
+			}
+
+			&.fourth-col {
+				background-color: $gray9;
+				&.comm {
+					background-color: $blue7;
+					border-right:3px solid $blue2;
+				}
+			}
+		}
+	}
+}
+
+
+/*
+# Basic Two-Column Feature Table (Table "No.4")
+
+Used when outlining features or capabilities.
+
+Markup:
+<table class="table-j4">
+    <tbody>
+      <tr>
+        <td class="first-col">Dashboards</td>
+        <td class="second-col">Multi-component dashboards built using an intuitive drag-and-drop web-based designer</td>
+      </tr>
+      <tr>
+        <td class="first-col">Metadata Layer</td>
+        <td class="second-col">Data abstraction layer for simplifying data field descriptions so non-technical users can easily understand and build their own reports</td>
+      </tr>
+    </tbody>
+  </table>
+
+Styleguide 2.2
+*/
+.table-j4 {
+
+	background-position: -1px 0;
+	font-family: "ff-dagny-web-pro";
+	@include gray-gradient('wide-medium');
+
+	tbody { border-top:0; }
+
+	tr {
+		&:first-child td { border-top:0; }
+		&:last-child td { border-bottom:0; }
+	}
+
+	td {
+		border-bottom:1px solid transparent;
+		border-left:2px solid transparent;
+		border-top:1px solid transparent;
+		font-size:14px;
+		padding:14px 12px;
+		text-align: center;
+		vertical-align: middle;
+		@include background-clip('padding-box');
+	}
+
+	.first-col {
+		background-size:200% 100%;
+		text-align: right;
+		width: 200px;
+		@include background-clip(padding-box);
+		@include gray-gradient('wide-light');
+	}
+
+	.second-col {
+		background-color:$gray9;
+		padding: 14px 20px;
+		text-align: left;
+	}
+}

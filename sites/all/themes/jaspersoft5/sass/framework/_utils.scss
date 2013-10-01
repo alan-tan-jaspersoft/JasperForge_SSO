@@ -1,0 +1,162 @@
+$break-desktop: 1025px;
+$break-tablet-landscape: 769px;
+$break-tablet-portrait: 481px;
+$break-phone-landscape: 321px;
+$break-phone-protrait: 0px;
+
+$screen-full: "only screen and (min-width: 1025px)";
+$screen-desktop-less: "only screen and (max-width:1024px)";
+$screen-tablet-l: "only screen and (min-width:769px) and (max-width:1024px)";
+$screen-tablet-l-less: "only screen and (max-width:1024px)";
+$screen-tablet-p-more: "only screen and (min-width:768px)";
+$screen-tablet-p: "only screen and (min-width:481px) and (max-width:768px)";
+$screen-tablet-p-less: "only screen and (max-width:768px)";
+$screen-phone-l-more: "only screen and (min-width:480px)";
+$screen-phone-l: "only screen and (min-width:321px) and (max-width:480px)";
+$screen-phone-l-less: "only screen and (max-width:480px)";
+$screen-phone-p: "only screen and (max-width:320px)";
+
+//
+// Markup free clearing
+// http://www.stubbornella.org/content/2012/05/02/cross-browser-debugging-css/
+//
+
+@mixin cf {
+  overflow: hidden;   // New formatting context in better browsers
+  *overflow: visible; // Protect IE7 and older from the overflow property
+  *zoom: 1;           // Give IE hasLayout, a new formatting context equivalent
+}
+
+// Helper classes
+
+// floats
+.f-l { float: left; }
+.f-r { float: right; }
+.f-n { float: none; }
+
+// clear floats
+.cf-l { clear: left; }
+.cf-r { clear: right; }
+.cf-b { clear: both; }
+
+// clearfix
+.cf { @include cf; }
+
+// display
+.d-i { display: inline; }
+.d-ib { display: inline-block; }
+.d-b { display: block; }
+
+//line heights
+.lh-1 { line-height: 1em; }
+.lh-2 { line-height: 2em; }
+.lh-3 { line-height: 3em; }
+
+// text-align
+.ta-l { text-align: left; }
+.ta-c { text-align: center; }
+.ta-r { text-align: right; }
+.ta-j { text-align: justify; }
+
+// margins / centering
+.mca { margin: 0 auto; }
+.m-sq { margin: 0.5em 1em; }
+
+.m-v1 { margin: 1em 0; }
+.m-v2 { margin: 2em 0; }
+.m-v3 { margin: 3em 0; }
+
+.m-t2 { margin-top: 2em; }
+
+.m-b1 { margin-bottom: 1em; }
+.m-b2 { margin-bottom: 2em; }
+
+// padding
+.p-0 { padding: 0; }
+.p-v1 { padding: 1em; }
+.p-sq { padding: 0.5em 1em; }
+.p-t1 { padding-top: 1em; }
+.p-b1 { padding-bottom: 1em; }
+
+// position
+.p-abs { position: absolute; }
+.p-rel { position: relative; }
+.p-fxd { position: fixed; }
+.p-stc { position: static; }
+
+// widths
+.w-full { width: 100%; }
+.w-80 { width: 80%; }
+
+.w-max-full { max-width: 100%; }
+
+// colors / grads
+.grad-bl-med { @include blue-gradient('medium'); }
+
+.bg-bl1 { background: $blue1; }
+.bg-bl2 { background: $blue2; }
+.bg-bl3 { background: $blue3; }
+.bg-bl4 { background: $blue4; }
+.bg-bl5 { background: $blue5; }
+.bg-bl6 { background: $blue6; }
+.bg-bl7 { background: $blue7; }
+
+.bg-gr1 { background: $gray1; }
+.bg-gr2 { background: $gray2; }
+.bg-gr3 { background: $gray3; }
+.bg-gr9 { background: $gray9; }
+
+// borders
+.bor-g6 { border: 1px solid $gray6; }
+
+// text colors
+.t-wt { color: #FFFFFF; }
+
+.t-bl1 { color: $blue1; }
+.t-bl2 { color: $blue2; }
+.t-bl3 { color: $blue3; }
+
+.t-or1 { color: $orange1; }
+.t-or2 { color: $orange2; }
+.t-or3 { color: $orange3; }
+
+.t-gr1 { color: $gray1; }
+.t-gr2 { color: $gray2; }
+.t-gr3 { color: $gray3; }
+.t-gr4 { color: $gray4; }
+.t-gr5 { color: $gray5; }
+
+// font-size
+.fs-90 { font-size: 90%; }
+.fs-1 { font-size: 1em; }
+.fs-125 { font-size: 1.25em; }
+.fs-15 { font-size: 1.5em; }
+.fs-2 { font-size: 2em; }
+
+// font-weights
+.fw-1 { font-weight: 100; }
+
+// shadows
+.bs-r { @include box-shadow(1px 1px 5px rgba(0,0,0,0.4)); }
+
+// vertical alignment
+.va-m { vertical-align: middle; }
+
+// Columns
+@mixin list-cols() {
+	-webkit-column-break-inside: avoid;
+	break-inside: avoid-column;
+	page-break-inside: avoid;
+
+}
+
+.c-2 {
+	@include column-count(2);
+	@include at-breakpoint(12 50em) { @include column-count(1); }
+	li { @include list-cols(); }
+}
+
+
+
+// Lists
+.lspi { list-style-position: inside; }
