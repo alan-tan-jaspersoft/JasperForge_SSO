@@ -96,6 +96,7 @@ function jasperforge_sso_server_user_logout($account)
 function jasperforge_sso_server_get_supported_sites()
 {
   $jf_sso_sites = str_replace("\n", ',', variable_get('jf_sso_sites', 'www.jaspersoft.com,community.jaspersoft.com'));
+  $jf_sso_sites = str_replace("\r", '', $jf_sso_sites);
   return explode(',', $jf_sso_sites);
 }
 

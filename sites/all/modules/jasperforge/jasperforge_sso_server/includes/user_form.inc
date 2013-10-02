@@ -302,7 +302,7 @@ function jasperforge_sso_server_link_form_remove_submit($form, &$form_state)
 
   $links->save();
   unset($form_state['input']['account_link'] );
-//  drupal_set_message('Account Link(s) Removed.');
+  drupal_set_message('Account Link(s) Removed.');
   $form_state['rebuild'] = TRUE;
 }
 
@@ -311,9 +311,9 @@ function jasperforge_sso_server_link_form_submit(&$form, &$form_state)
 {
   if($form_state['clicked_button']['#name'] == 'remove_all_links')
     return;
-
   $need_save = FALSE;
   $links = new JasperForgeSSO($form_state['user']->uid);
+
 /*  if(isset($form_state['values']['sync_name']) && $links->sync_name != $form_state['values']['sync_name'])
   {
     $links->sync_name = $form_state['values']['sync_name'];
@@ -476,9 +476,9 @@ function jasperforge_sso_server_merge_form($user)
   $form['account_merge']['new']['password'] = array(
       '#type' => 'password',
       '#title' => 'Password',
+      '#size' => 20,
       '#maxlength' => 64,
       '#required' => TRUE,
-      '#size' => 20,
       );
 
   $form['account_merge']['new']['submit'] = array(

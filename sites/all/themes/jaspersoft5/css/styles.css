@@ -1575,7 +1575,7 @@ dl.feature-list dd {
 /* =============================================================================
  *   Base
  * ========================================================================== */
-/* 
+/*
  * To preserve theme settings never apply font properties to the HTML element.
  * This is critically important if you are using the Responsive JavaScript
  * feature as this relies on being able to set a pseudo font family on the HTML
@@ -1590,7 +1590,7 @@ html {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\0000318}}
 body {
-  font-size: 100%;
+  font-size: 12pt;
   height: 100%;
 }
 
@@ -1990,7 +1990,7 @@ ul.action-links {
  * Underscores in field name are replaced with dashes
  */
 /*
- * Image Alignment Theme Settings - included here so you can easily override 
+ * Image Alignment Theme Settings - included here so you can easily override
  */
 /*
  * Float none setting
@@ -3619,7 +3619,7 @@ table {
   border-right: 0;
   border-spacing: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tables\.scss}line{font-family:\0000312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tables\.scss}line{font-family:\0000313}}
 table th, table td {
   border-left: 0px;
   border-right: 0px;
@@ -3628,7 +3628,7 @@ table th, table td {
   text-align: left;
   vertical-align: top;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tables\.scss}line{font-family:\0000321}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tables\.scss}line{font-family:\0000322}}
 table th {
   border-bottom: 1px solid #aabbcc;
   font-weight: normal;
@@ -3636,8 +3636,9 @@ table th {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tables\.scss}line{font-family:\0000326}}
 table td {
   border-bottom: 1px solid #c7c7c7;
+  font-size: 90%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tables\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tables\.scss}line{font-family:\0000329}}
 table thead th {
   vertical-align: bottom;
 }
@@ -4176,12 +4177,13 @@ a.tabledrag-handle .handle {
   width: 24px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\000039}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000310}}
 .vertical-tabs .form-type-textfield input {
   display: block;
+  width: auto;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000314}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000316}}
 .field-slideshow-pager a {
   background: #d9d9d9;
   border-bottom: 1px solid transparent !important;
@@ -4196,17 +4198,17 @@ a.tabledrag-handle .handle {
   -o-border-radius: 10em;
   border-radius: 10em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000323}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000325}}
 .field-slideshow-pager a.activeSlide {
   background: #acacac;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000327}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000329}}
 .chosen-container {
   font-size: 1em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000330}}
 .chosen-container-single .chosen-single {
   height: 2.5em;
   line-height: 1.75em;
@@ -4217,18 +4219,18 @@ a.tabledrag-handle .handle {
   -o-border-radius: 3px;
   border-radius: 3px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000333}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000335}}
 .chosen-container-single .chosen-single div b {
   margin-top: 0.5em;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000339}}
 .field-collection-view {
   margin: 0;
   padding: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000343}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000345}}
 .cluetip-arrows {
   top: 1em !important;
 }

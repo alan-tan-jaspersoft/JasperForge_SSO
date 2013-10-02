@@ -9,7 +9,8 @@ table {
 	border-left: 0;
 	border-right: 0;
 	border-spacing: 0;
-	th, td {
+	th, td
+	{
 		border-left: 0px;
 		border-right: 0px;
 		line-height: 1em;
@@ -19,15 +20,14 @@ table {
 	}
 	th
 	{
-
 	  border-bottom: 1px solid rgb(170, 187, 204);
 	  font-weight: normal;
 	}
-	td { border-bottom: 1px solid $gray5; }
-	thead {
+	td { border-bottom: 1px solid $gray5; font-size: 90%;  }
+	thead
+	{
 		th { vertical-align: bottom; }
-		&:first-child tr:first-child th,
-		&:first-child tr:first-child td { border-top: 0; }
+		&:first-child tr:first-child th, &:first-child tr:first-child td { border-top: 0; }
 	}
 	tbody + tbody { border-top: 2px solid $gray5; }
 	tbody {	tr.odd { background-color: $gray9; }	}

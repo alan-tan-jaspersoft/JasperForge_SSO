@@ -136,10 +136,20 @@ function jasperforge_sso_server_initial_validate($form, &$form_state)
   $_SESSION['form_state'] = $form_state;
   $_SESSION['form'] = $form;
   $form_state['existing'] = array();
-  foreach ($sites as $site) // check to see if we already know this email
-    if(JasperForgeSSO::find_cred($site, $mail))
-      $form_state['existing'][$site] = $site;
-
+  try{
+    foreach ($sites as $site) // check to see if we already know this email
+      if(JasperForgeSSO::find_cred($site, $mail))
+        $form_state['existing'][$site] = $site;
+  }
+  catch(Exception $e)
+  {
+    if(stristr($e->getMessage(), 'user 1'))
+    {
+      form_set_error('mail', $e->getMessage());
+      return;
+    }
+    throw $e;
+  }
 ///  $form_state['existing'] = array('community.jaspersoft.com' => 'community.jaspersoft.com');
 
   // we don't know this email

@@ -557,6 +557,8 @@ class JasperForgeSSO
     {
       $array = array('op'=>'find','mail' => $mail);
       $result = self::http_request($site, $array, 20);
+      if($result->data == '1')
+        throw new Exception("This email belongs to user 1 on $site");
       return $result->data == 'TRUE'? TRUE : FALSE;
     }
 

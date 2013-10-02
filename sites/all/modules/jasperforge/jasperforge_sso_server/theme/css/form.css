@@ -6,7 +6,7 @@ form#user-login, form#user-pass
   margin-right: auto;
 }
 
-form#jasperforge-sso-server-reg-form
+#block-system-main > form#jasperforge-sso-server-reg-form
 {
   width: 70%;
   margin-left: auto;

@@ -6,8 +6,10 @@ a.tabledrag-handle .handle {
 }
 
 // admin textfields in tabgroups
-.vertical-tabs .form-type-textfield input {
+.vertical-tabs .form-type-textfield input
+{
 	display: block;
+	width: auto;
 }
 
 // slideshow pagers
@@ -23,14 +25,14 @@ a.tabledrag-handle .handle {
 	&.activeSlide {	background: $gray4; }
 }
 
-// Chosen Selects 
+// Chosen Selects
 .chosen-container { font-size: 1em; }
 .chosen-container-single .chosen-single {
 	height: 2.5em;
 	line-height: 1.75em;
 	padding: 0.25em 0 0.25em 0.5em;
-	@include border-radius(3px); 
-	div b { margin-top: 0.5em; }	
+	@include border-radius(3px);
+	div b { margin-top: 0.5em; }
 }
 
 // Field Collections
