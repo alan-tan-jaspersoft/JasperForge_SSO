@@ -46,8 +46,8 @@ function jasperforge_sso_server_user_profile_validate(&$form, &$form_state)
 
   // if name changed, check availability
   $available = TRUE;
-  if($user->name != $form_state['values']['name']
-      && jasperforge_sso_server_check_name($form_state['values']['name'], $user->mail) !== TRUE)
+  if($form['#user']->name != $form_state['values']['name']
+      && jasperforge_sso_server_check_name($form_state['values']['name'], $form['#user']->mail) !== TRUE)
   {
     form_set_error('name', t('The name <em>@name</em> is already taken.',
                    array('@name' => $form_state['values']['name']))
@@ -55,8 +55,8 @@ function jasperforge_sso_server_user_profile_validate(&$form, &$form_state)
   }
 
   // if email changed, check availability
-  if($user->mail != $form_state['values']['mail'])
-    _jasperforge_sso_server_check_email($user->uid, $form_state['values']['mail']);
+  if($form['#user']->mail != $form_state['values']['mail'])
+    _jasperforge_sso_server_check_email($form['#user']->uid, $form_state['values']['mail']);
 }
 
 /**
