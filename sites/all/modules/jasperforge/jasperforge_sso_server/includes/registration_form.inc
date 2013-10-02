@@ -573,7 +573,10 @@ function jasperforge_sso_server_user_register_submit($form, &$form_state, $verif
 
   $form_state['values']['pass'] = $pass;
   $form_state['values']['init'] = $form_state['values']['mail'];
-  $form_state['values']['status'] = $verified? 1 : 0;
+  if($verified || !variable_get('user_email_verification', TRUE) && !variable_get('user_verify_lock',0))
+    $form_state['values']['status'] = 1;
+  else
+    $form_state['values']['status'] = 0;
 
   $account = $form['#user'];
   entity_form_submit_build_entity('user', $account, $form, $form_state);
