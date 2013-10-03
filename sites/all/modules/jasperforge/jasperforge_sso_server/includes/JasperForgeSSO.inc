@@ -327,11 +327,11 @@ class JasperForgeSSO
         return 'Request Timed Out';
       }//if
 
-      if(!stristr($result->data, 'Unrecognized')
-          && !stristr($result->data, 'already linked')
-          && !stristr($result->data, 'blocked')
-          && $result->data != 'TRUE')
+      if($result->data == 'Bad Request')
+      {
         watchdog('jasperforge_sso_server', dprint_r($result, TRUE), NULL, WATCHDOG_ERROR);
+        return FALSE;
+      }
 
       return $result->data == 'TRUE'? TRUE : $result->data;
     }

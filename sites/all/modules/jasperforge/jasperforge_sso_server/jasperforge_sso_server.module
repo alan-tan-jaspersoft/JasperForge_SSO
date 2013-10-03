@@ -432,6 +432,25 @@ function jasperforge_sso_server_sso_create_user()
     $_POST['name'] = $result;
   }
 
+  // find out if mail can be used
+  $list = array($_POST['site']);
+  try{
+    foreach (jasperforge_sso_server_get_supported_sites() as $site)
+    {
+      if($site == $_POST['site'])
+        continue;
+      if(JasperForgeSSO::find_cred($site, $_POST['mail']))
+        $list[] = $site;
+    }
+  }
+  catch(Exception $e)
+  {
+    if(stristr($e->getMessage(), 'user 1'))
+      return $e->getMessage();
+
+    throw $e;
+  }
+
   // check user name availability on all client sites
   foreach (jasperforge_sso_server_get_supported_sites() as $site)
     if(JasperForgeSSO::check_name($site, $_POST['name'], $_POST['mail']))
@@ -469,14 +488,7 @@ function jasperforge_sso_server_sso_create_user()
           WATCHDOG_NOTICE, l(t('edit'), 'user/' . $user->uid . '/edit'));
 
 
-  $list = array($_POST['site']);
-  foreach (jasperforge_sso_server_get_supported_sites() as $site)
-  {
-    if($site == $_POST['site'])
-      continue;
-    if(JasperForgeSSO::find_cred($site, $_POST['mail']))
-      $list[] = $site;
-  }
+
   foreach ($list as $site)
     exec("drush sso-user-merge-2 {$site} {$user->name} {$user->uid} {$_POST['mail']} > /dev/null &");
 

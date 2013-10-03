@@ -83,9 +83,12 @@ If you would like to use this email address, the linked account need to be merge
 
   foreach (jasperforge_sso_server_get_supported_sites() as $site)
   {
-    $result = JasperForgeSSO::find_cred($site, $newmail);
-    if(!$result)
-      continue;
+    try{
+      $result = JasperForgeSSO::find_cred($site, $newmail);
+      if(!$result)
+        continue;
+    }
+    catch(Exception $e){} // empty catch
 
     form_set_error('mail', t('The e-mail address <em>@mail</em> is already taken.
           If you own this account, you can link or merge it with this Jaspersoft ID.',
@@ -122,6 +125,9 @@ function jasperforge_sso_server_manage_form($form, &$form_state, $user)
   $form['tab']+= jasperforge_sso_server_merge_form($user);
   $form['tab']+= jasperforge_sso_server_link_form($user);
 
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/manage_accounts.css',
+  );
   return $form;
 }
 
@@ -164,7 +170,7 @@ function jasperforge_sso_server_link_form($user)
     $form['account_link'][$site]['mail'] = array(
       '#type' => 'textfield',
       '#default_value' => '',
-      '#size' => 50,
+      '#size' => 30,
       '#maxlength' => 100,
       '#required' => FALSE,
       '#default_value' => isset($links->creds['active'][$site]) && $links->creds['active'][$site]['type'] == 'user'?
@@ -286,9 +292,13 @@ function jasperforge_sso_server_link_form_validate(&$form, &$form_state)
     $result = JasperForgeSSO::validate_cred($site, $value['mail'], $value['password']);
     if($result === TRUE)
       continue;
-
-    if(!stristr($result, 'Unrecognized') && !stristr($result, 'already linked'))
-      $result = "We are unable to verify account <em>{$value['mail']}</em> at this moment, please try again later.";
+    elseif($result == FALSE)
+      $result = t("We are unable to verify account <em>@mail</em> at this moment, please try again later.",
+                  array('@mail' => $value['mail']));
+    else {
+      $result = t("User with Email <em>@mail</em> on <em>@site</em> cannot be linked. Reason: @reason",
+                  array('@mail' => $value['mail'], '@site' => $site, '@reason' => $result));
+    }
     form_set_error("account_link][${site}", $result);
   }//foreach
 }

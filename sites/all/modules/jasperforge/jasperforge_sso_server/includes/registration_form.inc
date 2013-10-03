@@ -142,7 +142,7 @@ function jasperforge_sso_server_initial_validate($form, &$form_state)
         $form_state['existing'][$site] = $site;
   }
   catch(Exception $e)
-  {
+  { // handle user 1
     if(stristr($e->getMessage(), 'user 1'))
     {
       form_set_error('mail', $e->getMessage());
@@ -299,7 +299,6 @@ function jasperforge_sso_server_step1_validate($form, &$form_state){
   {
     $verified = JasperForgeSSO::validate_cred(
                   $site,
-//                  $form_state['values']['user_register']['mail'],
                   $form_state['account_info']['mail'],
                   $form_state['values']['user_register']['password']
                   );
@@ -315,7 +314,7 @@ function jasperforge_sso_server_step1_validate($form, &$form_state){
 //$verified = TRUE;
   if($verified !== TRUE)
   {
-    form_set_error('user_register', 'Unrecognized username or password');
+    form_set_error('user_register', $verified);
     return;
   }
   $form_state['force_add'] = array_combine($form_state['existing'], $form_state['existing']);
@@ -484,7 +483,7 @@ function jasperforge_sso_server_step3_validate($form, &$form_state)
 
     // error
     $error = TRUE;
-    if(stristr($result, 'Unrecognized username or password'))
+    if($result != FALSE)
     {
       form_set_error("user_register][${site}", $result);
       continue;
