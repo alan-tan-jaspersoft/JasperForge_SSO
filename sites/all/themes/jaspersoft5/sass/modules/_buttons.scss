@@ -21,3 +21,32 @@ a.button, .button, button {
 		line-height: 14px;
 	}
 }
+
+input[type="submit"], input[type="button"]
+{
+  font: 100 26px/32px $sans-serif-title;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  @include sassy-button('simple', 4px, 100%, $gray3);
+  &.blue { @include sassy-button-gradient('simple', $blue3); }
+  &.orange { @include sassy-button-gradient('simple', $orange25); }
+  &.cta {
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    @include sassy-button-structure(4px, 26px, 0.4em 0.75em);
+    .action { display: block; }
+    .prefix { color: $green1; font: italic 20px/32px $serif-large; }
+    &.blue .prefix { color: $blue1; }
+    &.orange .prefix { color: $orange1; }
+    @include at-breakpoint(12 50em) { text-align: center; }
+  }
+  &.small {
+    @include sassy-button-structure(4px, 14px, 0.35em 0.75em);
+    line-height: 14px;
+  }
+
+
+
+}

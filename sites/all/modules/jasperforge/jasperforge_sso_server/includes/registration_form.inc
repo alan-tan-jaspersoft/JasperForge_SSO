@@ -653,7 +653,7 @@ function jasperforge_sso_server_user_register_submit($form, &$form_state, $verif
 function jasperforge_sso_server_add_links_submit(&$form_state)
 {
   $user = user_load($form_state['account_info']['uid']);
-  $links = new JasperForgeSSO($form_state['account_info']['uid']);
+  $links = new JasperForgeSSO($form_state['account_info']['uid'], TRUE);
 //  $links->sync_name = isset($form_state['sync_name'])? $form_state['sync_name'] : FALSE;
 
   // add links

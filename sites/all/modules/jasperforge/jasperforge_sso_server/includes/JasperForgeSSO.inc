@@ -12,7 +12,7 @@ class JasperForgeSSO
     /**
      * @param int|string  $uid  The user's ID to load links for.
      */
-    public function __construct($uid = NULL)
+    public function __construct($uid = NULL, $reset = FALSE)
     {
       if(!db_table_exists('jasperforge_sso_links'))
         throw new Exception('Database table "jasperforge_sso_links" does not exist.');
@@ -21,6 +21,17 @@ class JasperForgeSSO
         return;
 
       $this->uid = (int)$uid;
+
+      // get data from cache
+      if($reset && $result = cache_get("JasperForgeSSO_$uid", 'cache_field'))
+      {
+        $result = $result->data;
+        $this->name = $result['name'];
+        $this->creds = $result['creds'];
+        return;
+      }
+
+      // get fresh data
       $this->name = db_query('SELECT name FROM {users} WHERE uid=:uid', array(':uid' => $uid))
                   ->fetchField();
       $result = db_query('SELECT * FROM {jasperforge_sso_links} WHERE uid=:uid', array(':uid' => $uid))
@@ -40,6 +51,12 @@ class JasperForgeSSO
         if(!$this->creds[$status][$site]['link_mail'])
           unset($this->creds[$status][$site]['link_mail']);
       }
+
+      cache_set("JasperForgeSSO_$uid",
+                array('name' => $this->name, 'creds' => $this->creds),
+                'cache_field',
+                CACHE_TEMPORARY
+                );
     }
 
     /**
@@ -99,6 +116,12 @@ class JasperForgeSSO
       catch(Exception $e){
         watchdog_exception('JasperForgeSSO', $e);
       }
+
+      cache_set("JasperForgeSSO_{$this->uid}",
+                array('name' => $this->name, 'creds' => $this->creds),
+                'cache_field',
+                CACHE_TEMPORARY
+                );
     }
 
     /**
@@ -182,6 +205,8 @@ class JasperForgeSSO
      */
     public function cancel($method)
     {
+      cache_clear_all("JasperForgeSSO_{$this->uid}", 'cache_field');
+
       foreach ($this->creds['active'] as $site => $value)
         if(!isset($this->skip) || $this->skip != $site)
           self::cancel_user($site, $this->uid, $value['uid'], $method);
@@ -189,6 +214,9 @@ class JasperForgeSSO
       if(!strstr($method, 'user_cancel_block')) // if deleting user
       {
         db_delete('jasperforge_sso_links')
+          ->condition('uid', $this->uid)
+          ->execute();
+        db_delete('jasperforge_sso_merge')
           ->condition('uid', $this->uid)
           ->execute();
         $this->creds = NULL;
@@ -200,6 +228,8 @@ class JasperForgeSSO
      */
     public function delete($keep_content = 1)
     {
+      cache_clear_all("JasperForgeSSO_{$this->uid}", 'cache_field');
+
       foreach ($this->creds['active'] as $site => $value)
         self::delete_user($site, $this->uid, $value['uid'], $keep_content);
 
@@ -223,6 +253,13 @@ class JasperForgeSSO
         watchdog('jasperforge_sso_server', 'Input not valid.<br />' . dprint_r($edit, TRUE), NULL, WATCHDOG_ERROR);
       	return FALSE;
       }
+
+      if(isset($edit['name']))
+        cache_set("JasperForgeSSO_{$this->uid}",
+                  array('name' => $this->name, 'creds' => $this->creds),
+                  'cache_field',
+                  CACHE_TEMPORARY
+                  );
 
       $cleanup = array();
       $edit['op'] = 'sso_update';

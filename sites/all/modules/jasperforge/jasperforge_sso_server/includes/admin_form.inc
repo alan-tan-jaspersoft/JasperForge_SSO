@@ -89,4 +89,6 @@ function jasperforge_sso_server_admin_submit(&$form, &$form_state)
 {
   if($form_state['values']['sites'] != $form['sites']['#default_value'])
     variable_set('jf_sso_sites', $form_state['values']['sites']);
+
+  drupal_set_message('The configuration options have been saved.');
 }

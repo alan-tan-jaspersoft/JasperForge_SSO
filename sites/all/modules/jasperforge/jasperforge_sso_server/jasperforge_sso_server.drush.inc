@@ -106,14 +106,14 @@ function drush_jasperforge_sso_server_sso_sync_name($uid, $newname, $oldname)
 function drush_jasperforge_sso_server_sso_cleanup_remote($uid, $keep_content = 1)
 {
   include_once 'includes/JasperForgeSSO.inc';
-  $link = new JasperForgeSSO($uid);
+  $link = new JasperForgeSSO($uid, TRUE);
   $link->delete($keep_content);
 }
 
 function drush_jasperforge_sso_server_sso_update_remote($uid, $data, $skip ='')
 {
   $data = unserialize($data);
-  $link = new JasperForgeSSO($uid);
+  $link = new JasperForgeSSO($uid, TRUE);
   if($skip)
     $link->skip = $skip; // if this op is relayed from a client site, don't loopback to that client site
   $link->update_remote($data);
@@ -122,7 +122,7 @@ function drush_jasperforge_sso_server_sso_update_remote($uid, $data, $skip ='')
 
 function drush_jasperforge_sso_server_sso_user_op($uid, $method, $skip ='')
 {
-  $link = new JasperForgeSSO($uid);
+  $link = new JasperForgeSSO($uid, TRUE);
   if($skip)
     $link->skip = $skip; // if this op is relayed from a client site, don't loopback to that client site
   $link->cancel($method);
@@ -148,7 +148,7 @@ function drush_jasperforge_sso_server_sso_user_merge_2($site, $cas_name, $cas_ui
     if($e->getMessage() != 'SSO client Timed Out')
       continue;
     if(!isset($link))
-      $link = new JasperForgeSSO($user->uid);
+      $link = new JasperForgeSSO($user->uid, TRUE);
     $link->sso_link(array('site' => $site, 'mail' => $_POST['mail'], 'type' => 'user'));
   }
 }

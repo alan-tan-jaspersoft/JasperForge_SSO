@@ -42,7 +42,6 @@ function jasperforge_sso_server_user_profile_validate(&$form, &$form_state)
 {
   if(form_get_errors())
     return;
-  $links = new JasperForgeSSO($form['#user']->uid);
 
   // if name changed, check availability
   $available = TRUE;
@@ -114,7 +113,7 @@ function jasperforge_sso_server_manage_form($form, &$form_state, $user)
   elseif(isset($form_state['input']['tab__active_tab']))
     $default_tab = $form_state['input']['tab__active_tab'];
   else
-    $default_tab = 'edit-account-merge';
+    $default_tab = 'edit-account-link';
 
   $form['tab'] = array(
     '#type' => 'vertical_tabs',
@@ -122,8 +121,8 @@ function jasperforge_sso_server_manage_form($form, &$form_state, $user)
     );
 
   $form_state['user'] = $user;
-  $form['tab']+= jasperforge_sso_server_merge_form($user);
   $form['tab']+= jasperforge_sso_server_link_form($user);
+  $form['tab']+= jasperforge_sso_server_merge_form($user);
 
   $form['#attached']['css'] = array(
     drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/manage_accounts.css',
@@ -182,6 +181,7 @@ function jasperforge_sso_server_link_form($user)
           ),
       '#prefix' => '<td>',
       '#suffix' => '</td>',
+      '#attributes' => array('autocomplete' => 'off')
       );
     $form['account_link'][$site]['password'] = array(
       '#type' => 'password',
@@ -194,6 +194,7 @@ function jasperforge_sso_server_link_form($user)
 
       '#prefix' => '<td>',
       '#suffix' => $i == $last ? '</td></tr></table>' : '</td></tr>',
+      '#attributes' => array('autocomplete' => 'off')
       );
 
     if($forced)
@@ -202,6 +203,14 @@ function jasperforge_sso_server_link_form($user)
       unset($form['account_link'][$site]['password']['#states']);
     }
   }//foreach
+
+  $form['account_link']['description'] = array(
+    '#prefix' => '<div class="description">',
+    '#markup' => t('To link an account, click the checkbox next to the website the existing account belongs to.
+    Then fill in the credentials and click the <em>Save</em> button.<br />To remove a link, uncheck the checkbox and
+    click the <em>Save</em> button.'),
+    '#suffix' => '</div>',
+    );
 
   $check = FALSE;
   foreach ($links->creds['active'] as $key => $value)
@@ -482,6 +491,7 @@ function jasperforge_sso_server_merge_form($user)
       '#maxlength' => 100,
       '#required' => TRUE,
       '#default_value' => '',
+      '#attributes' => array('autocomplete' => 'off')
       );
   $form['account_merge']['new']['password'] = array(
       '#type' => 'password',
@@ -489,6 +499,7 @@ function jasperforge_sso_server_merge_form($user)
       '#size' => 20,
       '#maxlength' => 64,
       '#required' => TRUE,
+      '#attributes' => array('autocomplete' => 'off')
       );
 
   $form['account_merge']['new']['submit'] = array(
@@ -515,6 +526,10 @@ function jasperforge_sso_server_merge_form_validate(&$form, &$form_state)
     'community.jaspersoft.com' => array(array('account' =>'neko@gmail.com', 'timestamp' => time())),
     );*/
 
+  // check valid email format
+  if(!preg_match('/\S+@\S+/', $form_state['values']['account_merge']['new']['mail']))
+    form_set_error('account_merge][new][mail',t('Not a Valid Email'));
+
   // check if qualified for merging
   $result = db_query('SELECT uid FROM {users} WHERE mail=:mail',
                     array(':mail' => $form_state['values']['account_merge']['new']['mail']))
@@ -522,7 +537,7 @@ function jasperforge_sso_server_merge_form_validate(&$form, &$form_state)
   if($result) // it's an SSO account
   {
     form_set_error(
-          'mail',
+          'account_merge][new][mail',
           t('The account <em>@mail</em> is not qualified for merging.',
             array('@mail' => $form_state['values']['account_merge']['new']['mail']))
           );
@@ -536,7 +551,7 @@ function jasperforge_sso_server_merge_form_validate(&$form, &$form_state)
       if($value['account'] != $form_state['values']['account_merge']['new']['mail'])
         continue;
       form_set_error(
-          'mail',
+          'account_merge][new][mail',
           t('The account <em>@mail</em> on <em>@site</em> has already been merged or is being merged.',
             array('@mail' => $form_state['values']['account_merge']['new']['mail'],
                   '@site' => $form_state['values']['account_merge']['new']['site']))
@@ -561,7 +576,9 @@ function jasperforge_sso_server_merge_form_validate(&$form, &$form_state)
       if($result != 'FALSE')
         $msg .= " Reason: $result";
     }
-    form_set_error('mail', t($msg, array('@mail' => $form_state['values']['account_merge']['new']['mail'])));
+    form_set_error('account_merge][new][mail',
+                   t($msg, array('@mail' => $form_state['values']['account_merge']['new']['mail']))
+                  );
     return;
   }
 }

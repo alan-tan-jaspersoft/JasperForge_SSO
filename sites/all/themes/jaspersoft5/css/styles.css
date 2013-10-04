@@ -1554,7 +1554,8 @@ dl.feature-list dd {
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_type\.scss}line{font-family:\00003183}}
 .description {
-  font-size: 95%;
+  font-size: 0.85em;
+  line-height: 1;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_type\.scss}line{font-family:\00003186}}
@@ -2907,6 +2908,217 @@ a.button.small, .button.small, button.small {
   line-height: 14px;
 }
 
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000326}}
+input[type="submit"], input[type="button"] {
+  font: 100 26px/32px "futura-pt", Arial, Helvetica, sans-serif;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  margin-right: 1em;
+  font-size: 100%;
+  padding: 0.15em 1em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF777777', endColorstr='#FF444444');
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzc3Nzc3NyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzVlNWU1ZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #777777), color-stop(100%, #5e5e5e));
+  background: -webkit-linear-gradient(#777777, #5e5e5e);
+  background: -moz-linear-gradient(#777777, #5e5e5e);
+  background: -o-linear-gradient(#777777, #5e5e5e);
+  background: linear-gradient(#777777, #5e5e5e);
+  -webkit-box-shadow: #9d9d9d 0 1px 0 inset;
+  -moz-box-shadow: #9d9d9d 0 1px 0 inset;
+  box-shadow: #9d9d9d 0 1px 0 inset;
+  border: 1px solid #515151;
+  color: white;
+  text-shadow: #353535 0 -1px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
+input[type="submit"]:hover, input[type="button"]:hover {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000336}}
+input[type="submit"]:hover, input[type="button"]:hover {
+  background-color: #515151;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZhNmE2YSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzUxNTE1MSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6a6a6a), color-stop(100%, #515151));
+  background: -webkit-linear-gradient(#6a6a6a, #515151);
+  background: -moz-linear-gradient(#6a6a6a, #515151);
+  background: -o-linear-gradient(#6a6a6a, #515151);
+  background: linear-gradient(#6a6a6a, #515151);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000339}}
+input[type="submit"]:active, input[type="button"]:active {
+  -webkit-box-shadow: #494949 0 1px 2px inset;
+  -moz-box-shadow: #494949 0 1px 2px inset;
+  box-shadow: #494949 0 1px 2px inset;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
+input[type="submit"].disabled, input[type="submit"][disabled], input[type="button"].disabled, input[type="button"][disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #5e5e5e;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/_sassy-buttons\.sass}line{font-family:\0000374}}
+input[type="submit"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner {
+  padding: 0 !important;
+  margin: -1px !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000332}}
+input[type="submit"].blue, input[type="button"].blue {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF023B56');
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzA0ODBiYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAzNWU4OCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0480ba), color-stop(100%, #035e88));
+  background: -webkit-linear-gradient(#0480ba, #035e88);
+  background: -moz-linear-gradient(#0480ba, #035e88);
+  background: -o-linear-gradient(#0480ba, #035e88);
+  background: linear-gradient(#0480ba, #035e88);
+  -webkit-box-shadow: #11b0fa 0 1px 0 inset;
+  -moz-box-shadow: #11b0fa 0 1px 0 inset;
+  box-shadow: #11b0fa 0 1px 0 inset;
+  border: 1px solid #024c6f;
+  color: white;
+  text-shadow: #012738 0 -1px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
+input[type="submit"].blue:hover, input[type="button"].blue:hover {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000336}}
+input[type="submit"].blue:hover, input[type="button"].blue:hover {
+  background-color: #024c6f;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAzNmZhMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAyNGM2ZiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #036fa1), color-stop(100%, #024c6f));
+  background: -webkit-linear-gradient(#036fa1, #024c6f);
+  background: -moz-linear-gradient(#036fa1, #024c6f);
+  background: -o-linear-gradient(#036fa1, #024c6f);
+  background: linear-gradient(#036fa1, #024c6f);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000339}}
+input[type="submit"].blue:active, input[type="button"].blue:active {
+  -webkit-box-shadow: #024260 0 1px 2px inset;
+  -moz-box-shadow: #024260 0 1px 2px inset;
+  box-shadow: #024260 0 1px 2px inset;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
+input[type="submit"].blue.disabled, input[type="submit"].blue[disabled], input[type="button"].blue.disabled, input[type="button"].blue[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #035e88;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000333}}
+input[type="submit"].orange, input[type="button"].orange {
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FFD76609', endColorstr='#FF753805');
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2Q3NjYwOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2E2NGYwNyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #d76609), color-stop(100%, #a64f07));
+  background: -webkit-linear-gradient(#d76609, #a64f07);
+  background: -moz-linear-gradient(#d76609, #a64f07);
+  background: -o-linear-gradient(#d76609, #a64f07);
+  background: linear-gradient(#d76609, #a64f07);
+  -webkit-box-shadow: #f78d36 0 1px 0 inset;
+  -moz-box-shadow: #f78d36 0 1px 0 inset;
+  box-shadow: #f78d36 0 1px 0 inset;
+  border: 1px solid #8e4306;
+  color: white;
+  text-shadow: #582a04 0 -1px 0;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000315}}
+input[type="submit"].orange:hover, input[type="button"].orange:hover {
+  text-decoration: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000336}}
+input[type="submit"].orange:hover, input[type="button"].orange:hover {
+  background-color: #8e4306;
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2JmNWEwOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzhlNDMwNiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #bf5a08), color-stop(100%, #8e4306));
+  background: -webkit-linear-gradient(#bf5a08, #8e4306);
+  background: -moz-linear-gradient(#bf5a08, #8e4306);
+  background: -o-linear-gradient(#bf5a08, #8e4306);
+  background: linear-gradient(#bf5a08, #8e4306);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\0000339}}
+input[type="submit"].orange:active, input[type="button"].orange:active {
+  -webkit-box-shadow: #7f3c05 0 1px 2px inset;
+  -moz-box-shadow: #7f3c05 0 1px 2px inset;
+  box-shadow: #7f3c05 0 1px 2px inset;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/lib\/gems\/1\.9\.1\/gems\/sassy-buttons-0\.2\.6\/stylesheets\/sassy-buttons\/_sassy-button-pseudo-states\.sass}line{font-family:\000036}}
+input[type="submit"].orange.disabled, input[type="submit"].orange[disabled], input[type="button"].orange.disabled, input[type="button"].orange[disabled] {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  background: #a64f07;
+  cursor: default;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000334}}
+input[type="submit"].cta, input[type="button"].cta {
+  font-weight: 400;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  font-size: 26px;
+  padding: 0.4em 0.75em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000339}}
+input[type="submit"].cta .action, input[type="button"].cta .action {
+  display: block;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000340}}
+input[type="submit"].cta .prefix, input[type="button"].cta .prefix {
+  color: #245c08;
+  font: italic 20px/32px Georgia, Baskerville, Palatino, "Palatino Linotype", "Book Antiqua", "Times New Roman", serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000341}}
+input[type="submit"].cta.blue .prefix, input[type="button"].cta.blue .prefix {
+  color: #024666;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000342}}
+input[type="submit"].cta.orange .prefix, input[type="button"].cta.orange .prefix {
+  color: #963b06;
+}
+@media (max-width: 50em) {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000334}}
+  input[type="submit"].cta, input[type="button"].cta {
+    text-align: center;
+  }
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_buttons\.scss}line{font-family:\0000345}}
+input[type="submit"].small, input[type="button"].small {
+  font-size: 14px;
+  padding: 0.35em 0.75em;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  line-height: 14px;
+}
+
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_header\.scss}line{font-family:\000031}}
 #header-bg {
   z-index: -1;
@@ -4233,4 +4445,17 @@ a.tabledrag-handle .handle {
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000345}}
 .cluetip-arrows {
   top: 1em !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000351}}
+.form-disabled > input {
+  background-color: #f0f0f0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c8c8c8;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_overrides\.scss}line{font-family:\0000359}}
+.form-type-checkbox > label {
+  vertical-align: middle;
 }

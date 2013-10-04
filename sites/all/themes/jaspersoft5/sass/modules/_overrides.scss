@@ -45,3 +45,17 @@ a.tabledrag-handle .handle {
 .cluetip-arrows {
 	top:1em!important;
 }
+
+// Disabled form input
+.form-disabled > input
+{
+  background-color: rgb(240,240,240);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(200, 200, 200);
+}
+
+// Label alignment
+.form-type-checkbox > label { vertical-align: middle; }
+
+

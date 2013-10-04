@@ -74,7 +74,6 @@ function jasperforge_sso_server_menu_alter(&$items)
  */
 function jasperforge_sso_server_user_login(&$edit, $account)
 {
-//  $_COOKIE['jasperforge_sso_uid'] = $account->uid;
   setcookie('jasperforge_sso_uid', $account->uid,  time() + 31536000, '/');
 }
 
@@ -145,9 +144,8 @@ function jasperforge_sso_server_check_name($name, $ignore = '')
 {
   if($result = user_validate_name($name))
     return $result;
-  $result = db_query('SELECT uid FROM {users} WHERE name=:name',
-                      array(':name'=>$name))
-                  ->fetchField();
+  $result = db_query('SELECT uid FROM {users} WHERE name=:name', array(':name'=>$name))
+              ->fetchField();
   if($result)
     return t('The name <em>%name</em> is already taken.', array('%name' =>$name));
 
@@ -169,11 +167,8 @@ function jasperforge_sso_server_user_delete($account)
   if(!db_table_exists('jasperforge_sso_links'))
     return;
 
-  db_delete('jasperforge_sso_merge')
-    ->condition('uid', $account->uid)
-    ->execute();
-
-  $skip = isset($_POST['site'])?  escapeshellarg($_POST['site']) : '';
+  // dont send request back to client site if this was from there
+  $skip = isset($_POST['site'])? escapeshellarg($_POST['site']) : '';
 //  dpm("drush sso-user-op \"{$account->uid}\" user_cancel_delete ${skip} > /dev/null &", 'jasperforge_sso_server_user_delete');
   exec("drush sso-user-op \"{$account->uid}\" user_cancel_delete ${skip} > /dev/null &");
 }
@@ -206,6 +201,7 @@ function jasperforge_sso_server_user_delete($account)
  */
 function jasperforge_sso_server_user_cancel($edit, $account, $method)
 {
+  // dont send request back to client site if this was from there
   $skip = isset($_POST['site'])? escapeshellarg($_POST['site']) : '';
   exec("drush sso-user-op \"{$account->uid}\" ${method} ${skip} > /dev/null &");
 }
@@ -245,7 +241,7 @@ function jasperforge_sso_server_user_update(&$edit, $account, $category)
 }
 
 /**
- * Provides SSO services
+ * Receives SSO requests from client sites
  */
 function jasperforge_sso_server_callback()
 {
