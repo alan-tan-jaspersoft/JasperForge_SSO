@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * Implementation of hook_requirements().
+ */
+function salesforce_ssp_auth_requirements($phase) {
+  $requirements = array();
+  require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'salesforce_api') . '/salesforce_api.module';
+  if($phase == 'runtime') {
+    $username = variable_get('salesforce_api_username', FALSE);
+    if(!salesforce_ssp_auth_toolkit_installed()) {
+      $description = t('Salesforce Self-Service Portal Toolkit is missing. Please make sure Salesforce Self-Service Portal Toolkit is available at ' . SALESFORCE_SSP_AUTH_DIR_TOOLKIT);
+      $severity = REQUIREMENT_WARNING;
+    }
+    elseif(!salesforce_api_toolkit_installed() || !$username || !salesforce_api_connect()) {
+      $description = t('Problems exist with Salesforce API module and must be resolved in order to user Self-Service authentication.');
+      $severity = REQUIREMENT_WARNING;
+    }
+    else {
+      $description = t('Salesforce Self-Service Portal libraries and credentials OK.');
+      $severity = REQUIREMENT_OK;
+    }
+  }
+
+  if(!empty($description)) {
+    $requirements[] = array(
+      'title'     => t('Salesforce Self-Serivce Portal Authentication Configuration'),
+      'value'     => l('Salesforce Admin', SALESFORCE_PATH_ADMIN),
+      'description'   => $description,
+      'severity'    => $severity,
+    );
+    return $requirements;
+  }
+}
+
+
+/**
+ * implements hook_uninstall
+ */
+function salesforce_ssp_auth_uninstall()
+{
+  variable_del('salesforce_ssp_override');
+
+}

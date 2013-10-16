@@ -1,0 +1,169 @@
+<?php
+
+/**
+ * @file
+ * Defines a protocol for Drupal users to authenticate against a Salesforce Self-Service User Portal.
+ *
+ */
+
+// Define default directory paths for the Toolkit and WSDL files.
+define('SALESFORCE_SSP_AUTH_DIR', drupal_get_path('module', 'salesforce_ssp_auth'));
+define('SALESFORCE_SSP_AUTH_DIR_TOOLKIT', libraries_get_path('salesforce_ssp'));
+define('SALESFORCE_SSP_AUTH_DIR_SOAPCLIENT', SALESFORCE_SSP_AUTH_DIR_TOOLKIT . '/soapclient');
+define('SALESFORCE_SSP_AUTH_DIR_SSUUTILITY', SALESFORCE_SSP_AUTH_DIR_TOOLKIT . '/selfserviceuser');
+define('SALESFORCE_SSP_AUTH_DIR_WSDL', SALESFORCE_SSP_AUTH_DIR . '/wsdl');
+
+/****************************
+ * 		Hook Functions		*
+ ****************************/
+
+
+function salesforce_ssp_auth_init()
+{
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function salesforce_ssp_auth_menu() {
+	$items = array();
+	/*$items[SALESFORCE_PATH_ADMIN.'/ssp-auth-settings'] = array(
+		'title' 			=> 'Salesforce Self-Service Authentication',
+		'description' 		=> 'Administer settings related to Self-Service authentication.',
+		'page callback' 	=> 'drupal_get_form',
+		'page arguments' 	=> array('salesforce_ssp_auth_settings_form'),
+		'access arguments' 	=> array('administer salesforce'),
+		'file' 				=> 'salesforce_ssp_auth.admin.inc',
+		'type' 				=> MENU_NORMAL_ITEM,
+		'weight' 			=> -9,
+	);*/
+	return $items;
+}
+
+
+/**
+ * implments hook_form_FORM_ID_alter
+ */
+function salesforce_ssp_auth_form_salesforce_api_settings_form_alter(&$form, &$form_state, $form_id)
+{
+  $form['login'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Salesforce User Login Form'),
+    '#weight' => 5,
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    );
+
+  $form['login']['salesforce_ssp_override'] = array(
+    '#type' => 'checkbox',
+    '#default_value' => variable_get('salesforce_ssp_override', FALSE),
+    '#title' => t('Override Drupal Login form by default.'),
+    '#description' => 'If NOT set, URL query <em>salesforce</em> has to be set in the URL to use Salesforce login
+    provided by module <em>Salesforce Self-Service Portal Authentication</em>.',
+    );
+
+
+}
+
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function salesforce_ssp_auth_form_alter(&$form,$form_state,$form_id) {
+	// Alter all user login forms.
+	if((variable_get('salesforce_ssp_override', FALSE) || isset($_GET['salesforce']))
+	     && ($form_id == 'user_login' || $form_id == 'user_login_block' || $form_id == 'user_login_form')) {
+
+		// Clone the form passed by reference and empty it, only setting the SSP validator.
+		// Additional handling is provided in the validator function itself.
+		$oldform 	= $form;
+		$form 		= array();
+		foreach($oldform as $key => $value) {
+			if($key == '#validate') {
+				$form[$key] = array();
+				foreach($value as $validator) {
+					if($validator == 'user_login_authenticate_validate') {
+						$validator = 'salesforce_ssp_auth_authenticate';
+					}
+					$form[$key][] = $validator;
+				}
+			}
+			else {
+				$form[$key] = $value;
+			}
+		}
+	}
+	// Alter admin user settings form.
+	elseif($form_id == 'user_admin_settings') {
+
+	}
+}
+
+
+
+
+/****************************
+ * 		Custom Functions	*
+ ****************************/
+
+/**
+ * Simple check for Salesforce Self-Service Portal Toolkit.
+ */
+function salesforce_ssp_auth_toolkit_installed() {
+	return file_exists(SALESFORCE_SSP_AUTH_DIR_SSUUTILITY . '/SelfServiceUserUtility.php');
+}
+
+/**
+ * Authentication callback.
+ */
+function salesforce_ssp_auth_authenticate($form,&$form_state) {
+	global $salesforce_ssp_auth_authenticated;
+	$username = $form_state['values']['name'];
+
+	// check for bypass here __________________-
+	if($username == 'administrator') {
+		return user_login_authenticate_validate($form, $form_state);
+	}
+
+	$auth = salesforce_ssp_auth_sfdc_ssu($form_state['values']['name'],$form_state['values']['pass']);
+	if($auth) {
+		user_external_login_register($username,'salesforce_ssp_auth');
+		$salesforce_ssp_auth_authenticated = TRUE;
+
+		$account = user_external_load($username);
+		$form_state['uid'] = $account->uid;
+	}
+}
+
+/**
+ * Salesforce SSP Authentication.
+ */
+function salesforce_ssp_auth_sfdc_ssu($username,$password) {
+  $sf = salesforce_api_connect();
+	if($sf) {
+		require_once DRUPAL_ROOT . "/sites/all/libraries/salesforce_ssp/selfserviceuser/SelfServiceUserUtility.php";
+		require_once DRUPAL_ROOT . "/sites/all/libraries/salesforce_ssp/soapclient/SforcePartnerClient.php";
+    dpm($sf, '$sf');
+		// Load up the sitewide API credentials if none were provided.
+		$encrypted = variable_get('salesforce_api_encrypt', FALSE);
+		$goldenUsername = $encrypted
+			? salesforce_api_decrypt(variable_get('salesforce_api_username', ''))
+			: variable_get('salesforce_api_username', '');
+		$goldenPassword = $encrypted
+			? salesforce_api_decrypt(variable_get('salesforce_api_password', ''))
+			: variable_get('salesforce_api_password', '');
+		$goldenPassword .= $encrypted
+			? salesforce_api_decrypt(variable_get('salesforce_api_token', ''))
+			: variable_get('salesforce_api_token', '');
+
+		$wsdl                = drupal_get_path('module', 'salesforce_ssp_auth')."/partner.wsdl.xml";
+
+		$ssuUtility = new SelfServiceUserUtility($wsdl, $goldenUsername, $goldenPassword);
+		$ssu_url = $ssuUtility->getSSP_URL($username, $password);
+		if(strlen($ssu_url) > 100) { return TRUE; }
+	}
+	else {
+		drupal_set_message('Connection to Salesforce failed.');
+		return FALSE;
+	}
+}

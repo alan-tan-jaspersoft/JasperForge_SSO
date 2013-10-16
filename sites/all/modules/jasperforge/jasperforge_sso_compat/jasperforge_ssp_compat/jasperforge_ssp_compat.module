@@ -1,0 +1,252 @@
+<?php
+
+
+require_once 'includes/admin_form.inc';
+require_once 'includes/user_form.inc';
+
+function jasperforge_ssp_compat_init()
+{
+}
+
+/**
+ * implements hook_user_logout
+ */
+function jasperforge_ssp_compat_user_logout($account)
+{
+  setcookie('salesforce_ssp_auth_authenticated', '', time() - 3600, '/');
+}
+
+
+/**
+ * implements hook_menu
+ */
+function jasperforge_ssp_compat_menu()
+{
+  $items = array();
+
+  $items['user/salesforce-login'] = array(
+    'title' => 'Salesforce Self-service Login',
+    'page callback' => 'jasperforge_ssp_compat_user_page',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+
+
+/**
+ * implments hook_module_implements_alter
+ */
+function jasperforge_ssp_compat_module_implements_alter(&$implementations, $hook)
+{
+  if ($hook == 'form_alter')
+  {
+    $group = $implementations['jasperforge_ssp_compat'];
+    unset($implementations['jasperforge_ssp_compat']);
+    $implementations['jasperforge_ssp_compat'] = $group;
+  }
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function jasperforge_ssp_compat_menu_alter(&$items)
+{
+  $items['user']['page callback'] = 'jasperforge_ssp_compat_user_page';
+//  $items['user/login']['page callback'] = 'jasperforge_sso_server_user_page';
+//  $items['user/login']['access callback'] = 'jasperforge_sso_server_user_login_access';
+}
+
+
+function jasperforge_ssp_compat_user_page()
+{
+  if(!$GLOBALS['user']->uid || empty($_POST))
+    return jasperforge_sso_server_user_page();
+
+  include_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'user') . '/user.module';
+
+  // TODO enable this
+//  $auth = salesforce_ssp_auth_sfdc_ssu($_POST['name'], $_POST['pass']);
+  $auth = TRUE;
+  if(!$auth)
+  {
+    drupal_set_message(t('Sorry, unrecognized username or password.'), 'error');
+    $form = drupal_get_form('jasperforge_ssp_compat_salesforce_login_form');
+    $form['name']['#value'] = $_POST['name'];
+    return $form;
+  }
+
+  // check if we have the user account already
+  $mail = $_POST['name'];
+  $account = user_external_load($mail);
+  if(!$account && ($account = user_load_by_mail($mail)))
+    jasperforge_ssp_compat_set_authmap($account->uid, $mail);
+
+  if($account && $GLOBALS['user']->uid != $account->uid)
+  { // currently logged in account is not the salesforce associated account, so log into that account instead
+    module_invoke_all('user_logout', $user);
+    session_destroy();
+    $GLOBALS['user'] = $account;
+    user_login_finalize();
+  }
+  else
+    jasperforge_ssp_compat_set_authmap($GLOBALS['user']->uid, $mail);
+
+  setcookie('salesforce_ssp_auth_authenticated', $mail,  time() + 31536000, '/');
+
+  drupal_goto("{$_GET['site']}/cas?destination={$_GET['dest']}", array('external' => TRUE));
+}
+
+
+
+
+
+/**
+ * Authentication callback.
+ */
+function jasperforge_ssp_compat_authenticate($form,&$form_state)
+{
+  require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'salesforce_ssp_auth') . '/salesforce_ssp_auth.module';
+
+  // TODO enable this
+//  $auth = salesforce_ssp_auth_sfdc_ssu($form_state['values']['name'], $form_state['values']['pass']);
+//  if(!$auth)
+//    return;
+
+  // check if we have the user account already
+  $mail = $form_state['values']['name'];
+  $account = user_external_load($mail);
+  if(!$account && ($account = user_load_by_mail($mail)))  // see if we can find an SSO account with this email
+    jasperforge_ssp_compat_set_authmap($account->uid, $mail);
+
+  if(!$account)
+  { // see if we can find an SSO account from user linked account by reverse searching
+    $uid = db_query('SELECT uid FROM {jasperforge_sso_links} WHERE link_mail=:mail', array(':mail' => $mail))
+            ->fetchField();
+    if($uid && ($account = user_load($uid)))
+      jasperforge_ssp_compat_set_authmap($account->uid, $mail);
+  }
+
+  if(!$account)
+    jasperforge_ssp_compat_register_new($mail, $form_state['values']['pass']);
+
+  setcookie('salesforce_ssp_auth_authenticated', $mail,  time() + 31536000, '/');
+
+  $account = user_external_load($mail);
+  $form_state['uid'] = $account->uid;
+}
+
+/**
+ * Create new account for the given Salesforce credentials
+ */
+function jasperforge_ssp_compat_register_new($mail, $pass)
+{
+  $username = drupal_substr($mail, 0, stripos($mail, '@'));
+  $sites = jasperforge_sso_server_get_supported_sites();
+  foreach ($sites as $site)
+    if(!JasperForgeSSO::check_name($site, $username, $mail))
+    {
+      $username = $username . '_' . time();
+      break;
+    }
+  $userinfo = array(
+    'name' => $username,
+    'pass' => $pass,
+    'mail' => $mail,
+    'init' => $mail,
+    'status' => 1,
+    'access' => REQUEST_TIME,
+    );
+
+  try{
+    $account = user_save(drupal_anonymous_user(), $userinfo);
+  }
+  catch(Exception $e){
+    watchdog_exception(jasperforge_ssp_compat, $e);
+  }
+  if (!$account)  // Terminate if an error occurred during user_save().
+  {
+    drupal_set_message(t("Error saving user account."), 'error');
+    return;
+  }
+  jasperforge_ssp_compat_set_authmap($account->uid, $mail); // external_username != internal_username
+  _user_mail_notify('register_admin_created', $account);
+
+  foreach ($sites as $site)
+    exec("drush sso-user-merge {$site} {$account->name} {$account->uid} {$account->mail} > /dev/null &");
+}
+
+
+/**
+ * Returns the array of SF_SSP enabled sites
+ */
+function jasperforge_ssp_compat_get_ssp_sites()
+{
+  $sites = str_replace("\n", ',', variable_get('jasperforge_ssp_compat_ssp_site', ''));
+  $sites = str_replace("\r", '', $sites);
+  return $sites? explode(',', trim($sites)) : array();
+}
+
+
+/**
+ * Util function
+ * Replaces user_set_authmaps since it will replace existing entries
+ */
+function jasperforge_ssp_compat_set_authmap($uid, $auth_name, $auth_module = 'salesforce_ssp_auth')
+{
+  try{
+    db_insert('authmap')
+      ->fields(array(
+        'uid' => $uid,
+        'authname' => $auth_name,
+        'module' => $auth_module
+        ))
+      ->execute();
+  }
+  catch(Exception $e){
+    watchdog_exception('jasperforge_ssp_compat', $e);
+  }
+
+
+}
+
+
+/**
+ * Return additional CAS attributes when acting as a CAS server.
+ *
+ * This hook allows modules to add additional CAS attributes to the basic
+ * response by the CAS Server module.
+ *
+ * @param $account
+ *   The user being logged in.
+ * @param $service
+ *   The service URL of the site the user is logging in to.
+ * @param $ticket
+ *   The login ticket the user provided.
+ *
+ * @return
+ *   An associative array of CAS attributes for the user.
+ *
+ * @see hook_cas_server_user_attributes_alter()
+ */
+/*function jasperforge_ssp_compat_cas_server_user_attributes($account, $service, $ticket) {
+  $attributes = array();
+
+  db_query('SELECT authname FROM {authmap} WHERE uid=:uid', array(':uid' => $account->uid))->fe
+  // Attributes can be single valued...
+  $attributes['color'] = 'blue';
+
+  // ... or multi-valued.
+  $attributes['friends'] = array('dries', 'webchick');
+
+  // Or change the response based upon the server.
+  if (preg_match("@^http://apple.com/@", $service)) {
+    // This data should not be confidential as the service URL is directly
+    // supplied by the user and is in no way validated.
+    $attributes['friends'] += 'sjobs';
+  }
+
+  return $attributes;
+}*/

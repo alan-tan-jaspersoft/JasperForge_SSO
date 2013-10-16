@@ -1,0 +1,8 @@
+<?php
+
+
+
+function jasperforge_ssp_compat_uninstall()
+{
+  variable_del('jasperforge_ssp_compat_ssp_site');
+}

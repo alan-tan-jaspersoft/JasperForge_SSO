@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * implements hook_form_FORM_ID_alter
+ * Removes captcha from the registration form except the first page
+ */
+function jasperforge_sso_compat_form_jasperforge_sso_server_reg_form_alter(&$form, &$form_state, $form_id)
+{
+  unset($form['captcha']);
+}

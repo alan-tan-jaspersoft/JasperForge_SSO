@@ -1,0 +1,7 @@
+name = Salesforce Self-Service Portal Authentication
+description = Allows a Drupal site to authenticate against a Salesforce Self-Service User Portal.
+package = Jaspersoft
+core = 7.x
+version = 7.x-1.0-beta1
+dependencies[] = salesforce_api
+dependencies[] = libraries

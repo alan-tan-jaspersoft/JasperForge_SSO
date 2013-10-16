@@ -1,0 +1,9 @@
+name = Jasperforge SSO Compatibility
+description = Provides general compatibility for SSO and other modules
+core = 7.x
+package = Jasperforge
+php = 5.2.4
+version = 7.x-1.0-dev
+;configure = admin/config/people/jf-sso
+;files[] = includes/JasperForgeSSO.inc
+dependencies[] = cas_server

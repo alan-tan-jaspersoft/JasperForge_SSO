@@ -1,0 +1,10 @@
+fieldset#edit-salesforce table { /*width: 50%;*/ width:auto;}
+fieldset#edit-salesforce .form-item
+{
+  float: left;
+  margin-top: 0px;
+  margin-right: 15px;
+}
+
+fieldset#edit-salesforce fieldset#edit-salesforce-new { border: 0px; padding: 0; }
+fieldset#edit-salesforce input#edit-salesforce-new-submit { margin-top: 1.5em; }
