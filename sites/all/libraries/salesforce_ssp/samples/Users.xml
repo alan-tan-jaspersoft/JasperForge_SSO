@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<Users>
+  <User>
+    <UserName>john</UserName>
+    <UserPassword>
+      5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
+    </UserPassword>
+    <SalesforceUserName>test@test.com</SalesforceUserName>
+  </User>
+<User><UserName>test</UserName><UserPassword>5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8</UserPassword><SalesforceUserName>test@test.com</SalesforceUserName></User><User><UserName>bsohr@salesforce.com</UserName><UserPassword>07e44c65b50e7804e962e80838f9f6f0597e216c</UserPassword><SalesforceUserName>bsohr@salesforce.com</SalesforceUserName></User></Users>
