@@ -1,10 +1,15 @@
 #page-title { display: none; }
-form#user-login, form#user-pass
+
+form#user-login, form#user-pass, form#user-login-form
 {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
 }
+
+form#user-login-form .form-text  {  width: 250px; }
+
+form#user-login-form > div > .item-list { display: none; }
 
 #block-system-main > form#jasperforge-sso-server-reg-form
 {

@@ -1,0 +1,11 @@
+#page-title { display: none; }
+
+
+#block-system-main
+{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#block-system-main > p:first-child {  font-size: 1.5em; }

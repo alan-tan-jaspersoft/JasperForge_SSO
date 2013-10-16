@@ -146,9 +146,8 @@ function drush_jasperforge_sso_server_sso_user_merge_2($site, $cas_name, $cas_ui
   catch(Exception $e)
   {
     if($e->getMessage() != 'SSO client Timed Out')
-      continue;
-    if(!isset($link))
-      $link = new JasperForgeSSO($user->uid, TRUE);
+      return;
+    $link = new JasperForgeSSO($user->uid, TRUE);
     $link->sso_link(array('site' => $site, 'mail' => $_POST['mail'], 'type' => 'user'));
   }
 }

@@ -6,11 +6,12 @@
 function jasperforge_sso_server_admin_form($form, &$form_state)
 {
   $form['sites'] = array(
-    '#title' => t('Supported Sites'),
+    '#title' => t('SSO Client Sites'),
     '#type' => 'textarea',
     '#rows' => 4,
-    '#description' => t ('Enter the list of supported website\'s URLs, separated by newline or comma.'),
+    '#description' => t ('Enter the list of SSO client site URLs, separated by newline or comma.'),
     '#default_value' => variable_get('jf_sso_sites', "www.jaspersoft.com\ncommunity.jaspersoft.com"),
+    '#weight' => -15,
     );
 
   $form['secret_container'] = array(

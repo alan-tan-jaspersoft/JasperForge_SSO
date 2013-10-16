@@ -11,12 +11,21 @@ function jasperforge_sso_server_reg_form($form, &$form_state)
 
   $step = jasperforge_sso_server_reg_steps($form_state['step']);
   $form = $step['form']($form, $form_state);
+  if($form_state['step'] == 0)
+  {
+    $hooks = array('form');
+    $form_id = 'user_register_form';
+    $hooks[] = 'form_user_register_form';
+    drupal_alter($hooks, $form, $form_state, $form_id);
+  }
+
   $form['#validate'][] = 'jasperforge_sso_server_reg_validate';
 //  $form['#submit'][] = 'user_register_submit';
 
   $form['#attached']['css'] = array(
-    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/form.css',
+    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/misc.css',
   );
+
   return $form;
 }
 
@@ -32,7 +41,7 @@ function jasperforge_sso_server_reg_validate($form, &$form_state)
  */
 function jasperforge_sso_server_reg_steps($step = NULL)
 {
-  $steps = array(
+  static $steps = array(
     array('form' => 'user_register_form', 'validate' => 'jasperforge_sso_server_initial_validate'),
     array('form' => 'jasperforge_sso_server_step1', 'validate' => 'jasperforge_sso_server_step1_validate'),
     array('form' => 'jasperforge_sso_server_step2', 'validate' => 'jasperforge_sso_server_step2_validate'),
@@ -42,13 +51,18 @@ function jasperforge_sso_server_reg_steps($step = NULL)
   return isset($step)? $steps[$step] : $steps;
 }
 
+
+
+
 /**
  * implements hook_form_alter
  * Alters user_register_form
  */
-function jasperforge_sso_server_form_alter(&$form, &$form_state, $form_id){
-  if ($form_id != 'jasperforge_sso_server_reg_form' || $form_state['step'] != 0)
-    return;
+//function jasperforge_sso_server_form_jasperforge_sso_server_reg_form_alter(&$form, &$form_state, $form_id)
+function jasperforge_sso_server_form_user_register_form_alter(&$form, &$form_state, $form_id)
+{
+//  if ($form_id != 'jasperforge_sso_server_reg_form' || $form_state['step'] != 0)
+//    return;
 
   unset($form['actions']);
   unset($form['#submit']);
@@ -106,6 +120,7 @@ You will be able to link more existing accounts later.',
   $form['account']['next'] = array(
     '#type' => 'button',
     '#value' => t('Next'),
+    '#weight' => 99,
 //    '#limit_validation_errors' => array(array('mail')),
     '#ajax' => array(
       'callback' => 'jasperforge_sso_server_user_register_ajax',
@@ -115,7 +130,6 @@ You will be able to link more existing accounts later.',
       'event' => 'click',
       ),
     );
-
 
 }
 
@@ -503,15 +517,18 @@ function jasperforge_sso_server_step3_validate($form, &$form_state)
   }
 
   // one last check for name availability
-  $result = jasperforge_sso_server_check_name(
-                $_SESSION['form_state']['values']['name'],
-                $_SESSION['form_state']['values']['mail']
-                );
-  if($result !== TRUE)
+  foreach (jasperforge_sso_server_get_supported_sites() as $site)
   {
+    $result = JasperForgeSSO::check_name($site,
+                                         $_SESSION['form_state']['values']['name'],
+                                         $_SESSION['form_state']['values']['mail']
+                                         );
+    if(!$result)
+    {
       $form_state['step'] = $form_state['step'] + 1;
       $form_state['rebuild'] = TRUE;
       return;
+    }
   }
 
   // everything good, submit the form
@@ -678,15 +695,6 @@ function jasperforge_sso_server_add_links_submit(&$form_state)
       );
     $result = $links->sso_link($data);
 
-    if($data['type'] == 'auto')
-    {
-//      JasperForgeSSO::merge_account($site, $user->name, $user->uid, $user->mail);
-      $site = escapeshellarg($site);
-      $cas_name = escapeshellarg($user->name);
-      $cas_uid = escapeshellarg($user->uid);
-      $mail = escapeshellarg($user->mail);
-      exec("drush sso-user-merge {$site} {$cas_name} {$cas_uid} {$mail} > /dev/null &");
-    }
     if($result === TRUE)
       continue; // added successfully, next one
 

@@ -5,6 +5,9 @@ include_once 'includes/registration_form.inc';
 
 function jasperforge_sso_server_init()
 {
+  if($_GET['q'] == 'cas/logout')
+    drupal_add_css(drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/logout_page.css',
+                    array('group'=> CSS_THEME , 'weight'=> 999));
 }
 
 
@@ -13,6 +16,8 @@ function jasperforge_sso_server_init()
  */
 function jasperforge_sso_server_menu()
 {
+  $items = array();
+
   $items['admin/config/people/jf-sso'] = array(
     'title' => 'JasperForge SSO',
     'description' => 'Settings for JasperForge SSO',
@@ -64,10 +69,26 @@ function jasperforge_sso_server_menu()
 function jasperforge_sso_server_menu_alter(&$items)
 {
   $items['user/register']['page arguments'] = array('jasperforge_sso_server_reg_form');
-//  $items['cas/logout']['page callback'] = array('jasperforge_sso_server_logout');
-  return $items;
+  $items['user']['page callback'] = 'jasperforge_sso_server_user_page';
 }
 
+
+
+function jasperforge_sso_server_user_page()
+{
+  global $user;
+  if ($user->uid)
+  {
+    menu_set_active_item('user/' . $user->uid);
+    return menu_execute_active_handler(NULL, FALSE);
+  }
+  else
+  {
+    if(isset($_POST['form_id']) && strstr($_POST['form_id'], 'user_login'))
+      return drupal_get_form($_POST['form_id']);
+    return drupal_get_form('user_login');
+  }
+}
 
 /**
  * implements hook_user_login
@@ -83,7 +104,7 @@ function jasperforge_sso_server_user_login(&$edit, $account)
  */
 function jasperforge_sso_server_user_logout($account)
 {
-  setcookie ('asperforge_sso_uid', '', time() - 3600);
+  setcookie ('jasperforge_sso_uid', '', time() - 3600, '/');
   if($_GET['q'] == 'cas/logout' && isset($_GET['url']))
     drupal_add_http_header('Refresh', "1; url={$_GET['url']}"); //redirect back to previous page after X delay
 }
@@ -96,7 +117,7 @@ function jasperforge_sso_server_get_supported_sites()
 {
   $jf_sso_sites = str_replace("\n", ',', variable_get('jf_sso_sites', 'www.jaspersoft.com,community.jaspersoft.com'));
   $jf_sso_sites = str_replace("\r", '', $jf_sso_sites);
-  return explode(',', $jf_sso_sites);
+  return $jf_sso_sites? explode(',', $jf_sso_sites) : array();
 }
 
 
@@ -285,9 +306,8 @@ function jasperforge_sso_server_sso_user_op()
 function jasperforge_sso_server_sso_unblock()
 {
   $users = user_load_multiple(explode(',', $_POST['cas_uid']));
-  foreach ($users as $user) {
+  foreach ($users as $user)
     user_save($user, array('status' => 1));
-  }
 
   $data = serialize(array('status' => 1));
   $data = escapeshellarg($data);
@@ -299,9 +319,8 @@ function jasperforge_sso_server_sso_unblock()
 function jasperforge_sso_server_sso_block()
 {
   $users = user_load_multiple(explode(',', $_POST['cas_uid']));
-  foreach ($users as $user) {
+  foreach ($users as $user)
     user_save($user, array('status' => 0));
-  }
 
   $data = serialize(array('status' => 0));
   $data = escapeshellarg($data);
@@ -526,7 +545,7 @@ function jasperforge_sso_server_cas_server_user_attributes($account, $service, $
 function jasperforge_sso_server_batch_link($uid, $data, &$context)
 {
   if(!isset($context['results']['links']))
-    $context['results']['links'] = new JasperForgeSSO($uid);
+    $context['results']['links'] = new JasperForgeSSO($uid, TRUE);
 
   $result = $context['results']['links']->sso_link($data);
   if($result === TRUE)

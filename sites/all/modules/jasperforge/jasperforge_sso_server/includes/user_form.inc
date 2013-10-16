@@ -3,7 +3,31 @@
 require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'user') . '/user.module';
 
 
+/**
+ * Implements of hook_form_alter().
+ */
+function jasperforge_sso_server_form_alter(&$form, $form_state, $form_id)
+{
+  // Alter all user login forms.
+  if($form_id == 'user_login' || $form_id == 'user_login_block' || $form_id == 'user_login_form')
+    if(isset($_GET['site']))
+    {
+      $form['#submit'][] = 'jasperforge_sso_server_login_redirect';
 
+      $query = $_GET;
+      unset($query['q']);
+      $form['#action'] = url($_GET['q'], array('query' => $query)); // fix the POST action URL
+    }
+}
+
+
+function jasperforge_sso_server_login_redirect($form, &$form_state)
+{
+//  $form_state['redirect'] = $_GET['destination'];
+
+  if(isset($_GET['site']))
+    $form_state['redirect'] = "{$_GET['site']}/cas?destination={$_GET['dest']}";
+}
 
 /**
  * implements hook_form_FORM_ID_alter
@@ -11,7 +35,17 @@ require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'user') . '/user.modu
 function jasperforge_sso_server_form_user_login_alter(&$form, &$form_state, $form_id)
 {
   $form['#attached']['css'] = array(
-    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/form.css',
+    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/misc.css',
+  );
+}
+
+/**
+ * implements hook_form_FORM_ID_alter
+ */
+function jasperforge_sso_server_form_user_login_block_alter(&$form, &$form_state, $form_id)
+{
+  $form['#attached']['css'] = array(
+    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/misc.css',
   );
 }
 
@@ -21,7 +55,7 @@ function jasperforge_sso_server_form_user_login_alter(&$form, &$form_state, $for
 function jasperforge_sso_server_form_user_pass_alter(&$form, &$form_state, $form_id)
 {
   $form['#attached']['css'] = array(
-    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/form.css',
+    drupal_get_path('module', 'jasperforge_sso_server') . '/theme/css/misc.css',
   );
 }
 
@@ -204,6 +238,16 @@ function jasperforge_sso_server_link_form($user)
     }
   }//foreach
 
+  if(!$sites)
+  {
+    $form['account_link']['description'] = array(
+      '#prefix' => '<div class="messages warning">',
+      '#markup' => 'Account Linking not available at the moment.',
+      '#suffix' => '</div>',
+      );
+    return $form;
+  }
+
   $form['account_link']['description'] = array(
     '#prefix' => '<div class="description">',
     '#markup' => t('To link an account, click the checkbox next to the website the existing account belongs to.
@@ -315,7 +359,7 @@ function jasperforge_sso_server_link_form_validate(&$form, &$form_state)
 
 function jasperforge_sso_server_link_form_remove_submit($form, &$form_state)
 {
-  $links = new JasperForgeSSO($form_state['user']->uid);
+  $links = new JasperForgeSSO($form_state['user']->uid, TRUE);
   foreach ($links->creds['active'] as $site => $mail)
     $links->sso_unlink($site);
 
@@ -331,7 +375,7 @@ function jasperforge_sso_server_link_form_submit(&$form, &$form_state)
   if($form_state['clicked_button']['#name'] == 'remove_all_links')
     return;
   $need_save = FALSE;
-  $links = new JasperForgeSSO($form_state['user']->uid);
+  $links = new JasperForgeSSO($form_state['user']->uid, TRUE);
 
 /*  if(isset($form_state['values']['sync_name']) && $links->sync_name != $form_state['values']['sync_name'])
   {
@@ -468,6 +512,17 @@ function jasperforge_sso_server_merge_form($user)
     '#markup' => '</table>'
     );
 
+  if(!($supported_sites = jasperforge_sso_server_get_supported_sites()))
+  {
+    $form['account_merge']['description'] = array(
+      '#prefix' => '<div class="messages warning">',
+      '#markup' => 'Account Merging not available at the moment.',
+      '#suffix' => '</div>',
+      );
+    unset($form['account_merge']['warning']);
+    return $form;
+  }
+
   $form['account_merge']['new'] = array(
     '#type' => 'fieldset',
     '#title' => t('Merge Existing Account'),
@@ -476,7 +531,6 @@ function jasperforge_sso_server_merge_form($user)
     '#collapsed' => FALSE,
     );
 
-  $supported_sites = jasperforge_sso_server_get_supported_sites();
   $form['account_merge']['new']['site'] = array(
     '#type' => 'select',
     '#title' => t('Website'),
@@ -570,6 +624,8 @@ function jasperforge_sso_server_merge_form_validate(&$form, &$form_state)
   {
     if(stristr($result, 'Unrecognized'))
       $msg = $result;
+    elseif(stristr($result, 'timed out'))
+      $msg = 'We are unable to service your request at the moment, please try again later.';
     else
     {
       $msg = 'The account <em>@mail</em> is not qualified for merging.';
@@ -602,6 +658,6 @@ function jasperforge_sso_server_merge_form_submit($form, &$form_state)
   {
     if($e->getMessage() != 'SSO client Timed Out' || $e->getMessage() != $result->data)
       watchdog_exception('jasperforge_sso_server', $e);
-    drupal_set_message('We are unable to service your request at the moment, please try again later.', 'error');
+    drupal_set_message(t('We are unable to service your request at the moment, please try again later.'), 'error');
   }
 }
