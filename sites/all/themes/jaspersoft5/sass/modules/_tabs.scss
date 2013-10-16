@@ -173,11 +173,40 @@ ul.button-bar {
 
 .vertical-tabs
 {
-  .vertical-tabs-list
+  ul.vertical-tabs-list
   {
-    .offscreen { display: none; }
-  }
-  .vertical-tabs-panes { padding: 10px; }
+    border-top: 0px;
+    margin-top: 10px;
 
+    .offscreen { display: none; }
+    .vertical-tab-button
+    {
+      border: 0px;
+      background-color: transparent;
+      height: 30px;
+      a
+      {
+        height: 100%;
+        vertical-align:middle;
+        padding: 0;
+        text-align: right;
+        margin-right: 35px;
+        &:hover { outline: 0 none !important; }
+        * { vertical-align: middle; padding-top: 4px; }
+      }
+    }
+    .vertical-tab-button.selected
+    {
+      background-color: white;
+      background-image: url(../images/triangle.png);
+      background-size: 22px 100%;
+      background-repeat: no-repeat;
+      background-position: right center;
+      margin-right: -1px;
+      margin-left: -1px;
+      a {  strong {text-decoration: underline;} }
+    }
+  }
+  .vertical-tabs-panes{  padding: 10px;  }
 }
 

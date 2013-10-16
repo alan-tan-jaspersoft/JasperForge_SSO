@@ -1556,6 +1556,7 @@ dl.feature-list dd {
 .description {
   font-size: 0.85em;
   line-height: 1;
+  margin-top: 0;
 }
 
 @media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_type\.scss}line{font-family:\00003186}}
@@ -1639,6 +1640,15 @@ var {
 }
 
 /* =============================================================================
+ *   Page content
+ * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003104}}
+#content {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+/* =============================================================================
  *   Misc Global Styles
  * ========================================================================== */
 /*
@@ -1647,14 +1657,14 @@ var {
 /*
  * Aggregator feed source
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003114}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003118}}
 #aggregator .feed-source .feed-icon {
   display: inline;
   float: none;
   margin-right: 10px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003121}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003125}}
 .feed-details dt,
 .feed-details dd {
   display: inline;
@@ -1667,16 +1677,16 @@ var {
 /*
  * Generic styles for links. See the ul.links declaration in node and comment stylesheets
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003134}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003138}}
 ul.links {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003138}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003142}}
 ul.links.inline {
   display: block;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003142}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003146}}
 ul.links li {
   display: inline;
   list-style: none;
@@ -1686,7 +1696,7 @@ ul.links li {
 /*
  * Search results are an ordered list so reset the margin
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003153}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003157}}
 .search-results {
   margin: 0;
 }
@@ -1736,13 +1746,19 @@ ul.links li {
 /* =============================================================================
  *   Links
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003243}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003246}}
 a {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003253}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003256}}
 a:hover, a:focus {
   text-decoration: underline;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003264}}
+li > a:hover, li > a:active, li > a:focus {
+  outline: 0 none;
+  text-decoration: none;
 }
 
 /* =============================================================================
@@ -1755,17 +1771,17 @@ a:hover, a:focus {
  *  - #secondary-menu (secondary/user menu)
  * You can target all of these with .nav or div[id$="menu-bar"]
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003271}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003282}}
 .nav {
   clear: both;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003275}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003286}}
 .nav ul,
 .nav ul.menu {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003281}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003292}}
 .nav li,
 .nav ul.menu li {
   display: inline;
@@ -1773,14 +1789,14 @@ a:hover, a:focus {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003289}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003300}}
 .nav li a,
 .nav ul.menu li a {
   display: block;
   white-space: nowrap;
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003299}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003310}}
 .nav .block {
   margin-bottom: 0;
 }
@@ -1788,21 +1804,21 @@ a:hover, a:focus {
 /* =============================================================================
  *   Menus, usually blocks
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003309}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003320}}
 ul.menu {
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003312}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003323}}
 ul.menu ul {
   padding-left: 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003320}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003331}}
 ul.menu li {
   margin: 0;
 }
 
 /* If li.content exists it's a problem, so reset the padding */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003349}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003360}}
 .block .menu li.content {
   padding: 0;
 }
@@ -1810,13 +1826,13 @@ ul.menu li {
 /* =============================================================================
  *   Book navigation menu
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003366}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003377}}
 .book-navigation .page-up {
   /* Prevent text wrapping to a new line, assumes English "up" is used (two characters) */
   min-width: 2em;
   white-space: nowrap;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003372}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003383}}
 .book-navigation .menu {
   margin-left: 0;
 }
@@ -1824,31 +1840,31 @@ ul.menu li {
 /* =============================================================================
  *   Breadcrumbs
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003382}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003393}}
 #breadcrumb {
   margin: 10px 0 0;
   /* If the label is set to show in theme settings the label class is added */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003386}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003397}}
 #breadcrumb .breadcrumb-label {
   font-size: 1em;
   display: inline;
   padding-right: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003402}}
 #breadcrumb .breadcrumb-label:after {
   content: ":";
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003396}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003407}}
 #breadcrumb ol {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003401}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003412}}
 #breadcrumb .with-breadcrumb-label ol {
   display: inline;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003405}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003416}}
 #breadcrumb li {
   list-style: none;
   display: inline;
@@ -1857,31 +1873,31 @@ ul.menu li {
 /* =============================================================================
  *   Pagers
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003432}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003443}}
 ul.pager {
   clear: both;
   margin: 0;
   text-align: center;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003439}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003450}}
 .item-list ul.pager li {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003444}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003455}}
 ul.pager li {
   background-image: none;
   display: inline;
   list-style-type: none;
   padding: .5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003450}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003461}}
 ul.pager li.pager-current {
   font-weight: 700;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003456}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003467}}
 .block ul.pager li {
   margin: 0;
 }
@@ -1892,7 +1908,7 @@ ul.pager li.pager-current {
 /* =============================================================================
  *   Action links
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003492}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003503}}
 ul.action-links {
   margin: 20px 0 0;
   list-style: none;
@@ -1913,7 +1929,7 @@ ul.action-links {
 /*
  * Labels are h2 in Adaptivetheme. Use a strong selector to mitigate unwanted ineritance issues
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003525}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003536}}
 .field-label {
   font-size: 1em;
   font-weight: 700;
@@ -1931,17 +1947,17 @@ ul.action-links {
 /*
  * Taxonomy
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003554}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003565}}
 .field-type-taxonomy-term-reference {
   /* The same bottom margin as p, blockquote, ul, ol and dl */
   margin-bottom: 1.5em;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003559}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003570}}
 .field-type-taxonomy-term-reference.field-label-inline .field-items {
   margin: 0;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003564}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003575}}
 .field-type-taxonomy-term-reference.field-label-inline .field-item {
   display: inline;
   list-style: none;
@@ -1999,7 +2015,7 @@ ul.action-links {
 /*
  * Float left setting
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003679}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003690}}
 .ia-l .field-type-image figure,
 .iat-l .field-type-image figure {
   margin: 5px 20px 15px 0;
@@ -2008,7 +2024,7 @@ ul.action-links {
 /*
  * Centered setting
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003688}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003699}}
 .ia-c .field-type-image figure,
 .iat-c .field-type-image figure {
   margin: 5px auto 15px;
@@ -2017,7 +2033,7 @@ ul.action-links {
 /*
  * Float right setting
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003697}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003708}}
 .ia-r .field-type-image figure,
 .iat-r .field-type-image figure {
   margin: 5px 0 15px 20px;
@@ -2029,7 +2045,7 @@ ul.action-links {
 /*
  * Main wrapper for most blocks, block_system_main does not have it
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003709}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003720}}
 .block {
   margin-bottom: 20px;
 }
@@ -2052,7 +2068,7 @@ ul.action-links {
 /*
  * Block title
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003746}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003757}}
 .block-title {
   margin: 0;
 }
@@ -2063,12 +2079,12 @@ ul.action-links {
 /*
  * Match item list and block menu margin and padding
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003763}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003774}}
 .block-content ul,
 .block-content ol {
   padding: 0 0 0 15px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003767}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003778}}
 .block-content li {
   margin: 0;
   padding: 0;
@@ -2077,11 +2093,11 @@ ul.action-links {
 /* =============================================================================
  *   Node Styling
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003778}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003789}}
 .node {
   margin-bottom: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003795}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003806}}
 .node .node-title {
   margin: 0;
 }
@@ -2094,14 +2110,19 @@ ul.action-links {
 /* =============================================================================
  *   Forms
  * ========================================================================== */
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003856}}
+fieldset {
+  margin-top: 1em;
+}
+
 /*
  * Wrapper for a form element (or group of form elements) and its label
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003857}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003869}}
 .form-item label {
   font-weight: 700;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003864}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003876}}
 .form-item .description {
   font-size: 0.85em;
 }
@@ -2112,7 +2133,7 @@ ul.action-links {
 /*
  * The submit button
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003892}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003904}}
 .container-inline div,
 .container-inline label {
   display: inline;
@@ -2127,7 +2148,7 @@ ul.action-links {
 /*
  * Password confirmation
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003916}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003928}}
 .password-parent,
 .confirm-parent {
   margin: 0;
@@ -2136,37 +2157,37 @@ ul.action-links {
 /* =============================================================================
  *   Tables
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003925}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003937}}
 table {
   margin: 10px 0;
   padding: 0;
   width: 100%;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003930}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003942}}
 table.sticky-header {
   z-index: 10;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003948}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003960}}
 table,
 td,
 th {
   vertical-align: middle;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003955}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003967}}
 caption,
 th,
 td {
   text-align: left;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003960}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003972}}
 thead tr {
   font-weight: 700;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003967}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003979}}
 td,
 th {
   border-bottom: 0;
@@ -2174,11 +2195,11 @@ th {
   padding: 5px 7px;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003982}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003994}}
 tr {
   /* Table row striping */
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\00003991}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031003}}
 tr.info, tr.even, tr:nth-child(2n+2) {
   border-bottom: 0;
 }
@@ -2186,12 +2207,12 @@ tr.info, tr.even, tr:nth-child(2n+2) {
 /* =============================================================================
  *   Messages
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031028}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031040}}
 div.messages {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031033}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031045}}
 div.messages ul {
   margin-top: 0;
   margin-bottom: 0;
@@ -2203,28 +2224,28 @@ div.messages ul {
 /* =============================================================================
  *    Maintenance pages
  * ========================================================================== */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031085}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031097}}
 .maintenance-page .container {
   padding: 40px 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031090}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031102}}
 .maintenance-page #site-name,
 .maintenance-page #page-title {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031096}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031108}}
 .db-offline .container {
   margin: 0 auto;
   padding: 40px 0;
   width: 100%;
   max-width: 960px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031103}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031115}}
 .db-offline div.messages {
   margin: 20px 0 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031119}}
 .db-offline #content {
   padding: 20px 0;
 }
@@ -2235,7 +2256,7 @@ div.messages ul {
 /*
  * Admin menu overrides
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031132}}
 #admin-menu {
   margin: 0;
   padding: 0;
@@ -2244,7 +2265,7 @@ div.messages ul {
 /*
  * Devel Module
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031128}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031140}}
 .dev-query {
   padding: 30px;
 }
@@ -2252,11 +2273,11 @@ div.messages ul {
 /*
  * Styleguide module tweaks
  */
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031148}}
 #styleguide-header {
   padding: 0 10px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031139}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/framework\/_base\.scss}line{font-family:\000031151}}
 #styleguide-header .item-list {
   font-family: inherit;
   margin: 0 20px 20px 0;
@@ -3283,8 +3304,11 @@ input[type="submit"].small, input[type="button"].small {
   border-right: 1px solid #035585;
   float: left;
   position: relative;
+  height: 34px;
+  top: -1px;
+  padding-top: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000328}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000331}}
 #menu-bar nav.block-menu > ul > li > a {
   color: #FFFFFF;
   display: block;
@@ -3295,44 +3319,12 @@ input[type="submit"].small, input[type="button"].small {
   padding: 5px 30px;
   text-transform: uppercase;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000337}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000340}}
 #menu-bar nav.block-menu > ul > li > a:hover {
   text-decoration: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000339}}
-#menu-bar nav.block-menu > ul > li > ul {
-  background: #003b64;
-  display: none;
-  float: left;
-  padding: 12px;
-  position: absolute;
-  z-index: 120;
-  -webkit-box-shadow: 0px 0px 7px 0px #333333;
-  -moz-box-shadow: 0px 0px 7px 0px #333333;
-  box-shadow: 0px 0px 7px 0px #333333;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000348}}
-#menu-bar nav.block-menu > ul > li > ul > li a {
-  color: #FFFFFF;
-  font-weight: 400;
-  font-size: 14px;
-  font-height: 22px;
-  font-family: "franklin-gothic-urw", Arial, Helvetica, sans-serif;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000355}}
-#menu-bar nav.block-menu > ul > li > ul > li > a {
-  font-weight: 600;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000358}}
-#menu-bar nav.block-menu > ul > li > ul > li > ul {
-  margin-left: 0.5em;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000361}}
-#menu-bar nav.block-menu > ul > li:first-child {
-  border-left: 1px solid #035585;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000362}}
-#menu-bar nav.block-menu > ul > li:hover, #menu-bar nav.block-menu > ul > li:active, #menu-bar nav.block-menu > ul > li.active-trail, #menu-bar nav.block-menu > ul > li.active {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000341}}
+#menu-bar nav.block-menu > ul > li > a:focus {
   background-color: #0480ba;
   *zoom: 1;
   filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
@@ -3347,34 +3339,82 @@ input[type="submit"].small, input[type="button"].small {
   background-image: -o-linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
   background-image: linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000363}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000343}}
+#menu-bar nav.block-menu > ul > li > ul {
+  background: #003b64;
+  display: none;
+  float: left;
+  padding: 12px;
+  position: absolute;
+  z-index: 120;
+  -webkit-box-shadow: 0px 0px 7px 0px #333333;
+  -moz-box-shadow: 0px 0px 7px 0px #333333;
+  box-shadow: 0px 0px 7px 0px #333333;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000352}}
+#menu-bar nav.block-menu > ul > li > ul > li a {
+  color: #FFFFFF;
+  font-weight: 400;
+  font-size: 14px;
+  font-height: 22px;
+  font-family: "franklin-gothic-urw", Arial, Helvetica, sans-serif;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000359}}
+#menu-bar nav.block-menu > ul > li > ul > li > a {
+  font-weight: 600;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000362}}
+#menu-bar nav.block-menu > ul > li > ul > li > ul {
+  margin-left: 0.5em;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000365}}
+#menu-bar nav.block-menu > ul > li:first-child {
+  border-left: 1px solid #035585;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000366}}
+#menu-bar nav.block-menu > ul > li:hover, #menu-bar nav.block-menu > ul > li:active, #menu-bar nav.block-menu > ul > li:focus, #menu-bar nav.block-menu > ul > li.active-trail, #menu-bar nav.block-menu > ul > li.active {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-color: #0075bf;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0075BF', endColorstr='#FF003B64');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzViZiIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjMDA1MzhjIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAzYjY0Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0075bf), color-stop(64%, #00538c), color-stop(100%, #003b64));
+  background-image: -webkit-linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+  background-image: -moz-linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+  background-image: -o-linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+  background-image: linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000367}}
 #menu-bar nav.block-menu > ul > li:hover > ul {
   display: block;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000368}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000372}}
 #mobile-nav-trigger {
   display: none;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000370}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000374}}
 .mm-menu.mm-opened {
   margin: 0;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000374}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000378}}
 #section-menu-wrapper-container {
   height: 48px;
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000379}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000383}}
 .section-menu-wrapper {
   height: 48px;
   position: relative;
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000381}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000385}}
 .container-wrapper.smint {
   background: #FFFFFF;
   border-bottom: 1px solid #d9d9d9;
@@ -3385,11 +3425,11 @@ input[type="submit"].small, input[type="button"].small {
   width: 100%;
   z-index: 100;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000391}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000395}}
 .admin-menu .container-wrapper.smint.fxd {
   margin-top: 20px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000392}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\0000396}}
 .container-wrapper.smint ul.section-menu {
   height: 48px;
   list-style: none;
@@ -3399,33 +3439,33 @@ input[type="submit"].small, input[type="button"].small {
   right: 0;
   top: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003101}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003105}}
 .container-wrapper.smint ul.section-menu li {
   height: 48px;
   float: left;
   margin: 0 12px;
   padding: 0;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003107}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003111}}
 .container-wrapper.smint ul.section-menu li a {
   cursor: pointer;
   font: 400 16px "ff-dagny-web-pro";
   line-height: 48px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003111}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003115}}
 .container-wrapper.smint ul.section-menu li a.active {
   color: #024666;
 }
 
 @media only screen and (max-width: 768px) {
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003120}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003124}}
   #menu-bar nav.block-menu > ul,
   .container-wrapper.smint,
   #top-menu {
     display: none;
   }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003124}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003128}}
   #mobile-nav-trigger {
     color: #FFFFFF;
     cursor: pointer;
@@ -3436,13 +3476,16 @@ input[type="submit"].small, input[type="button"].small {
     top: 0;
   }
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003136}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003140}}
 #logout-link {
   float: right;
   border-left: 1px solid #035585;
   border-right: 1px solid #035585;
+  margin-top: -1px;
+  height: 34px;
+  padding-top: 1px;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003141}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003148}}
 #logout-link > a {
   color: #FFFFFF;
   display: block;
@@ -3452,12 +3495,26 @@ input[type="submit"].small, input[type="button"].small {
   font-family: "franklin-gothic-urw", Arial, Helvetica, sans-serif;
   padding: 5px 30px;
   text-transform: uppercase;
-}
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003150}}
-#logout-link > a:hover {
   text-decoration: none;
+  outline: 0px none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003152}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003159}}
+#logout-link > a:focus {
+  background-color: #0480ba;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0480BA', endColorstr='#FF024666');
+  background-color: #0075bf;
+  *zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF0075BF', endColorstr='#FF003B64');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwNzViZiIvPjxzdG9wIG9mZnNldD0iNjQlIiBzdG9wLWNvbG9yPSIjMDA1MzhjIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAzYjY0Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #0075bf), color-stop(64%, #00538c), color-stop(100%, #003b64));
+  background-image: -webkit-linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+  background-image: -moz-linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+  background-image: -o-linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+  background-image: linear-gradient(top, #0075bf 0%, #00538c 64%, #003b64 100%);
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_menu\.scss}line{font-family:\00003161}}
 #logout-link:hover, #logout-link:active, #logout-link.active-trail, #logout-link.active {
   background-color: #0480ba;
   *zoom: 1;
@@ -4374,11 +4431,53 @@ ul.button-bar li a i.icon {
   background-image: linear-gradient(top, #777777 0%, #555555 64%, #333333 100%);
 }
 
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003178}}
-.vertical-tabs .vertical-tabs-list .offscreen {
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003177}}
+.vertical-tabs ul.vertical-tabs-list {
+  border-top: 0px;
+  margin-top: 10px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003181}}
+.vertical-tabs ul.vertical-tabs-list .offscreen {
   display: none;
 }
-@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003180}}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003183}}
+.vertical-tabs ul.vertical-tabs-list .vertical-tab-button {
+  border: 0px;
+  background-color: transparent;
+  height: 30px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003188}}
+.vertical-tabs ul.vertical-tabs-list .vertical-tab-button a {
+  height: 100%;
+  vertical-align: middle;
+  padding: 0;
+  text-align: right;
+  margin-right: 35px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003194}}
+.vertical-tabs ul.vertical-tabs-list .vertical-tab-button a:hover {
+  outline: 0 none !important;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003195}}
+.vertical-tabs ul.vertical-tabs-list .vertical-tab-button a * {
+  vertical-align: middle;
+  padding-top: 4px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003199}}
+.vertical-tabs ul.vertical-tabs-list .vertical-tab-button.selected {
+  background-color: white;
+  background-image: url(../images/triangle.png);
+  background-size: 22px 100%;
+  background-repeat: no-repeat;
+  background-position: right center;
+  margin-right: -1px;
+  margin-left: -1px;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003207}}
+.vertical-tabs ul.vertical-tabs-list .vertical-tab-button.selected a strong {
+  text-decoration: underline;
+}
+@media -sass-debug-info{filename{font-family:file\:\/\/\/var\/www\/drupal7\/sites\/all\/themes\/jaspersoft5\/sass\/modules\/_tabs\.scss}line{font-family:\00003210}}
 .vertical-tabs .vertical-tabs-panes {
   padding: 10px;
 }

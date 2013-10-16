@@ -25,6 +25,9 @@
 			border-right: 1px solid $blue2;
 			float: left;
 			position: relative;
+			height: 34px;
+			top: -1px;
+			padding-top: 1px;
 			> a {
 				color: #FFFFFF;
 				display: block;
@@ -35,6 +38,7 @@
 				padding: 5px 30px;
 				text-transform: uppercase;
 				&:hover { text-decoration: none; }
+				&:focus { @include blue-gradient('menu-hover'); }
 			}
 			> ul {
 				background: $blue-menu-btm;
@@ -59,7 +63,7 @@
 				}
 			}
 			&:first-child {	border-left: 1px solid $blue2; }
-			&:hover, &:active, &.active-trail, &.active { @include blue-gradient('menu-hover'); }
+			&:hover, &:active, &:focus, &.active-trail, &.active { @include blue-gradient('menu-hover'); }
 			&:hover > ul { display:block; }
 		}
 	}
@@ -137,6 +141,9 @@ $section-menu-height: 48px;
   float: right;
   border-left: 1px solid $blue2;
   border-right: 1px solid $blue2;
+  margin-top: -1px;
+  height: 34px;
+  padding-top: 1px;
   > a
   {
     color: #FFFFFF;
@@ -147,7 +154,9 @@ $section-menu-height: 48px;
     font-family: $sans-serif-body;
     padding: 5px 30px;
     text-transform: uppercase;
-    &:hover { text-decoration: none; }
+    text-decoration: none;
+    outline: 0px none;
+    &:focus { @include blue-gradient('menu-hover'); }
   }
   &:hover, &:active, &.active-trail, &.active { @include blue-gradient('menu-hover'); }
 

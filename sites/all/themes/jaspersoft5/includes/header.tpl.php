@@ -25,10 +25,6 @@
 					<li><a href="http://community.jaspersoft.com"><?php echo t('COMMUNITY'); ?></a></li>
 					<li><a href="http://support.jaspersoft.com"><?php echo t('SUPPORT'); ?></a></li>
 					<li><a href="http://www.jaspersoft.com/contact-us"><?php echo t('CONTACT US'); ?></a></li>
-
-					<?php if(user_is_logged_in()) :?>
-						<li><a href="/user/logout"><?php echo t('LOG OUT'); ?></a></li>
-					<?php endif; ?>
 				</ul>
 			</div>
 		</div>
@@ -58,7 +54,7 @@
 				  <?php print $page['menu_bar']; ?>
 				<?php //print render($page['menu_bar']); ?>
         <?php if(user_is_logged_in()) :?>
-          <div id="logout-link"><a href="/user/logout"><?php echo t('LOG OUT'); ?></a></div>
+          <div id="logout-link"><a href="/user/logout" style="outline: 0px none; text-decoration: none;"><?php echo t('LOG OUT'); ?></a></div>
         <?php endif; ?>
 				</div>
 
